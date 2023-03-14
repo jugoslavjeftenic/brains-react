@@ -33,10 +33,39 @@ Zahtevi:
     - ime pesnika i naziv pesme takodje centrirati i podebljati
     - ime pesnika prikazati zelenom bojom
 */
+import picture from "../../src/assets/images/s_maria_della_salut.jpg";
 
 const Zadatak_J2 = () => {
-    return <h1> Zadatak 2</h1>
+    return <>
+        <header>
+            <h1>Santa Maria della Salute</h1>
+        </header>
+        <a href="https://sr.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B7%D0%B0_%D0%9A%D0%BE%D1%81%D1%82%D0%B8%D1%9B" target="_blank" rel="noreferrer">Laza Kostic</a>
+        <div>
+            <p>
+                Зар није лепше носит лепоту,
+                сводова твојих постати стуб,
+                него грејући светску грехоту
+                у пепо спалит срце и луб;
+                тонут о броду, трнут у плоту,
+                ђаволу јелу а врагу дуб?
+                Зар није лепше вековат у те,
+                Santa Maria della Salute?
+            </p>
+            <p>
+                Зар није лепше носит лепоту,
+                сводова твојих постати стуб,
+                него грејући светску грехоту
+                у пепо спалит срце и луб;
+                тонут о броду, трнут у плоту,
+                ђаволу јелу а врагу дуб?
+                Зар није лепше вековат у те,
+                Santa Maria della Salute?
+            </p>
+        </div>
+        <div>
+            <img src={picture} width={500} alt="Santa Maria della Salute" />
+        </div>
+    </>
 }
-
-
 export default Zadatak_J2;
