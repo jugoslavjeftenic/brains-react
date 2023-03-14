@@ -18,7 +18,24 @@ Zahtevi:
 
 
 const ZadatakJ3 = () => {
-    return <h1> Zadatak 3</h1>
+    return <>
+        <table>
+            <tr>
+                <td>Quick</td>
+                <td colspan="2">brown fox</td>
+                <td>jumps</td>
+            </tr>
+            <tr>
+                <td rowspan="3">over<br />the</td>
+                <td>lazy</td><td>dog</td><td>and</td>
+            </tr>
+            <tr>
+                <td>then</td><td>it</td><td>fall</td>
+            </tr>
+            <tr>
+                <td colspan="3">prey to a lion</td>
+            </tr>
+        </table>
+    </>
 }
-
 export default ZadatakJ3;
