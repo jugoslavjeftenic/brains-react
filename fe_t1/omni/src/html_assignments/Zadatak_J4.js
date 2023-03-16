@@ -30,17 +30,92 @@ const Zadatak_J4 = () => {
       <div>
         {/* to do: ovde kreirati formu */}
         <p> TO DO: FORMA</p>
-        <h1>lunch special</h1>
-        <p><b>monday thru friday, 11 am ~ 3 pm</b></p>
-        <p><b>$9.95</b> (plus tax)</p>
-        <form action="" method="POST">
+        <form action="https://cscie12.dce.harvard.edu/echo" method="POST">
+          <label>Customare Name:</label> <input type="text" name="name" /><br />
+          <label>Customare Email:</label> <input type="email" name="email" />
+          <br /><br />
 
+          <fieldset>
+            Sandwich:<br />
+            <br />Mon:
+            <input type="radio" name="sandwich" value="1a" />
+            <label for="1a"> Tomato Mozzarela </label>
+            <input type="radio" name="sandwich" value="1b" />
+            <label for="1b"> Chicken Salad </label>
+            <br />Tues:
+            <input type="radio" name="sandwich" value="2a" />
+            <label for="2a"> Greek Salad </label>
+            <input type="radio" name="sandwich" value="2b" />
+            <label for="2b"> Toto Wrap </label>
+            <br />Wed:
+            <input type="radio" name="sandwich" value="3a" />
+            <label for="3a"> Red Pepper Hummus </label>
+            <input type="radio" name="sandwich" value="3b" />
+            <label for="3b"> Roasted Turkey </label>
+            <br />Thur:
+            <input type="radio" name="sandwich" value="4a" />
+            <label for="4a"> Carrot-Ginger Hummus Wrap </label>
+            <input type="radio" name="sandwich" value="4b" />
+            <label for="4b"> Egg Salad </label>
+            <br />Fri:
+            <input type="radio" name="sandwich" value="5a" />
+            <label for="5a"> Dado Wrap </label>
+            <input type="radio" name="sandwich" value="5b" />
+            <label for="5b"> Tuna Salad </label>
+          </fieldset>
+
+          <br /><input type="checkbox" name="gluten" />
+          <label for="gluten">Gluten Free Bread</label><br /><br />
+
+          <fieldset>
+            Snack:
+            <input type="radio" name="snack" value="1" />
+            <label for="1"> Apple </label>
+            <input type="radio" name="snack" value="2" />
+            <label for="2"> Bannana </label>
+            <input type="radio" name="snack" value="3" />
+            <label for="3"> Potato Chips </label>
+          </fieldset>
+
+          <fieldset>
+            Regular size drink:<br />
+
+            <input type="radio" name="drink" value="coffee" />
+            <label for="coffee"> Coffee </label>
+            <select name="coffee" id="coffee">
+              <option value="regular">Regular</option>
+              <option value="iced">Iced</option>
+            </select><br />
+
+            <input type="radio" name="drink" value="peppermint" />
+            <label for="peppermint"> Organic Peppermint </label><br />
+
+            <input type="radio" name="drink" value="greentea" />
+            <label for="greentea"> Sencha Green Tea </label>
+            <select name="greentea" id="greentea">
+              <option value="hot">Hot</option>
+              <option value="iced">Iced</option>
+            </select><br />
+
+            <input type="radio" name="drink" value="blacktea" />
+            <label for="blacktea"> Keemun Black Tea </label>
+            <select name="blacktea" id="blacktea">
+              <option value="hot">Hot</option>
+              <option value="iced">Iced</option>
+            </select>
+          </fieldset>
+
+          <br /><input type="checkbox" name="bubble" />
+          <label for="bubble">Bubble Tea</label>
+          <br /><input type="checkbox" name="large" />
+          <label for="large">Large Drink</label><br /><br />
+
+          <input type="submit" />
+          <input type="reset" />
+          <button type="button">Click Me!</button>
         </form>
       </div>
     </div>
-
-
-
   </div>
 }
 
