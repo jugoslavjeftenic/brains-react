@@ -112,7 +112,6 @@ const Zadatak_J4 = () => {
 
           <input type="submit" />
           <input type="reset" />
-          <button type="button">Click Me!</button>
         </form>
       </div>
     </div>
