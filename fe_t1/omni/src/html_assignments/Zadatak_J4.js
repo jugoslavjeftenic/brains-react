@@ -23,18 +23,24 @@ const Zadatak_J4 = () => {
   return <div>
     <h2> Zadatak 4</h2>
     <div className='zad_container'>
-      <div> 
-          <p> Slika na osnovu koje treba napraviti formu</p>
-          <img src={slika}/>
+      <div>
+        <p> Slika na osnovu koje treba napraviti formu</p>
+        <img src={slika} alt="" />
       </div>
       <div>
-      {/* to do: ovde kreirati formu */}
-      <p> TO DO: FORMA</p>
-    </div>
-    </div>
-    
+        {/* to do: ovde kreirati formu */}
+        <p> TO DO: FORMA</p>
+        <h1>lunch special</h1>
+        <p><b>monday thru friday, 11 am ~ 3 pm</b></p>
+        <p><b>$9.95</b> (plus tax)</p>
+        <form action="" method="POST">
 
-   
+        </form>
+      </div>
+    </div>
+
+
+
   </div>
 }
 
