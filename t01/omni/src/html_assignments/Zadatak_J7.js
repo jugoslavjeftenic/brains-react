@@ -24,26 +24,18 @@ const Zadatak_J7 = () => {
             Stranice se mogu dobaviti kako iz fajl-sistema, tako i putem TCP/IP mreže.
             Protokol kojim komuniciraju wb čitač i web server je HTTP protokol.
           </p>
-          <p>
-            Danas su najpoznatiji sledeću web čitači:
-            <ol>
-              <li>
-                <a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noreferrer">Microsoft Edge</a> (https://www.microsoft.com/en-us/edge)
-              </li>
-              <li>
-                <a href="https://www.google.com/chrome" target="_blank" rel="noreferrer">Google Chrome</a> (https://www.google.com/chrome)
-              </li>
-              <li>
-                <a href="https://www.mozilla.org" target="_blank" rel="noreferrer">Mozilla</a> (https://www.mozilla.org)
-              </li>
-            </ol>
-          </p>
+          <ol>Danas su najpoznatiji sledeću web čitači:
+            <li>
+              <a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noreferrer">Microsoft Edge</a> (https://www.microsoft.com/en-us/edge)
+            </li>
+            <li>
+              <a href="https://www.google.com/chrome" target="_blank" rel="noreferrer">Google Chrome</a> (https://www.google.com/chrome)
+            </li>
+            <li>
+              <a href="https://www.mozilla.org" target="_blank" rel="noreferrer">Mozilla</a> (https://www.mozilla.org)
+            </li>
+          </ol>
           <img src={slika2} width={200} alt="" />
-
-
-
-
-          {/* to do: ovde strukturirati tekst */}
         </div>
       </div>
     </div>
