@@ -23,7 +23,45 @@ The order of the medal winners
 
 const Zadatak_J9 = () => {
   // to do
-  return <div>Zadatak 9</div>;
+  return <div>
+    <div>Zadatak 9</div>
+    <br />
+    <div>
+      <table>
+        <tr>
+          <th>First name</th><th>Last name</th><th>Country</th><th>Sport</th>
+        </tr>
+        <tr>
+          <td>Simone</td><td>Biles</td><td>USA</td><td>Artistic Gymnastics</td>
+        </tr>
+        <tr>
+          <td>Darya</td><td>Klishina</td><td>Russia</td><td>Athletics</td>
+        </tr>
+        <tr>
+          <td>Ivana</td><td>Spanovic</td><td>Serbia</td><td>Athletics</td>
+        </tr>
+        <tr>
+          <td>Luka</td><td>Doncic</td><td>Slovenia</td><td>Basketball</td>
+        </tr>
+        <tr>
+          <td>Filip</td><td>Filipovic</td><td>Serbia</td><td>Water Polo</td>
+        </tr>
+        <tr>
+          <td>Evgeniya</td><td>Startseva</td><td>Russia</td><td>Volleyball</td>
+        </tr>
+        <tr>
+          <td>Novak</td><td>Djokovic</td><td>Serbia</td><td>Tennis</td>
+        </tr>
+      </table>
+      <ol>The order of the medal winners
+        <li>People's Republic Of China</li>
+        <li>United States of America</li>
+        <li>Japan</li>
+        <li>Australia</li>
+        <li>ROC</li>
+      </ol>
+    </div>
+  </div>;
 };
 
 export default Zadatak_J9;
