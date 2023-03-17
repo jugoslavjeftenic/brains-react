@@ -37,6 +37,7 @@ import HTMLTabela from "./HTMLTabela";
 import Zadatak_J7 from "./html_assignments/Zadatak_J7";
 import Zadatak_J8 from "./html_assignments/Zadatak_J8";
 import Zadatak_J9 from "./html_assignments/Zadatak_J9";
+import Zadatak_J10 from "./html_assignments/Zadatak_J10";
 
 const router = createBrowserRouter([
   {
@@ -130,6 +131,10 @@ const router = createBrowserRouter([
   {
     path: "/html_assignment/zad9",
     element: <Zadatak_J9 />,
+  },
+  {
+    path: "/html_assignment/zad10",
+    element: <Zadatak_J10 />,
   },
   {
     path: "/js_funkcionalno",
