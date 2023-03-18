@@ -7,31 +7,31 @@ const HTMLAssignment = () => {
       <p>Zadaci iz HTML-a i CSS-a</p>
       <ul>
         <li>
-          <Link to="zad01">Zadatak 1</Link>
+          <Link to="zad01">Zadatak 01</Link>
         </li>
         <li>
-          <Link to="zad02">Zadatak 2</Link>
+          <Link to="zad02">Zadatak 02</Link>
         </li>
         <li>
-          <Link to="zad03">Zadatak 3</Link>
+          <Link to="zad03">Zadatak 03</Link>
         </li>
         <li>
-          <Link to="zad04">Zadatak 4</Link>
+          <Link to="zad04">Zadatak 04</Link>
         </li>
         <li>
-          <Link to="zad05">Zadatak 5</Link>
+          <Link to="zad05">Zadatak 05</Link>
         </li>
         <li>
-          <Link to="zad06">Zadatak 6</Link>
+          <Link to="zad06">Zadatak 06</Link>
         </li>
         <li>
-          <Link to="zad07">Zadatak 7</Link>
+          <Link to="zad07">Zadatak 07</Link>
         </li>
         <li>
-          <Link to="zad08">Zadatak 8</Link>
+          <Link to="zad08">Zadatak 08</Link>
         </li>
         <li>
-          <Link to="zad09">Zadatak 9</Link>
+          <Link to="zad09">Zadatak 09</Link>
         </li>
         <li>
           <Link to="zad10">Zadatak 10</Link>
