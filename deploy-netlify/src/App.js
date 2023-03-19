@@ -2,24 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const handleNameChange = () => {
+		const names = ['Bomba', 'Uraa', 'ClankerTech'];
+		const int = Math.floor(Math.random() * 3);
+		return names[int];
+	}
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+					Hello {handleNameChange()}!
+				</p>
+			</header>
+		</div>
+	);
 }
 
 export default App;
