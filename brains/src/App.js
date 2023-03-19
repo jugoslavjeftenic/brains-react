@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
 	const handleNameChange = () => {
-		const names = ['Bomba', 'Uraa', 'ClankerTech'];
+		const names = ['Bomba', 'Brains', 'Jugoslav'];
 		const int = Math.floor(Math.random() * 3);
 		return names[int];
 	}
