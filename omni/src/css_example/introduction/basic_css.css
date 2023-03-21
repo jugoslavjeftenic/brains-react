@@ -28,7 +28,7 @@
 */
 
 /* selekcija po tagu -> napravicemo da svi elementi oznaceni sa h1 budu zelene boje */
-h4 {
+h5 {
     color: green;
 }
 

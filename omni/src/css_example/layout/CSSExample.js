@@ -10,26 +10,30 @@ import ExampleForm from './ExampleForm';
 import ExampleCalculator from './ExampleCalculator';
 import picture from './../../assets/images/lorem_ipsum.jpg';
 import React, { useState} from 'react';
+import ExampleTable from "./ExampleTable";
 
 const CSSExample = () => {
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState('f');
 
   const clickFormButton = () => {
-    setShowForm(true);
+    setShowForm('f');
   }
   const clickCalButton = () => {
-    setShowForm(false);
+    setShowForm('c');
   }
+  const clickTableButton = () => {
+    setShowForm('t');
+  }
+
   const main_layout = (
     <div className="container">
       <div className="header">
-        {" "}
-        <h1> Example header </h1>{" "}
+        <header>Example header</header>
       </div>
       <div className="navigation_menu">
           <input className="menu_item" type="button" value="Forma" onClick={clickFormButton} />
           <input className="menu_item" type="button" value="Kalkulator" onClick={clickCalButton}/>
-        
+          <input className="menu_item" type="button" value="Tabela" onClick={clickTableButton}/>
       </div>
       <div className="content_left">
         {" "}
@@ -61,10 +65,10 @@ const CSSExample = () => {
       </div>
       <div className="content_main"> 
       {/* raspored se smenjuje u zavisnosti od toga sta se izabere da li forma ili kalkulator */}
-          { showForm ? <ExampleForm/> : <ExampleCalculator/> }
+          { showForm === 'f' ? <ExampleForm/> : (showForm === 'c' ? <ExampleCalculator/> : <ExampleTable/>) }
       </div>
       <div className="content_right"> <img  src={picture} alt="Example"/> </div>
-      <div className="footer"> <h2> Example footer</h2> </div>
+      <div className="footer"> <footer> Example footer</footer> </div>
     </div>
   );
   return main_layout;

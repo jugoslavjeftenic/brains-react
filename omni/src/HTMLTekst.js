@@ -12,6 +12,10 @@ const HTMLTekst = () => {
       <h2>Ovo drugi</h2>
       <h3>Ovo treći</h3>
       <h4>Ovo četvrti</h4>
+      <h5>Ovo je peti </h5>
+
+      <p> Ovo je pasus</p>
+
       Tekst ne mora da bude u naslovu ili nekom posebnom tag-u, može se kucati
       direktno, kao ovde. Naslovi ne samo što organizuju tekst, oni tekstu i
       daju nekakav podrazumevan izgled. Bez obzira na to što ponekad utiče na

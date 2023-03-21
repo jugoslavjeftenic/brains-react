@@ -7,7 +7,7 @@ const BasicCSS = () => {
         CSS (Cascade Style Sheet) je jezik za stilizovannje Web stranice.
         Opisuje kako ce HTML element da bude prikazan.
       </p>
-      <h4> Definisanje stilova</h4>
+      <h5> Definisanje stilova</h5>
       <p>
         Moze da se definise na vise nacina:
         <ul>
@@ -29,23 +29,31 @@ const BasicCSS = () => {
         <li> Stil definisan u eksternoj datoteci </li>
         <li> Podrazumevani stil elementa </li>
       </ol>
-      <h4> Definisanje stila u HTML elementu </h4>
+      <h5> Definisanje stila u HTML elementu </h5>
       <p>
         {" "}
-        U okviru otvarajuceg taga HTML elementa definisemo atribu <i>
+        U okviru otvarajuceg taga HTML elementa definisemo atribut <i>
           style
         </i>.{" "}
       </p>
       <p>
         {" "}
         Primer:
-        <i> &lt;h1 style="color: black" &gt; Naslov &lt;/h1&gt; </i>
+       <p> HTML - <i> &lt;h1 style="color: black" &gt; Naslov &lt;/h1&gt; </i> </p>
+       <p> JSX - <i> &lt;h1 style=&#123;&#123;color: black&#125;&#125; &gt; Naslov &lt;/h1&gt; </i> </p>
       </p>
-      <h4>
+      <p> 
+        Na semaforu se menjaju tri boje: 
+        <span style={{color:'red'}} >crvena</span>, 
+        <span style={{color:'green'}} > zelena </span> i 
+        <span style={{color:'yellow'}} > zuta</span>
+      </p>
+      
+      <h5>
         {" "}
         Sintaksa za definisanje stila u sekciji <i>style</i> i u eksternoj
         datoteci
-      </h4>
+      </h5>
       <i> selektor &#123; osobina : nova_vrednost &#125; </i>
       <br />
       Selektor moze da bude:
@@ -61,10 +69,10 @@ const BasicCSS = () => {
           <i> className</i> ako je u pitanju JSX
         </li>
       </ul>
-      <h4>
+      <h5>
         {" "}
         Definisanje stila u <i>style</i> sekciji{" "}
-      </h4>
+      </h5>
       <p className="text_class">
         {" "}
         Sekcija <i>style</i> se definise u okviru <i>head</i> dela HTML
@@ -85,7 +93,7 @@ const BasicCSS = () => {
           </code>
         </pre>
       </p>
-      <h4> Definisanje stila u eksternoj datoteci </h4>
+      <h5> Definisanje stila u eksternoj datoteci </h5>
       <p>
         {" "}
         Mozemo stil da definsemo u eksternoj datoteci navodeci skup pravila.
@@ -96,6 +104,8 @@ const BasicCSS = () => {
       <p>Da bi se neki stil primenimo na stranicu obavezno moramo da uvezemo .css i .html ili .js fajl upotrebom <i>import</i> izraza.</p>
       <code> import 'putanja_do_css_datoteke';</code>
       <p> U ovom primeru su stilovi definisani u eksternim datotekama i ovo je najcesci nacin kako se definisu stilovi.</p>
+    
+      
     </div>
   );
 };

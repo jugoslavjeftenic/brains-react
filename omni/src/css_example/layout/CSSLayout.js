@@ -104,6 +104,8 @@ const CSSLayout = () => {
     <div>
       <h1> Raspored </h1>
       <p><Link to="css_example">Primeri upotrebe rasporeda</Link></p>
+      <p><Link to="css_list_view_example">Primeri upotrebe rasporeda (dashboard 1)</Link></p>
+      <p><Link to="css_dashboard">Primeri upotrebe rasporeda (dashboard 2) </Link></p>
       <span>
         {" "}
         <i> Raspored ce biti prikazan na sledecem tekstu: {setLayout()} </i>{" "}
