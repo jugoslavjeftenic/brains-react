@@ -8,6 +8,7 @@ import './Zadatak05_css.css';
 const Zadatak_J05 = () => {
     return (
         <div>
+            <h2> Zadatak 5</h2>
             <div className='zad5_container'>
                 <div>
                     <p> Slika na osnovu koje treba napraviti formu</p>

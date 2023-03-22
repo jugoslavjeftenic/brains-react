@@ -21,7 +21,6 @@ const ZadatakJ03 = () => {
     return (
         <div>
             <h2> Zadatak 3</h2>
-
             <table border="1">
                 <tr>
                     <td>Quick</td>

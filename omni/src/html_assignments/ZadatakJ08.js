@@ -12,10 +12,9 @@ const Zadatak_J08 = () => {
 	// to do
 	return (
 		<div>
+			<h2> Zadatak 8</h2>
 			<h1>Poem</h1>
-
 			<hr width="99%" />
-
 			<p>
 				My Bonnie lies over the ocean<br />
 				My Bonnie lies over the sea<br />

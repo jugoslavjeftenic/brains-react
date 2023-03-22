@@ -8,6 +8,7 @@ import slika2 from "./../assets/images/apache-tomcat-logo.png";
 const Zadatak_J07 = () => {
 	return (
 		<div>
+			<h2> Zadatak 7</h2>
 			<div className="zad_container">
 				<div>
 					<p> Prikazati tekst kao što je na slici: </p>

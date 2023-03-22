@@ -28,6 +28,7 @@ import slika from "./../assets/images/seo.png";
 const Zadatak_J06 = () => {
 	return (
 		<div>
+			<h2> Zadatak 6</h2>
 			<div className="zad_container">
 				<div width="50%">
 					<p> Prikazati tekst kao što je na slici: </p>
