@@ -10,10 +10,12 @@ import HTMLOrganizacija from "./HTMLOrganizacija";
 import HTMLSlika from "./HTMLSlika";
 import HTMLTabela from "./HTMLTabela";
 import HTMLForma from "./HTMLForma";
+
 import CSSExample from "./css_example/layout/CSSExample";
 import BasicCSS from "./css_example/introduction/BasicCSS";
 import CSSText from "./css_example/text/CSSText";
 import CSSLayout from "./css_example/layout/CSSLayout";
+
 import JSOsnove from "./js/JSOsnove";
 import JSUsluzne from "./js/JSUsluzne";
 import JSFunkcionalno from "./js/JSFunkcionalno";
