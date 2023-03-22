@@ -17,8 +17,30 @@ Zahtevi:
 */
 
 
-const ZadatakJ3 = () => {
-    return <h1> Zadatak 3</h1>
+const ZadatakJ03 = () => {
+    return (
+        <div>
+            <h2> Zadatak 3</h2>
+
+            <table border="1">
+                <tr>
+                    <td>Quick</td>
+                    <td colspan="2">brown fox</td>
+                    <td>jumps</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">over<br />the</td>
+                    <td>lazy</td><td>dog</td><td>and</td>
+                </tr>
+                <tr>
+                    <td>then</td><td>it</td><td>fall</td>
+                </tr>
+                <tr>
+                    <td colspan="3">prey to a lion</td>
+                </tr>
+            </table>
+        </div>
+    );
 }
 
-export default ZadatakJ3;
+export default ZadatakJ03;

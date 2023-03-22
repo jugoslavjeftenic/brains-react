@@ -33,6 +33,9 @@ const HTMLAssignment = () => {
 				<li>
 					<Link to="zad09">Zadatak 09</Link>
 				</li>
+				<li>
+					<Link to="zad10">Zadatak 10</Link>
+				</li>
 			</ul>
 		</div>
 	);

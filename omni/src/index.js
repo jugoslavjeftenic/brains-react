@@ -33,6 +33,7 @@ import ZadatakJ06 from "./html_assignments/ZadatakJ06";
 import ZadatakJ07 from "./html_assignments/ZadatakJ07";
 import ZadatakJ08 from "./html_assignments/ZadatakJ08";
 import ZadatakJ09 from "./html_assignments/ZadatakJ09";
+import ZadatakJ10 from "./html_assignments/ZadatakJ10";
 
 import JSVAssignment from "./js_assignments/JSVAssignment";
 import JSV01 from "./js_assignments/JSV01";
@@ -45,6 +46,7 @@ import JSV07 from "./js_assignments/JSV07";
 import JSV08 from "./js_assignments/JSV08";
 import JSV09 from "./js_assignments/JSV09";
 import JSV10 from "./js_assignments/JSV10";
+import Zadatak_J10 from "./html_assignments/ZadatakJ10";
 
 const router = createBrowserRouter([
 	{
@@ -154,6 +156,10 @@ const router = createBrowserRouter([
 	{
 		path: "/html_assignment/zad09",
 		element: <ZadatakJ09 />,
+	},
+	{
+		path: "/html_assignment/zad10",
+		element: <ZadatakJ10 />,
 	},
 	{
 		path: "/js_assignments",

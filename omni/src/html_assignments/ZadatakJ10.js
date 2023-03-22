@@ -42,7 +42,7 @@ const Zadatak_J10 = () => {
                 </fieldset>
 
                 <br />
-                <input type="submit" />
+                <input type="submit" value="submit" />
                 <input type="reset" />
             </form>
         </div>
