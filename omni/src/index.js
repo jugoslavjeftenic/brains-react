@@ -34,6 +34,8 @@ import ZadatakJ07 from "./html_assignments/ZadatakJ07";
 import ZadatakJ08 from "./html_assignments/ZadatakJ08";
 import ZadatakJ09 from "./html_assignments/ZadatakJ09";
 import ZadatakJ10 from "./html_assignments/ZadatakJ10";
+import ZadatakJ11 from "./html_assignments/ZadatakJ11";
+import ZadatakJ12 from "./html_assignments/ZadatakJ12";
 
 import JSVAssignment from "./js_assignments/JSVAssignment";
 import JSV01 from "./js_assignments/JSV01";
@@ -46,7 +48,6 @@ import JSV07 from "./js_assignments/JSV07";
 import JSV08 from "./js_assignments/JSV08";
 import JSV09 from "./js_assignments/JSV09";
 import JSV10 from "./js_assignments/JSV10";
-import Zadatak_J10 from "./html_assignments/ZadatakJ10";
 
 const router = createBrowserRouter([
 	{
@@ -160,6 +161,14 @@ const router = createBrowserRouter([
 	{
 		path: "/html_assignment/zad10",
 		element: <ZadatakJ10 />,
+	},
+	{
+		path: "/html_assignment/zad11",
+		element: <ZadatakJ11 />,
+	},
+	{
+		path: "/html_assignment/zad12",
+		element: <ZadatakJ12 />,
 	},
 	{
 		path: "/js_assignments",
