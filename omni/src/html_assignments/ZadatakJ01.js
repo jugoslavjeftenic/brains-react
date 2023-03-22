@@ -1,7 +1,7 @@
 /*
 Napraviti stranicu koja prikazuje podatke o Tokiu. Stranica treba da sadrzi:
-    - naslov 'Tokyo'
-    - tekst koji je dat na kraju zadatka
+	- naslov 'Tokyo'
+	- tekst koji je dat na kraju zadatka
 Tekst koji treba da bude napisan na stranici:
 -------------
 Tokyo, officially the Tokyo Metropolis, is the capital and most populous prefecture of Japan. Located
@@ -23,16 +23,19 @@ various bed towns in the western area, and two outlying island chains.
 
 CSS DEO ZADATKA (ovo radite tek kada budemo uradili CSS)
 Zahtevi:
-    - tekst poravnati po levoj strani i pozadinu teksta obojiti po zelji
-    - rec Tokyo predstaviti podebljano, crvene boje 
-    - prvi red u svakom pasusu uvuci za 15px
-    - sliku centirati i oviciti okvirom debljine 1px
-    - rastojanje izmedju slike i okvira treba da bude 10px
+	- tekst poravnati po levoj strani i pozadinu teksta obojiti po zelji
+	- rec Tokyo predstaviti podebljano, crvene boje 
+	- prvi red u svakom pasusu uvuci za 15px
+	- sliku centirati i oviciti okvirom debljine 1px
+	- rastojanje izmedju slike i okvira treba da bude 10px
 */
 
 const Zadatak_J1 = () => {
-  // to do
-  return <> <h1> Tokyo </h1> <p> Pasus </p></> ;
+	// to do
+	return (
+
+		<> <h1> Tokyo </h1> <p> Pasus </p></>
+	);
 };
 
 export default Zadatak_J1;
