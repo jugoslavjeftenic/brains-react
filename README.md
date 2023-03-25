@@ -2,5 +2,4 @@
 # brains-react
 Brains Online 2022/23 - React bootCamp
 
-Link ka sajtu sa urađenim zadacima.
-https://brains-akademija.netlify.app/
+Link ka sajtu sa urađenim zadacima https://brains-akademija.netlify.app/
