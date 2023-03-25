@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { Link } from "react-router-dom";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<h1>Univerzalni primer za React</h1>
+			<p>
+				Ovaj primer sadrži primere za prekvalifikacioni kurs za React. Primeri
+				su prokomentarisani, i svaki je namerno napravljen da bude onoliko
+				jednostavan koliko je to moguće.
+			</p>
+			<ul>
+				<li>Deo 1 - Osnove</li>
+				<li> Zadaci </li>
+				<ul>
+					<li>
+						{" "}
+						<Link to="html_assignment"> HTML i CSS Zadaci </Link>
+					</li>
+				</ul>
+			</ul>
+		</div>
+	);
 }
 
 export default App;
