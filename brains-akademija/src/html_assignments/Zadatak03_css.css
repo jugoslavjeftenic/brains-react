@@ -1,0 +1,25 @@
+.zadatak03 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.zadatak03 table {
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    border-spacing: 10px;
+}
+
+.zadatak03 th {
+    font-weight: 700;
+    background-color: #565656;
+}
+
+.zadatak03 th,
+.zadatak03 td {
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 1rem;
+}

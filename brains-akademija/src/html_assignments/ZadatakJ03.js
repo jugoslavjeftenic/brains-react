@@ -16,16 +16,17 @@ Zahtevi:
     - Okviri oko celija treba da budu debljine 2px i da se sastoje od dve linije
 */
 
+import { Link } from "react-router-dom";
+import './Zadatak03_css.css';
 
 const ZadatakJ03 = () => {
     return (
-        <div>
-            <h2> Zadatak 3</h2>
-            <table border="1">
+        <div className="container zadatak03">
+            <table>
                 <tr>
-                    <td>Quick</td>
-                    <td colspan="2">brown fox</td>
-                    <td>jumps</td>
+                    <th>Quick</th>
+                    <th colspan="2">brown fox</th>
+                    <th>jumps</th>
                 </tr>
                 <tr>
                     <td rowspan="3">over<br />the</td>
@@ -38,6 +39,9 @@ const ZadatakJ03 = () => {
                     <td colspan="3">prey to a lion</td>
                 </tr>
             </table>
+            <footer>
+                <Link to="/">Početna strana</Link>
+            </footer>
         </div>
     );
 }
