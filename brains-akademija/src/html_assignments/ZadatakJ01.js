@@ -48,11 +48,11 @@ const Zadatak_J01 = () => {
 
 			<main>
 				<p>
-					Tokyo, officially the Tokyo Metropolis, is the capital and most populous prefecture of Japan. Located
-					at the head of Tokyo Bay, the prefecture forms part of the Kantō region on the central Pacific coast
-					of Japan's main island of Honshu. Tokyo is the political and economic center of the country, as well
+					<span className="akcenat">Tokyo</span>, officially the <span className="akcenat">Tokyo</span> Metropolis, is the capital and most populous prefecture of Japan. Located
+					at the head of <span className="akcenat">Tokyo</span> Bay, the prefecture forms part of the Kantō region on the central Pacific coast
+					of Japan's main island of Honshu. <span className="akcenat">Tokyo</span> is the political and economic center of the country, as well
 					as the seat of the Emperor of Japan and the national government. As of 2021, the prefecture has an
-					estimated population of 13,960,236. The Greater Tokyo Area is the most populous metropolitan
+					estimated population of 13,960,236. The Greater <span className="akcenat">Tokyo</span> Area is the most populous metropolitan
 					area in the world, with more than 37.393 million residents as of 2020.
 				</p>
 
@@ -60,11 +60,11 @@ const Zadatak_J01 = () => {
 					Originally a fishing village, named Edo, the city became a prominent political center in 1603, when it
 					became the seat of the Tokugawa shogunate. By the mid-18th century, Edo was one of the most
 					populous cities in the world at over one million. Following the end of the shogunate in 1868, the
-					imperial capital in Kyoto was moved to the city, which was renamed Tokyo (literally "eastern
-					capital"). Tokyo was devastated by the 1923 Great Kantō earthquake, and again by Allied bombing
+					imperial capital in Kyoto was moved to the city, which was renamed <span className="akcenat">Tokyo</span> (literally "eastern
+					capital"). <span className="akcenat">Tokyo</span> was devastated by the 1923 Great Kantō earthquake, and again by Allied bombing
 					raids during World War II. Beginning in the 1950s, the city underwent rapid reconstruction and
-					expansion, going on to lead Japan's post-war economic recovery. Since 1943, the Tokyo
-					Metropolitan Government has administered the prefecture's 23 special wards (formerly Tokyo City),
+					expansion, going on to lead Japan's post-war economic recovery. Since 1943, the <span className="akcenat">Tokyo</span>
+					Metropolitan Government has administered the prefecture's 23 special wards (formerly <span className="akcenat">Tokyo</span> City),
 					various bed towns in the western area, and two outlying island chains.
 				</p>
 

@@ -35,9 +35,14 @@
     text-indent: 15px;
 }
 
+.akcenat {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 .imgContainer {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 }
 
 .imgContainer img {
