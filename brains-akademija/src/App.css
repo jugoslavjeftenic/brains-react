@@ -1,0 +1,30 @@
+:root {
+    --accent-color: #ff4136;
+}
+
+.App li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.App h1 {
+    color: var(--accent-color);
+}
+
+.App header {
+    margin-top: 1rem;
+}
+
+.App header>* {
+    margin-bottom: 1rem;
+}
+
+.App main p {
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+
+.App main>ul>li {
+    font-size: 1.1em;
+    margin-bottom: 0.1rem;
+}

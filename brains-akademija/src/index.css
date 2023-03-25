@@ -1,3 +1,10 @@
+:root {
+	--primary-color: #bdc1c6;
+	--accent-color: #ff4136;
+	--link-color: #0072c6;
+	--background-color: #202124;
+}
+
 /* Reset default styles */
 * {
 	margin: 0;
@@ -9,8 +16,8 @@
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	background-color: #202124;
-	color: #bdc1c6;
+	color: var(--primary-color);
+	background-color: var(--background-color);
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -22,7 +29,7 @@ code {
 
 /* Set default link styles */
 a {
-	color: #007bff;
+	color: var(--link-color);
 	text-decoration: none;
 }
 
