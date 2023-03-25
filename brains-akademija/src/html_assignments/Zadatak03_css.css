@@ -23,3 +23,8 @@
     border-radius: 5px;
     padding: 1rem;
 }
+
+.zadatak03 th:hover,
+.zadatak03 td:hover {
+    background-color: var(--accent-color);
+}
