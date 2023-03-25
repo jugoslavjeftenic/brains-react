@@ -20,7 +20,6 @@ expansion, going on to lead Japan's post-war economic recovery. Since 1943, the 
 Metropolitan Government has administered the prefecture's 23 special wards (formerly Tokyo City),
 various bed towns in the western area, and two outlying island chains.
 -------------
-
 CSS DEO ZADATKA (ovo radite tek kada budemo uradili CSS)
 Zahtevi:
 	- tekst poravnati po levoj strani i pozadinu teksta obojiti po zelji
@@ -30,20 +29,24 @@ Zahtevi:
 	- rastojanje izmedju slike i okvira treba da bude 10px
 */
 
+import './Zadatak01_css.css';
+import slika_tokio from "./../assets/images/tokyo.jpg";
+
 const Zadatak_J01 = () => {
 	return (
-		<div>
-			<h2> Zadatak 1</h2>
+		<div className="container zadatak01">
 			<header>
 				<h1>Tokyo</h1>
+
+				<table>
+					<tr><td>Kanji</td><td>東京</td></tr>
+					<tr><td>Hiragana</td><td>とうきょう</td></tr>
+					<tr><td>Katakana</td><td>トウキョウ</td></tr>
+					<tr><td>Kyūjitai</td><td>東亰</td></tr>
+				</table>
 			</header>
-			<table>
-				<tr><td>Kanji</td><td>東京</td></tr>
-				<tr><td>Hiragana</td><td>とうきょう</td></tr>
-				<tr><td>Katakana</td><td>トウキョウ</td></tr>
-				<tr><td>Kyūjitai</td><td>東亰</td></tr>
-			</table>
-			<div>
+
+			<main>
 				<p>
 					Tokyo, officially the Tokyo Metropolis, is the capital and most populous prefecture of Japan. Located
 					at the head of Tokyo Bay, the prefecture forms part of the Kantō region on the central Pacific coast
@@ -64,7 +67,11 @@ const Zadatak_J01 = () => {
 					Metropolitan Government has administered the prefecture's 23 special wards (formerly Tokyo City),
 					various bed towns in the western area, and two outlying island chains.
 				</p>
-			</div>
+
+				<div className="imgContainer">
+					<img src={slika_tokio} alt="Slika Tokia" />
+				</div>
+			</main>
 		</div>
 	);
 };

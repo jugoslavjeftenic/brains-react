@@ -1,0 +1,47 @@
+:root {
+    --accent-color: #ff4136;
+}
+
+.zadatak01 {
+    text-align: left;
+    background-color: inherit;
+    margin-top: 1rem;
+}
+
+.zadatak01 h1 {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.zadatak01 table {
+    margin-bottom: 1rem;
+}
+
+.zadatak01 tr td:first-child {
+    text-align: right;
+}
+
+.zadatak01 tr td:last-child {
+    text-align: left;
+    color: var(--accent-color);
+}
+
+.zadatak01 td {
+    padding-right: 1rem;
+}
+
+.zadatak01 p {
+    text-indent: 15px;
+}
+
+.imgContainer {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.imgContainer img {
+    max-width: 80%;
+    border: 2px solid var(--accent-color);
+    padding: 10px;
+}
