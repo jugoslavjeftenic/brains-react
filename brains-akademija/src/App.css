@@ -2,6 +2,12 @@
     --accent-color: #ff4136;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
 .App li {
     text-decoration: none;
     list-style: none;
@@ -27,4 +33,16 @@
 .App main>ul>li {
     font-size: 1.1em;
     margin-bottom: 0.1rem;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+footer a {
+    color: var(--secondary-color);
 }

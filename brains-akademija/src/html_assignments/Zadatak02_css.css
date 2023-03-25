@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: stretch;
     gap: 1rem 2rem;
+    margin-bottom: 3rem;
 }
 
 .zadatak02 main .tekst {

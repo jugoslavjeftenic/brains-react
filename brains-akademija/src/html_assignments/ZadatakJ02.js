@@ -34,6 +34,7 @@ Zahtevi:
     - ime pesnika prikazati zelenom bojom
 */
 
+import { Link } from "react-router-dom";
 import './Zadatak02_css.css';
 import slika_santa_maria_della_salut from "./../assets/images/santa_maria_della_salut.jpg";
 
@@ -73,6 +74,9 @@ const Zadatak_J02 = () => {
                     <img src={slika_santa_maria_della_salut} width={500} alt="Santa Maria della Salute" />
                 </div>
             </main>
+            <footer>
+                <Link to="/">Početna strana</Link>
+            </footer>
         </div>
     );
 }

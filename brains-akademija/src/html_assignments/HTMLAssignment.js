@@ -48,6 +48,9 @@ const HTMLAssignment = () => {
 					</li>
 				</ul>
 			</main>
+			<footer>
+				<Link to="/">Početna strana</Link>
+			</footer>
 		</div>
 	);
 };

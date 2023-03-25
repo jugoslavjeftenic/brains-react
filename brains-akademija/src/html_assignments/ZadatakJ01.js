@@ -29,6 +29,7 @@ Zahtevi:
 	- rastojanje izmedju slike i okvira treba da bude 10px
 */
 
+import { Link } from "react-router-dom";
 import './Zadatak01_css.css';
 import slika_tokio from "./../assets/images/tokyo.jpg";
 
@@ -70,6 +71,9 @@ const Zadatak_J01 = () => {
 					<img src={slika_tokio} alt="Slika Tokia" />
 				</div>
 			</main>
+			<footer>
+				<Link to="/">Početna strana</Link>
+			</footer>
 		</div>
 	);
 };
