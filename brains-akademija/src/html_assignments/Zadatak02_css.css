@@ -1,0 +1,39 @@
+.zadatak02 header {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.zadatak02 header a {
+    color: var(--secondary-color);
+}
+
+.zadatak02 header h1 {
+    color: var(--accent-color);
+}
+
+.zadatak02 main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem 2rem;
+}
+
+.zadatak02 main .tekst {
+    flex-grow: 1;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    padding: 1.5rem 1rem 0 1rem;
+}
+
+.zadatak02 main .slika {
+    flex-grow: 2;
+}
+
+.zadatak02 main .slika img {
+    width: 100%;
+}

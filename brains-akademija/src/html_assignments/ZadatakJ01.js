@@ -36,10 +36,8 @@ const Zadatak_J01 = () => {
 	return (
 		<div className="container zadatak01">
 			<header>
-				<h1>Tokyo</h1>
-
 				<table>
-					<tr><td>Kanji</td><td>東京</td></tr>
+					<tr><td>Kanji</td><td>東京</td><td rowspan="5"><h1>Tokyo</h1></td></tr>
 					<tr><td>Hiragana</td><td>とうきょう</td></tr>
 					<tr><td>Katakana</td><td>トウキョウ</td></tr>
 					<tr><td>Kyūjitai</td><td>東亰</td></tr>

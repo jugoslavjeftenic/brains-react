@@ -33,37 +33,46 @@ Zahtevi:
     - ime pesnika i naziv pesme takodje centrirati i podebljati
     - ime pesnika prikazati zelenom bojom
 */
-import picture from "./../assets/images/santa_maria_della_salut.jpg";
+
+import './Zadatak02_css.css';
+import slika_santa_maria_della_salut from "./../assets/images/santa_maria_della_salut.jpg";
 
 const Zadatak_J02 = () => {
     return (
-        <div>
-            <h2> Zadatak 2</h2>
-            <h1>Santa Maria della Salute</h1>
-            <a href="https://sr.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B7%D0%B0_%D0%9A%D0%BE%D1%81%D1%82%D0%B8%D1%9B" target="_blank" rel="noreferrer">Лаза Костић</a>
-            <p>
-                Зар није лепше носит лепоту,<br />
-                сводова твојих постати стуб,<br />
-                него грејући светску грехоту<br />
-                у пепо спалит срце и луб;<br />
-                тонут о броду, трнут у плоту,<br />
-                ђаволу јелу а врагу дуб?<br />
-                Зар није лепше вековат у те,<br />
-                Santa Maria della Salute?
-            </p>
+        <div className="container zadatak02">
+            <header>
+                <h1>Santa Maria della Salute</h1>
 
-            <p>
-                Зар није лепше носит лепоту,<br />
-                сводова твојих постати стуб,<br />
-                него грејући светску грехоту<br />
-                у пепо спалит срце и луб;<br />
-                тонут о броду, трнут у плоту,<br />
-                ђаволу јелу а врагу дуб?<br />
-                Зар није лепше вековат у те,<br />
-                Santa Maria della Salute?
-            </p>
+                <a href="https://sr.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B7%D0%B0_%D0%9A%D0%BE%D1%81%D1%82%D0%B8%D1%9B" target="_blank" rel="noreferrer">Лаза Костић</a>
+            </header>
+            <main>
+                <div className="tekst">
+                    <p>
+                        Зар није лепше носит лепоту,<br />
+                        сводова твојих постати стуб,<br />
+                        него грејући светску грехоту<br />
+                        у пепо спалит срце и луб;<br />
+                        тонут о броду, трнут у плоту,<br />
+                        ђаволу јелу а врагу дуб?<br />
+                        Зар није лепше вековат у те,<br />
+                        <span className="akcenat">Santa Maria della Salute?</span>
+                    </p>
 
-            <img src={picture} width={500} alt="Santa Maria della Salute" />
+                    <p>
+                        Зар није лепше носит лепоту,<br />
+                        сводова твојих постати стуб,<br />
+                        него грејући светску грехоту<br />
+                        у пепо спалит срце и луб;<br />
+                        тонут о броду, трнут у плоту,<br />
+                        ђаволу јелу а врагу дуб?<br />
+                        Зар није лепше вековат у те,<br />
+                        <span className="akcenat">Santa Maria della Salute?</span>
+                    </p>
+                </div>
+                <div className="slika">
+                    <img src={slika_santa_maria_della_salut} width={500} alt="Santa Maria della Salute" />
+                </div>
+            </main>
         </div>
     );
 }

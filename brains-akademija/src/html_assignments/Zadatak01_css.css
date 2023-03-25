@@ -1,30 +1,27 @@
-:root {
-    --accent-color: #ff4136;
-}
-
 .zadatak01 {
     text-align: left;
     background-color: inherit;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .zadatak01 h1 {
     font-weight: 700;
+    font-size: 5rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
 .zadatak01 table {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .zadatak01 tr td:first-child {
     text-align: right;
+    color: var(--accent-color);
 }
 
-.zadatak01 tr td:last-child {
+.zadatak01 tr td:nth-child(2n) {
     text-align: left;
-    color: var(--accent-color);
 }
 
 .zadatak01 td {
