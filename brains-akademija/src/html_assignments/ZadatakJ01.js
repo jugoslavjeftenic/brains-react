@@ -63,8 +63,8 @@ const Zadatak_J01 = () => {
 					imperial capital in Kyoto was moved to the city, which was renamed <span className="akcenat">Tokyo</span> (literally "eastern
 					capital"). <span className="akcenat">Tokyo</span> was devastated by the 1923 Great Kantō earthquake, and again by Allied bombing
 					raids during World War II. Beginning in the 1950s, the city underwent rapid reconstruction and
-					expansion, going on to lead Japan's post-war economic recovery. Since 1943, the <span className="akcenat">Tokyo</span>
-					Metropolitan Government has administered the prefecture's 23 special wards (formerly <span className="akcenat">Tokyo</span> City),
+					expansion, going on to lead Japan's post-war economic recovery. Since 1943, the <span className="akcenat">Tokyo</span> Metropolitan
+					Government has administered the prefecture's 23 special wards (formerly <span className="akcenat">Tokyo</span> City),
 					various bed towns in the western area, and two outlying island chains.
 				</p>
 
