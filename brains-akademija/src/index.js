@@ -86,6 +86,7 @@ root.render(
 		<RouterProvider router={router} />
 	</React.StrictMode>
 );
+document.title = "BRAAAINS";
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
