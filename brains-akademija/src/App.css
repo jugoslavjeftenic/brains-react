@@ -13,6 +13,26 @@ header {
     color: var(--secondary-color);
 }
 
+header nav {
+    margin-right: auto;
+}
+
+header nav a {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+header nav div {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+}
+
+header nav div:hover {
+    background-color: var(--accent2-color);
+    color: var(--primary-color);
+}
+
 header .logo {
     max-width: 10rem;
 }
@@ -21,41 +41,13 @@ header .logo img {
     width: 100%;
 }
 
-header nav {
-    margin-right: auto;
-}
-
-header nav li {
-    display: inline-block;
-}
-
-header nav a {
-    margin-right: 2rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-header nav a {
-    color: var(--accent2-color);
-}
-
-header nav a:hover {
-    color: var(--primary-color);
-}
-
 main {
     margin-top: 5rem;
 }
 
 main h1 {
-    color: var(--accent2-color);
+    color: var(--accent1-color);
     margin-bottom: 2rem;
-}
-
-main h2 {
-    color: var(--accent2-color);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
 }
 
 main a {
@@ -71,10 +63,16 @@ footer {
     color: var(--secondary-color);
 }
 
+footer p {
+    margin: 0;
+}
+
 footer a {
     color: var(--secondary-color);
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 footer a:hover {
-    color: var(--accent2-color);
+    color: var(--primary-color);
 }

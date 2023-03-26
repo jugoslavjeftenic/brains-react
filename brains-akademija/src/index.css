@@ -37,7 +37,7 @@ a {
 
 a:hover {
 	text-decoration: underline;
-	text-decoration-thickness: 5px;
+	text-decoration-thickness: 2px;
 }
 
 /* Set default heading styles */

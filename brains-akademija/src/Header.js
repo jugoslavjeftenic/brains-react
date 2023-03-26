@@ -5,11 +5,9 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <ul>
-                    <li><Link to="/">POČETNA STRANA</Link></li>
-                    <li><Link to="/html_assignment">HTML I CSS ZADACI</Link></li>
-                    <li><Link to="/">LINK 3</Link></li>
-                </ul>
+                <Link to="/"><div>POČETNA STRANA</div></Link>
+                <Link to="/html_assignment"><div>HTML I CSS ZADACI</div></Link>
+                <Link to="/"><div>JS ZADACI</div></Link>
             </nav>
             <div className="logo">
                 <img src={logo} alt="Logo" />
