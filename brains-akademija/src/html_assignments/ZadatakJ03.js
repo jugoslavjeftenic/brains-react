@@ -16,32 +16,34 @@ Zahtevi:
     - Okviri oko celija treba da budu debljine 2px i da se sastoje od dve linije
 */
 
-import { Link } from "react-router-dom";
+import Header from "./../Header";
+import Footer from "./../Footer";
 import './Zadatak03_css.css';
 
 const ZadatakJ03 = () => {
     return (
-        <div className="container zadatak03">
-            <table>
-                <tr>
-                    <th>Quick</th>
-                    <th colspan="2">brown fox</th>
-                    <th>jumps</th>
-                </tr>
-                <tr>
-                    <td rowspan="3">over<br />the</td>
-                    <td>lazy</td><td>dog</td><td>and</td>
-                </tr>
-                <tr>
-                    <td>then</td><td>it</td><td>fall</td>
-                </tr>
-                <tr>
-                    <td colspan="3">prey to a lion</td>
-                </tr>
-            </table>
-            <footer>
-                <Link to="/">Početna strana</Link>
-            </footer>
+        <div className="wrapper html_zad03">
+            <Header />
+            <div className="sadrzaj">
+                <table>
+                    <tr>
+                        <th>Quick</th>
+                        <th colspan="2">brown fox</th>
+                        <th>jumps</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">over<br />the</td>
+                        <td>lazy</td><td>dog</td><td>and</td>
+                    </tr>
+                    <tr>
+                        <td>then</td><td>it</td><td>fall</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">prey to a lion</td>
+                    </tr>
+                </table>
+            </div>
+            <Footer />
         </div>
     );
 }

@@ -29,23 +29,25 @@ Zahtevi:
 	- rastojanje izmedju slike i okvira treba da bude 10px
 */
 
-import { Link } from "react-router-dom";
 import './Zadatak01_css.css';
+import Header from "./../Header";
+import Footer from "./../Footer";
 import slika_tokio from "./../assets/images/tokyo.jpg";
 
 const Zadatak_J01 = () => {
 	return (
-		<div className="container zadatak01">
-			<header>
+		<div className="wrapper html_zad01">
+			<Header />
+			<div className="naslov">
 				<table>
 					<tr><td>Kanji</td><td>東京</td><td rowspan="5"><h1>Tokyo</h1></td></tr>
 					<tr><td>Hiragana</td><td>とうきょう</td></tr>
 					<tr><td>Katakana</td><td>トウキョウ</td></tr>
 					<tr><td>Kyūjitai</td><td>東亰</td></tr>
 				</table>
-			</header>
+			</div>
 
-			<main>
+			<div className="tekst">
 				<p>
 					<span className="akcenat">Tokyo</span>, officially the <span className="akcenat">Tokyo</span> Metropolis, is the capital and most populous prefecture of Japan. Located
 					at the head of <span className="akcenat">Tokyo</span> Bay, the prefecture forms part of the Kantō region on the central Pacific coast
@@ -66,14 +68,12 @@ const Zadatak_J01 = () => {
 					Government has administered the prefecture's 23 special wards (formerly <span className="akcenat">Tokyo</span> City),
 					various bed towns in the western area, and two outlying island chains.
 				</p>
+			</div>
 
-				<div className="imgContainer">
-					<img src={slika_tokio} alt="Slika Tokia" />
-				</div>
-			</main>
-			<footer>
-				<Link to="/">Početna strana</Link>
-			</footer>
+			<div className="slika">
+				<img src={slika_tokio} alt="Slika Tokia" />
+			</div>
+			<Footer />
 		</div>
 	);
 };

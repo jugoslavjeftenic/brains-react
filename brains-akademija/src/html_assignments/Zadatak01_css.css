@@ -1,50 +1,49 @@
-.zadatak01 {
-    text-align: left;
-    background-color: inherit;
+.html_zad01 .naslov {
     margin-top: 2rem;
+    text-align: left;
 }
 
-.zadatak01 h1 {
+.html_zad01 .naslov h1 {
     font-weight: 700;
     font-size: 5rem;
-    color: var(--accent-color);
+    color: var(--accent1-color);
     margin-left: 2rem;
 }
 
-.zadatak01 table {
+.html_zad01 .naslov table {
     margin-bottom: 2rem;
 }
 
-.zadatak01 tr td:first-child {
+.html_zad01 .naslov tr td:first-child {
     text-align: right;
-    color: var(--accent-color);
+    color: var(--accent1-color);
 }
 
-.zadatak01 tr td:nth-child(2n) {
+.html_zad01 .naslov tr td:nth-child(2n) {
     text-align: left;
 }
 
-.zadatak01 td {
+.html_zad01 .naslov td {
     padding-right: 1rem;
 }
 
-.zadatak01 p {
+.html_zad01 .tekst p {
     text-indent: 15px;
     text-align: justify;
 }
 
-.akcenat {
-    color: var(--accent-color);
+.html_zad01 .tekst .akcenat {
+    color: var(--accent1-color);
     font-weight: 700;
 }
 
-.imgContainer {
+.html_zad01 .slika {
     text-align: center;
     margin-bottom: 5rem;
 }
 
-.imgContainer img {
+.html_zad01 .slika img {
     max-width: 80%;
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--accent1-color);
     padding: 10px;
 }

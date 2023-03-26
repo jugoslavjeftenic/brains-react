@@ -1,30 +1,30 @@
-.zadatak03 {
-    margin-top: 3rem;
+.html_zad03 .sadrzaj {
+    margin-top: 5rem;
     margin-bottom: 3rem;
     font-size: 1.4rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
-.zadatak03 table {
+.html_zad03 .sadrzaj table {
     margin: 0 auto;
     margin-bottom: 5rem;
     border-spacing: 10px;
 }
 
-.zadatak03 th {
+.html_zad03 .sadrzaj th {
     font-weight: 700;
     background-color: #565656;
 }
 
-.zadatak03 th,
-.zadatak03 td {
-    border: 2px solid var(--accent-color);
+.html_zad03 .sadrzaj th,
+.html_zad03 .sadrzaj td {
+    border: 2px solid var(--accent1-color);
     border-radius: 5px;
     padding: 1rem;
 }
 
-.zadatak03 th:hover,
-.zadatak03 td:hover {
-    background-color: var(--accent-color);
+.html_zad03 .sadrzaj th:hover,
+.html_zad03 .sadrzaj td:hover {
+    background-color: var(--accent1-color);
 }

@@ -34,19 +34,21 @@ Zahtevi:
     - ime pesnika prikazati zelenom bojom
 */
 
-import { Link } from "react-router-dom";
 import './Zadatak02_css.css';
+import Header from "./../Header";
+import Footer from "./../Footer";
 import slika_santa_maria_della_salut from "./../assets/images/santa_maria_della_salut.jpg";
 
 const Zadatak_J02 = () => {
     return (
-        <div className="container zadatak02">
-            <header>
+        <div className="wrapper html_zad02">
+            <Header />
+            <div className="naslov">
                 <h1>Santa Maria della Salute</h1>
 
                 <a href="https://sr.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B7%D0%B0_%D0%9A%D0%BE%D1%81%D1%82%D0%B8%D1%9B" target="_blank" rel="noreferrer">Лаза Костић</a>
-            </header>
-            <main>
+            </div>
+            <div className="sadrzaj">
                 <div className="tekst">
                     <em>
                         <p>
@@ -75,10 +77,8 @@ const Zadatak_J02 = () => {
                 <div className="slika">
                     <img src={slika_santa_maria_della_salut} width={500} alt="Santa Maria della Salute" />
                 </div>
-            </main>
-            <footer>
-                <Link to="/">Početna strana</Link>
-            </footer>
+            </div>
+            <Footer />
         </div>
     );
 }

@@ -1,4 +1,4 @@
-.zadatak04 {
+.html_zad04 .sadrzaj {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -9,10 +9,4 @@
     justify-items: center;
     align-items: center;
     padding-top: 1rem;
-}
-
-.zadatak04 footer {
-    grid-area: futer;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
 }
