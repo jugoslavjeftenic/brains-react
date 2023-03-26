@@ -1,43 +1,72 @@
-:root {
-    --accent-color: #ff4136;
-}
-
 .App {
+    min-height: 97vh;
+}
+
+header {
     display: flex;
-    flex-direction: column;
-    height: 90vh;
-}
-
-.App li {
-    text-decoration: none;
-    list-style: none;
-}
-
-.App h1 {
-    color: var(--accent-color);
-}
-
-.App header {
+    justify-content: flex-start;
+    align-items: flex-end;
     margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
 }
 
-.App header>* {
+header .logo {
+    max-width: 10rem;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+header nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header nav li {
+    display: inline-block;
+}
+
+header nav a {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+header nav a {
+    color: var(--accent2-color);
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    margin-top: 5rem;
+}
+
+main h1 {
+    color: var(--accent2-color);
+    margin-bottom: 2rem;
+}
+
+main h2 {
+    color: var(--accent2-color);
+    margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
-.App main p {
-    font-size: 1.2em;
-    margin-bottom: 1rem;
-}
-
-.App main>ul>li {
-    font-size: 1.1em;
-    margin-bottom: 0.1rem;
+main a {
+    list-style-type: none;
+    color: var(--primary-color);
 }
 
 footer {
-    margin-top: auto;
-    margin-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     text-align: center;
     font-size: 0.8rem;
     color: var(--secondary-color);
@@ -45,4 +74,8 @@ footer {
 
 footer a {
     color: var(--secondary-color);
+}
+
+footer a:hover {
+    color: var(--accent2-color);
 }

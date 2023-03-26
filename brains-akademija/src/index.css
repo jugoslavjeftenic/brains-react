@@ -1,9 +1,10 @@
 :root {
-	--primary-color: #bdc1c6;
-	--secondary-color: #5e8b7e;
-	--accent-color: #ff4136;
-	--link-color: #0072c6;
 	--background-color: #202124;
+	--link-color: #0072c6;
+	--primary-color: #bdc1c6;
+	--secondary-color: #565656;
+	--accent1-color: #ff4136;
+	--accent2-color: #5e8b7e;
 }
 
 /* Reset default styles */
@@ -36,6 +37,7 @@ a {
 
 a:hover {
 	text-decoration: underline;
+	text-decoration-thickness: 5px;
 }
 
 /* Set default heading styles */
@@ -68,7 +70,7 @@ p {
 }
 
 /* Set default container styles */
-.container {
+.wrapper {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 1rem;

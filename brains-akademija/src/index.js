@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+import "./index.css";
 
 import HTMLAssignment from "./html_assignments/HTMLAssignment";
 import ZadatakJ01 from "./html_assignments/ZadatakJ01";
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
 	}
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		{/* <App /> */}
