@@ -35,6 +35,7 @@ header nav div:hover {
 
 header .logo {
     max-width: 10rem;
+    margin-right: 5rem;
 }
 
 header .logo img {
