@@ -131,6 +131,8 @@
 
 .html_zad04 .forma .puce input:first-child {
     background-color: var(--accent1-color);
+    color: var(--accent3-color);
+    font-weight: 700;
 }
 
 .html_zad04 .forma .puce input:hover {
