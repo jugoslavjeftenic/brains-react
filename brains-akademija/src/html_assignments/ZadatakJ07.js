@@ -17,7 +17,7 @@ const Zadatak_J07 = () => {
 				<img src={slika} alt="" />
 			</div>
 
-			<div className="resenje margina_vrh">
+			<div className="resenje margina_vrh font">
 				<h1>WEB čitači</h1>
 				<p><em>Web čitač</em> je aplikacija koja je namenjena prikazu sadržaja web stranica.</p>
 				<p>
