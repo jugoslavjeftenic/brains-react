@@ -1,0 +1,22 @@
+.html_zad07 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+}
+
+.html_zad07 .margina_vrh {
+    margin-top: 5rem;
+}
+
+.html_zad07 .margina_levo {
+    margin-left: 2.5rem;
+}
+
+.html_zad07 .zadatak img {
+    width: 100%;
+}
+
+.html_zad07 .resenje h1,
+.html_zad07 .resenje h2 {
+    color: var(--accent1-color);
+    margin-bottom: 1rem;
+}
