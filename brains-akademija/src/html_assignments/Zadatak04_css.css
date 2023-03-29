@@ -2,9 +2,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas:
-        "slika forma"
-        "futer futer";
     gap: 10px;
     justify-items: center;
     align-items: start;

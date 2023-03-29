@@ -31,6 +31,7 @@ const Zadatak_J04 = () => {
 				<div className="zadatak">
 					<img src={slika} alt="" />
 				</div>
+
 				<div className="resenje">
 					<div className="ponuda">
 						<h1>lunch special</h1>
@@ -157,6 +158,7 @@ const Zadatak_J04 = () => {
 						</form>
 					</div>
 				</div>
+
 			</div>
 			<Footer />
 		</div>

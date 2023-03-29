@@ -1,4 +1,84 @@
-.zad5_container {
+.html_zad05 .sadrzaj {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    justify-items: center;
+    align-items: start;
+    padding-top: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+.html_zad05 .zadatak {
+    border: 12px solid #F8F8F8;
+}
+
+.html_zad05 .zadatak img {
+    width: 100%;
+}
+
+.html_zad05 .resenje {
+    width: 100%;
+    margin-left: 10%;
+}
+
+.html_zad05 .resenje .blok {
+    width: 100%;
+}
+
+.html_zad05 .resenje .inline_blok {
+    display: inline-block;
+}
+
+.html_zad05 .resenje .margina_nula {
+    margin: 0;
+}
+
+.html_zad05 .resenje .sekcija {
+    background-color: var(--accent2-color);
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 2rem;
+    text-align: center;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+}
+
+.html_zad05 .resenje input[type="text"],
+.html_zad05 .resenje input[type="submit"],
+.html_zad05 .resenje textarea,
+.html_zad05 .resenje select {
+    width: 80%;
+    height: 2.5rem;
+    margin: 0.2rem 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.4rem;
+    border: 0;
+    border-radius: 2px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.html_zad05 .resenje select {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.html_zad05 .resenje input[type="text"]::placeholder,
+.html_zad05 .resenje textarea::placeholder {
+    color: var(--primary-color);
+}
+
+.html_zad05 .resenje input[type="submit"] {
+    background-color: var(--accent2-color);
+}
+
+.html_zad05 .resenje input[type="submit"]:hover {
+    background-color: var(--accent1-color);
 }

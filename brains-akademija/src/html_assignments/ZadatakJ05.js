@@ -2,33 +2,36 @@
 Kreirati formu za prijavu kandidata za posao. Izgled forme je dat na slici
 */
 
-import slika from './../assets/images/zadatak05.png';
 import './Zadatak05_css.css';
+import Header from "./../Header";
+import Footer from "./../Footer";
+import slika from './../assets/images/zadatak05.png';
 
 const Zadatak_J05 = () => {
     return (
-        <div>
-            <h2> Zadatak 5</h2>
-            <div className='zad5_container'>
-                <div>
-                    <p> Slika na osnovu koje treba napraviti formu</p>
+        <div className="wrapper html_zad05">
+            <Header />
+            <div className="sadrzaj">
+                <div className="zadatak">
                     <img src={slika} alt="" />
                 </div>
 
-                <div>
+                <div className="resenje">
                     <form action="https://cscie12.dce.harvard.edu/echo" method="POST">
-                        <label>Candidate Info</label><br />
-                        <input type="text" name="name" placeholder="Your Name *" /><br />
-                        <input type="text" name="email" placeholder="Your Email *" /><br />
+                        <div>
+                            <p className="inline_blok sekcija">1</p>
+                            <p className="inline_blok">Candidate Info</p>
+                        </div>
+                        <input type="text" name="name" placeholder="Your Name *" />
+                        <input type="text" name="email" placeholder="Your Email *" />
                         <textarea
                             name="description"
                             rows="1"
                             cols="30"
-                            placeholder="About Yourself *">
+                            placeholder="About Yourself">
                         </textarea>
 
-                        <br /><br />
-                        <label>Interests:</label><br />
+                        <p className="margina_nula">Interests:</p>
                         <select name="interests">
                             <option value="playing_video_game">Playing video games</option>
                             <option value="painting">Painting</option>
@@ -42,8 +45,10 @@ const Zadatak_J05 = () => {
                             <option value="photography">Photography</option>
                         </select>
 
-                        <br /><br />
-                        <label>Additional Info</label><br />
+                        <div>
+                            <p className="inline_blok sekcija">2</p>
+                            <p className="inline_blok">Additional Info</p>
+                        </div>
                         <textarea
                             name="school_description"
                             rows="1"
@@ -56,6 +61,7 @@ const Zadatak_J05 = () => {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
