@@ -1,0 +1,13 @@
+.html_zad06 .margina_vrh {
+    margin-top: 5rem;
+}
+
+.html_zad06 .zadatak img {
+    width: 100%;
+}
+
+.html_zad06 .resenje h1,
+.html_zad06 .resenje h2 {
+    color: var(--accent1-color);
+    margin-bottom: 1rem;
+}
