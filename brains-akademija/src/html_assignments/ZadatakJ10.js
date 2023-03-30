@@ -47,8 +47,8 @@ const Zadatak_J10 = () => {
                     </fieldset>
 
                     <div className="pucad">
-                        <input type="submit" />
-                        <input type="reset" />
+                        <input type="submit" value="Registruj" />
+                        <input type="reset" value="Poništi" />
                     </div>
                 </form>
             </div>
