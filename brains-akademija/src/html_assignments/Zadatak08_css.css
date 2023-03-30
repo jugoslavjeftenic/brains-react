@@ -1,0 +1,20 @@
+.html_zad08 .sadrzaj {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.html_zad08 .sadrzaj h1 {
+    color: var(--accent1-color);
+}
+
+.html_zad08 .sadrzaj hr {
+    width: 40%;
+    border: none;
+    border-top: 2px solid var(--primary-color);
+    margin: 1rem auto;
+}
+
+.html_zad08 .sadrzaj p {
+    color: var(--accent2-color);
+    line-height: 150%;
+}
