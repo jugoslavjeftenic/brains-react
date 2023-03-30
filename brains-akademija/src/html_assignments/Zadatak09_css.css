@@ -1,0 +1,41 @@
+.html_zad09 .sadrzaj {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.html_zad09 .sadrzaj table {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    background-color: var(--secondary-color);
+    border-spacing: 0;
+}
+
+.html_zad09 .sadrzaj table * {
+    padding: 0.4rem 0.8rem;
+}
+
+.html_zad09 .sadrzaj table th {
+    color: var(--accent1-color);
+}
+
+.html_zad09 .sadrzaj table tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+.html_zad09 .sadrzaj table tr:hover {
+    background-color: var(--accent2-color);
+}
+
+.html_zad09 .sadrzaj ol {
+    width: 80%;
+    margin-left: 10rem;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 140%;
+}
+
+.html_zad09 .sadrzaj ol strong {
+    color: var(--accent1-color);
+    font-size: 1.5rem;
+}

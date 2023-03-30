@@ -20,29 +20,36 @@ The order of the medal winners
 4. Australia
 5. ROC
 */
+import './Zadatak09_css.css';
+import Header from "./../Header";
+import Footer from "./../Footer";
 
 const Zadatak_J09 = () => {
 	return (
-		<div>
-			<h2> Zadatak 9</h2>
-			<table border="1">
-				<tr><th>First name</th><th>Last name</th><th>Country</th><th>Sport</th></tr>
-				<tr><td>Simone</td><td>Biles</td><td>USA</td><td>Artistic Gymnastics</td></tr>
-				<tr><td>Darya</td><td>Klishina</td><td>Russia</td><td>Athletics</td></tr>
-				<tr><td>Ivana</td><td>Spanovic</td><td>Serbia</td><td>Athletics</td></tr>
-				<tr><td>Luka</td><td>Doncic</td><td>Slovenia</td><td>Basketball</td></tr>
-				<tr><td>Filip</td><td>Filipovic</td><td>Serbia</td><td>Water Polo</td></tr>
-				<tr><td>Evgeniya</td><td>Startseva</td><td>Russia</td><td>Volleyball</td></tr>
-				<tr><td>Novak</td><td>Djokovic</td><td>Serbia</td><td>Tennis</td></tr>
-			</table>
+		<div className="wrapper html_zad09">
+			<Header />
+			<div className="sadrzaj">
+				<table>
+					<tr><th>First name</th><th>Last name</th><th>Country</th><th>Sport</th></tr>
+					<tr><td>Simone</td><td>Biles</td><td>USA</td><td>Artistic Gymnastics</td></tr>
+					<tr><td>Darya</td><td>Klishina</td><td>Russia</td><td>Athletics</td></tr>
+					<tr><td>Ivana</td><td>Spanovic</td><td>Serbia</td><td>Athletics</td></tr>
+					<tr><td>Luka</td><td>Doncic</td><td>Slovenia</td><td>Basketball</td></tr>
+					<tr><td>Filip</td><td>Filipovic</td><td>Serbia</td><td>Water Polo</td></tr>
+					<tr><td>Evgeniya</td><td>Startseva</td><td>Russia</td><td>Volleyball</td></tr>
+					<tr><td>Novak</td><td>Djokovic</td><td>Serbia</td><td>Tennis</td></tr>
+				</table>
 
-			<ol><strong>The order of the medal winners:</strong>
-				<li>People's Republic Of China</li>
-				<li>United States of America</li>
-				<li>Japan</li>
-				<li>Australia</li>
-				<li>ROC</li>
-			</ol>
+				<ol>
+					<strong>The order of the medal winners:</strong>
+					<li>People's Republic Of China</li>
+					<li>United States of America</li>
+					<li>Japan</li>
+					<li>Australia</li>
+					<li>ROC</li>
+				</ol>
+			</div>
+			<Footer />
 		</div>
 	);
 };
