@@ -1,0 +1,83 @@
+.html_zad10 .sadrzaj {
+    margin: 1.6rem 2rem;
+    margin-bottom: 0;
+}
+
+.html_zad10 .sadrzaj fieldset {
+    border: 2px solid var(--accent1-color);
+    border-radius: 10px;
+    padding: 0.6rem 2rem;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.html_zad10 .sadrzaj legend {
+    color: var(--accent2-color);
+    padding: 0 1rem;
+    width: 20%;
+}
+
+.html_zad10 .sadrzaj fieldset label,
+.html_zad10 .sadrzaj fieldset input[type="text"],
+.html_zad10 .sadrzaj fieldset input[type="password"] {
+    display: inline-block;
+}
+
+.html_zad10 .sadrzaj fieldset label {
+    width: 20%;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.html_zad10 .sadrzaj fieldset input[type="text"],
+.html_zad10 .sadrzaj fieldset input[type="password"],
+.html_zad10 .sadrzaj .pucad {
+    width: 80%;
+    margin: 0.2rem 0;
+    padding: 0.2rem 0.8rem;
+}
+
+.html_zad10 .sadrzaj fieldset select {
+    width: 30%;
+    margin: 0.2rem 0;
+    padding: 0.2rem 0.8rem;
+}
+
+.html_zad10 .sadrzaj .radijo {
+    width: 80%;
+    margin-left: auto;
+}
+
+.html_zad10 .sadrzaj .radijo input[type="radio"] {
+    width: 4%;
+    padding-right: 0.4rem;
+}
+
+.html_zad10 .sadrzaj .radijo label {
+    width: 4%;
+    margin: 0.2rem 0;
+    margin-right: 2rem;
+}
+
+.html_zad10 .sadrzaj .pucad {
+    text-align: center;
+}
+
+.html_zad10 .sadrzaj .pucad input {
+    width: 30%;
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    margin: 0 0.4rem;
+    color: var(--accent3-color);
+    background-color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.html_zad10 .sadrzaj .pucad input:first-child {
+    background-color: var(--accent1-color);
+}
+
+.html_zad10 .sadrzaj .pucad input:hover {
+    background-color: var(--accent2-color);
+}
