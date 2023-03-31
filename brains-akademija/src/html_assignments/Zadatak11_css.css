@@ -1,0 +1,123 @@
+.html_zad11 .margina_vrh {
+    margin-top: 5rem;
+}
+
+.html_zad11 .zadatak img {
+    width: 100%;
+}
+
+.html_zad11 .resenje h1 {
+    color: var(--accent1-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.html_zad11 .zaglavlje {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.html_zad11 .zaglavlje a {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    margin-top: 0.4rem;
+}
+
+.html_zad11 .zaglavlje a:hover {
+    background-color: var(--accent2-color);
+}
+
+.html_zad11 .articles article {
+    margin-bottom: 3rem;
+}
+
+.html_zad11 .articles table {
+    text-align: left;
+}
+
+.html_zad11 .articles tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+.html_zad11 .articles tr:first-child {
+    background-color: var(--accent2-color);
+}
+
+.html_zad11 .articles tr:hover {
+    background-color: var(--accent2-color);
+}
+
+.html_zad11 .articles th,
+.html_zad11 .articles td {
+    padding: 0.2rem 0.6rem;
+}
+
+.html_zad11 .contact h2 {
+    color: var(--accent2-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.html_zad11 .contact h2:nth-child(2n) {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.html_zad11 .contact p {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.blok_inline {
+    display: inline-block;
+}
+
+.desno {
+    text-align: right;
+}
+
+.html_zad11 .contact label {
+    width: 15%;
+    margin-right: 1rem;
+}
+
+.html_zad11 .contact input {
+    width: 40%;
+    margin: 0.1rem 0;
+    padding: 0.2rem 0.4rem;
+}
+
+.html_zad11 .contact input[type="checkbox"] {
+    width: 5%;
+}
+
+.html_zad11 .contact input[type="radio"] {
+    width: 5%;
+}
+
+.html_zad11 .pucad {
+    margin-top: 2rem;
+}
+
+.html_zad11 .pucad input {
+    width: 30%;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0.4rem;
+    color: var(--accent3-color);
+    background-color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.html_zad11 .pucad input:first-child {
+    background-color: var(--accent1-color);
+}
+
+.html_zad11 .pucad input:hover {
+    background-color: var(--accent2-color);
+}
