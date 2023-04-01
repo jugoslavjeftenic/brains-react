@@ -30,7 +30,6 @@ import JSz07 from "./js_assignments/JSz07";
 import JSz08 from "./js_assignments/JSz08";
 import JSz09 from "./js_assignments/JSz09";
 import JSz10 from "./js_assignments/JSz10";
-
 import JSdz01 from "./js_assignments/JSdz01";
 import JSdz02 from "./js_assignments/JSdz02";
 import JSdz03 from "./js_assignments/JSdz03";
@@ -185,7 +184,7 @@ const router = createBrowserRouter([
 	{
 		path: "/js_assignment/JSdz10",
 		element: <JSdz10 />,
-	},
+	}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
