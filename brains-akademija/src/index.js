@@ -18,6 +18,17 @@ import ZadatakJ09 from "./html_assignments/ZadatakJ09";
 import ZadatakJ10 from "./html_assignments/ZadatakJ10";
 import ZadatakJ11 from "./html_assignments/ZadatakJ11";
 import ZadatakJ12 from "./html_assignments/ZadatakJ12";
+import JSassignment from "./js_assignments/JSassignment";
+import JSz01 from "./js_assignments/JSz01";
+import JSz02 from "./js_assignments/JSz02";
+import JSz03 from "./js_assignments/JSz03";
+import JSz04 from "./js_assignments/JSz04";
+import JSz05 from "./js_assignments/JSz05";
+import JSz06 from "./js_assignments/JSz06";
+import JSz07 from "./js_assignments/JSz07";
+import JSz08 from "./js_assignments/JSz08";
+import JSz09 from "./js_assignments/JSz09";
+import JSz10 from "./js_assignments/JSz10";
 
 const router = createBrowserRouter([
 	{
@@ -76,6 +87,51 @@ const router = createBrowserRouter([
 	{
 		path: "/html_assignment/zad12",
 		element: <ZadatakJ12 />,
+	},
+
+	{
+		path: "/js_assignment",
+		element: <JSassignment />,
+	},
+	{
+		path: "/js_assignment/JSz01",
+		element: <JSz01 />,
+	},
+	{
+		path: "/js_assignment/JSz02",
+		element: <JSz02 />,
+	},
+	{
+		path: "/js_assignment/JSz03",
+		element: <JSz03 />,
+	},
+	{
+		path: "/js_assignment/JSz04",
+		element: <JSz04 />,
+	},
+	{
+		path: "/js_assignment/JSz05",
+		element: <JSz05 />,
+	},
+	{
+		path: "/js_assignment/JSz06",
+		element: <JSz06 />,
+	},
+	{
+		path: "/js_assignment/JSz07",
+		element: <JSz07 />,
+	},
+	{
+		path: "/js_assignment/JSz08",
+		element: <JSz08 />,
+	},
+	{
+		path: "/js_assignment/JSz09",
+		element: <JSz09 />,
+	},
+	{
+		path: "/js_assignment/JSz10",
+		element: <JSz10 />,
 	}
 ]);
 

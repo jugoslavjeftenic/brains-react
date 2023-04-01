@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import "./HTMLAssignment.css";
 import Header from "./../Header";
 import Footer from "./../Footer";
 
 const HTMLAssignment = () => {
 	return (
-		<div className="wrapper htmlAssignment">
+		<div className="wrapper assignment">
 			<Header />
-			<h1>HTML i CSS Zadaci</h1>
-			<p>Zadaci iz HTML-a i CSS-a</p>
+			<h1>HTML i CSS zadaci</h1>
 			<div className="zadaci_fleks">
 				<Link to="zad01"><div>Zadatak 01</div></Link>
 				<Link to="zad02"><div>Zadatak 02</div></Link>

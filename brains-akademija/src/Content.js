@@ -14,7 +14,8 @@ const Content = () => {
                 kao i korišćenje React-a za izradu modernih i dinamičnih web aplikacija.
             </p>
             <div className="zadaci_fleks">
-                <Link to="/html_assignment"><div> HTML i CSS Zadaci </div></Link>
+                <Link to="/html_assignment"><div> HTML i CSS zadaci </div></Link>
+                <Link to="/js_assignment"><div> JS zadaci </div></Link>
             </div>
         </main >
     )

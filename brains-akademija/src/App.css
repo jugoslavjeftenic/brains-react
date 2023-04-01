@@ -56,6 +56,43 @@ main a {
     color: var(--primary-color);
 }
 
+.assignment h1 {
+    color: var(--accent1-color);
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.zadaci_fleks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    gap: 0.2rem 0.4rem;
+}
+
+.zadaci_fleks a {
+    color: var(--primary-color);
+}
+
+.zadaci_fleks a:hover {
+    text-decoration: none;
+    background-color: var(--accent2-color);
+}
+
+.zadaci_fleks div {
+    width: 16rem;
+    text-align: center;
+    padding: 0.8rem 0;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.zadaci_fleks div:hover {
+    background-color: var(--accent2-color);
+}
+
 footer {
     margin-top: 5rem;
     margin-bottom: 5rem;
