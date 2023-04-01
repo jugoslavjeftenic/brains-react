@@ -18,6 +18,7 @@ import ZadatakJ09 from "./html_assignments/ZadatakJ09";
 import ZadatakJ10 from "./html_assignments/ZadatakJ10";
 import ZadatakJ11 from "./html_assignments/ZadatakJ11";
 import ZadatakJ12 from "./html_assignments/ZadatakJ12";
+
 import JSassignment from "./js_assignments/JSassignment";
 import JSz01 from "./js_assignments/JSz01";
 import JSz02 from "./js_assignments/JSz02";
@@ -29,6 +30,17 @@ import JSz07 from "./js_assignments/JSz07";
 import JSz08 from "./js_assignments/JSz08";
 import JSz09 from "./js_assignments/JSz09";
 import JSz10 from "./js_assignments/JSz10";
+
+import JSdz01 from "./js_assignments/JSdz01";
+import JSdz02 from "./js_assignments/JSdz02";
+import JSdz03 from "./js_assignments/JSdz03";
+import JSdz04 from "./js_assignments/JSdz04";
+import JSdz05 from "./js_assignments/JSdz05";
+import JSdz06 from "./js_assignments/JSdz06";
+import JSdz07 from "./js_assignments/JSdz07";
+import JSdz08 from "./js_assignments/JSdz08";
+import JSdz09 from "./js_assignments/JSdz09";
+import JSdz10 from "./js_assignments/JSdz10";
 
 const router = createBrowserRouter([
 	{
@@ -132,7 +144,48 @@ const router = createBrowserRouter([
 	{
 		path: "/js_assignment/JSz10",
 		element: <JSz10 />,
-	}
+	},
+
+	{
+		path: "/js_assignment/JSdz01",
+		element: <JSdz01 />,
+	},
+	{
+		path: "/js_assignment/JSdz02",
+		element: <JSdz02 />,
+	},
+	{
+		path: "/js_assignment/JSdz03",
+		element: <JSdz03 />,
+	},
+	{
+		path: "/js_assignment/JSdz04",
+		element: <JSdz04 />,
+	},
+	{
+		path: "/js_assignment/JSdz05",
+		element: <JSdz05 />,
+	},
+	{
+		path: "/js_assignment/JSdz06",
+		element: <JSdz06 />,
+	},
+	{
+		path: "/js_assignment/JSdz07",
+		element: <JSdz07 />,
+	},
+	{
+		path: "/js_assignment/JSdz08",
+		element: <JSdz08 />,
+	},
+	{
+		path: "/js_assignment/JSdz09",
+		element: <JSdz09 />,
+	},
+	{
+		path: "/js_assignment/JSdz10",
+		element: <JSdz10 />,
+	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -20,6 +20,19 @@ const JSassignment = () => {
                 <Link to="JSz09"><div>Zadatak 09</div></Link>
                 <Link to="JSz10"><div>Zadatak 10</div></Link>
             </div>
+            <h2>Dopunski JS zadaci</h2>
+            <div className="zadaci_fleks">
+                <Link to="JSdz01"><div>Zadatak 01</div></Link>
+                <Link to="JSdz02"><div>Zadatak 02</div></Link>
+                <Link to="JSdz03"><div>Zadatak 03</div></Link>
+                <Link to="JSdz04"><div>Zadatak 04</div></Link>
+                <Link to="JSdz05"><div>Zadatak 05</div></Link>
+                <Link to="JSdz06"><div>Zadatak 06</div></Link>
+                <Link to="JSdz07"><div>Zadatak 07</div></Link>
+                <Link to="JSdz08"><div>Zadatak 08</div></Link>
+                <Link to="JSdz09"><div>Zadatak 09</div></Link>
+                <Link to="JSdz10"><div>Zadatak 10</div></Link>
+            </div>
             <Footer />
         </div >
     );

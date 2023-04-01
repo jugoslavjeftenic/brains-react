@@ -14,8 +14,8 @@
     I to po indeksu tako što se prvo sortira abecedno po smeru, pa zatim po godini, i konačno po broju indeksa. Da bi se sortiralo abecedno samo treba porediti stringove kao da su brojevi. 
 */
 
-const JSV3 = () => {
+const JSz03 = () => {
   return <pre></pre>;
 };
 
-export default JSV3;
+export default JSz03;
