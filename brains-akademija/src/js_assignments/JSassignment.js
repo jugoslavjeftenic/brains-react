@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './JSassignment.css';
 import Header from "./../Header";
 import Footer from "./../Footer";
 

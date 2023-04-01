@@ -1,0 +1,14 @@
+.js_zadatak .code {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--accent3-color);
+    background-color: var(--secondary-color);
+}
+
+.js_zadatak .tekst {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    color: var(--accent2-color);
+    font-size: 1.2rem;
+}

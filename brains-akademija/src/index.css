@@ -8,14 +8,12 @@
 	--accent3-color: #f6f7f7;
 }
 
-/* Reset default styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* Set default font and font size */
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -30,7 +28,6 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Set default link styles */
 a {
 	color: var(--link-color);
 	text-decoration: none;
@@ -41,7 +38,6 @@ a:hover {
 	text-decoration-thickness: 2px;
 }
 
-/* Set default heading styles */
 h1,
 h2,
 h3,
@@ -64,15 +60,17 @@ h3 {
 	font-size: 1.5rem;
 }
 
-/* Set default paragraph styles */
 p {
 	line-height: 1.5;
 	margin-bottom: 1.5rem;
 }
 
-/* Set default container styles */
 .wrapper {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 1rem;
+}
+
+.margin_top_5rem {
+	margin-top: 5rem;
 }
