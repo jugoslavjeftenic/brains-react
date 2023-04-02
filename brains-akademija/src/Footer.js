@@ -8,7 +8,7 @@ const Footer = () => {
                 <a href="https://github.com/jugoslavjeftenic" target="_blank" rel="noreferrer">GitHub</a>|
                 <a href="https://www.linkedin.com/in/jugoslavjeftenic" target="_blank" rel="noreferrer">LinkedIn</a>
             </p>
-            <p><a href="/" ><div>početna strana</div></a></p>
+            <a href="/" ><div>početna strana</div></a>
         </footer>
     )
 }

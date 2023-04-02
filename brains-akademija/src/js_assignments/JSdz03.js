@@ -71,7 +71,6 @@ const login = (mapaKorisnika, korisnickoIme, lozinka) => {
 `;
 
 const JSdz03 = () => {
-    console.log(login(mapaKorisnika, korisnickoIme, lozinka));
     return (
         <div className="wrapper js_zadatak">
             <Header />

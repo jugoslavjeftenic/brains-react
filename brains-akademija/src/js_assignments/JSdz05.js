@@ -1,7 +1,7 @@
 import Header from "./../Header";
 import Footer from "./../Footer";
 
-const zadatak = "Iz sledećeg teksta pomoću regularnog izraza izdvojiti sve e-mail adrese. ";
+const zadatak = "Iz sledećeg teksta pomoću regularnog izraza izdvojiti sve e-mail adrese.";
 
 const tekst = "Petar Petrović ima naloge na nekoliko servisa koji omogućavaju razmenu poruka. " +
     "Njegove adrese su pera.petrovic@gmail.com, petar@uns.ac.rs i petrovic@yahoo.com. " +
@@ -12,11 +12,6 @@ const regex_tudji = /\b[\w.-]+@[\w.-]+\.\w{2,}\b/g;
 const regex_moj = /[a-z][a-z0-9]+\.?[a-z]+@[a-z0-9]+\.?[a-z]+\.?[a-z]{2,10}/g;
 
 const kod = `
-const tekst = "Petar Petrović ima naloge na nekoliko servisa koji omogućavaju razmenu poruka. " +
-    "Njegove adrese su pera.petrovic@gmail.com, petar@uns.ac.rs i petrovic@yahoo.com. " +
-    "Mina Mirković takođe ima nekoliko e-mail adresa. " +
-    "Za komunikaciju sa Petrom koristi adresu mina90.m@hotmail.com";
-
 const regex_tudji = /\\b[\\w.-]+@[\\w.-]+\\.\\w{2,}\\b/g;
 const regex_moj = /[a-z][a-z0-9]+\\.?[a-z]+@[a-z0-9]+\\.?[a-z]+\\.?[a-z]{2,10}/g;
 `;
@@ -28,7 +23,7 @@ const JSdz05 = () => {
             <div className="margin_top_5rem">
                 <div className="tekst">Zadatak</div>
                 <div className="code"><code>{zadatak}</code></div>
-                <div className="tekst">Tekst</div>
+                <div className="tekst">Ulaz</div>
                 <div className="code"><code><div>{tekst}</div></code></div>
                 <div className="tekst">Metoda</div>
                 <div className="code"><pre><code>{kod}</code></pre></div>
