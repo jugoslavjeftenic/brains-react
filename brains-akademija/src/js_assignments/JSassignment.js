@@ -20,7 +20,7 @@ const JSassignment = () => {
                 <Link to="JSz09"><div>Zadatak 09</div></Link>
                 <Link to="JSz10"><div>Zadatak 10</div></Link>
             </div>
-            <h2>Dopunski JS zadaci</h2>
+            <h2>JS zadaci - dopunske vežbe</h2>
             <div className="zadaci_fleks">
                 <Link to="JSdz01"><div>Zadatak 01</div></Link>
                 <Link to="JSdz02"><div>Zadatak 02</div></Link>
