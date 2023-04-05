@@ -28,17 +28,13 @@ const korisnici = [
     }
 ]
 
-const mapaKorisnika = new Map();
-for (let korisnik of korisnici) {
-    mapaKorisnika.set(korisnik.korisnickoIme, korisnik);
-}
-
-const arrayToString = (inputArray) => {
-    let output = ``;
-    for (let element of inputArray) {
-        output += `${JSON.stringify(element)}\n`;
-    }
-    return output;
+const mapaKorisnika = new Map(korisnici.map(korisnik => [korisnik.korisnickoIme, korisnik]));
+const mapaKorisnikaHTML = () => {
+    return (
+        <div>
+            const mapaKorisnika = new Map(korisnici.map(korisnik =&gt; [korisnik.korisnickoIme, korisnik]));
+        </div>
+    );
 }
 
 const korisnickoIme = "srele";
@@ -55,7 +51,7 @@ const login = (mapaKorisnika, korisnickoIme, lozinka) => {
     } else {
         return "Pogrešno korisničko ime!";
     }
-}
+};
 
 const JSdz03 = () => {
     return (
@@ -67,16 +63,13 @@ const JSdz03 = () => {
                 <div className="tekst">Ulaz</div>
                 <div className="code">
                     <code>
-                        <div>korisnici:<br />{arrayToString(korisnici)}</div>
-                        <div>uloguj korisnika: {korisnickoIme.toString()}/{lozinka.toString()}</div>
+                        <div>niz sa korisnicima:<br />{JSON.stringify(korisnici)}</div>
+                        <div><br />mapiranje korisnika: {mapaKorisnikaHTML()}</div>
+                        <div><br />uloguj korisnika: {korisnickoIme.toString()}/{lozinka.toString()}</div>
                     </code>
                 </div>
                 <div className="tekst">Metoda</div>
-                <div className="code">
-                    <pre>
-                        <code>{login.toString()}</code>
-                    </pre>
-                </div>
+                <div className="code"><pre><code>{login.toString()}</code></pre></div>
                 <div className="tekst">Izlaz</div>
                 <div className="code"><code>ulogovan korisnik: {login(mapaKorisnika, korisnickoIme, lozinka).toString()}</code></div>
             </div>

@@ -2,17 +2,12 @@ import Header from "./../Header";
 import Footer from "./../Footer";
 
 const zadatak = "Proći kroz niz elemenata i ispisati sve elemente koji se nalaze na neparnim indeksima.";
+
 const niz = [1, 5, 6, 7, 2, 90, 10, 25, 67, 8];
 
 const obradi = (niz) => {
-    let niz_obradjeno = [];
-    for (let i = 0; i < niz.length; i++) {
-        if ((i % 2) > 0) {
-            niz_obradjeno.push(niz[i]);
-        }
-    }
-    return niz_obradjeno;
-}
+    return niz.filter((element, index) => index % 2 > 0);
+};
 
 const JSdz02 = () => {
     return (
