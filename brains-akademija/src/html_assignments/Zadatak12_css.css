@@ -1,0 +1,42 @@
+.html_zad12 .margina_vrh {
+    margin-top: 5rem;
+}
+
+.html_zad12 .zadatak img {
+    width: 100%;
+}
+
+.html_zad12 .resenje h1 {
+    color: var(--accent1-color);
+    margin-bottom: 1rem;
+}
+
+.html_zad12 .zaglavlje {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.html_zad12 .zaglavlje a {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.html_zad12 .zaglavlje a:hover {
+    background-color: var(--accent2-color);
+}
+
+.html_zad12 .zaglavlje li {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    margin-top: 0.4rem;
+}
+
+.html_zad12 .zaglavlje li:hover {
+    background-color: var(--accent2-color);
+}
+
+.html_zad12 .sub_nav {
+    display: none;
+}
