@@ -9,7 +9,7 @@ const Content = () => {
             </p>
             <p>
                 Ovde možete pronaći vežbe koje sam uspešno uradio uz pomoć stručnih predavača i mentora BRAINS Akademije.<br />
-                Kroz ove zadatke sam stekao (steći ću) znanja i veštine u oblasti web developmenta, uključujući HTML i CSS,
+                Kroz ove zadatke sam stekao znanja i veštine u oblasti web developmenta, uključujući HTML i CSS,
                 stilizovanje web stranica, korišćenje JavaScript-a za interaktivnost,
                 kao i korišćenje React-a za izradu modernih i dinamičnih web aplikacija.
             </p>

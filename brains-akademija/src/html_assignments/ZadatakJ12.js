@@ -23,10 +23,10 @@ const Zadatak_J12 = () => {
                         <a href="#blank"><li>About</li></a>
                         <a href="#blank"><li>Contact</li></a>
                         <ul className="sub_nav">
-                            <li><a href="#blank">Advertising</a></li>
-                            <li><a href="#blank">Marketing</a></li>
-                            <li><a href="#blank">Sales</a></li>
-                            <li><a href="#blank">The CEO</a></li>
+                            <a href="#blank"><li>Advertising</li></a>
+                            <a href="#blank"><li>Marketing</li></a>
+                            <a href="#blank"><li>Sales</li></a>
+                            <a href="#blank"><li>The CEO</li></a>
                         </ul>
                     </ol>
                 </section>

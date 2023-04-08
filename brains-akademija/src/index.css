@@ -74,3 +74,19 @@ p {
 .margin_top_5rem {
 	margin-top: 5rem;
 }
+
+.mt_5rem {
+	margin-top: 5rem;
+}
+
+.mt_2rem {
+	margin-top: 2rem;
+}
+
+.mt_1rem {
+	margin-top: 1rem;
+}
+
+.mt_0rem {
+	margin-top: 0;
+}

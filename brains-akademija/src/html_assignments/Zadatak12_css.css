@@ -24,6 +24,10 @@
     background-color: var(--accent2-color);
 }
 
+.html_zad12 .nav {
+    display: inline-block;
+}
+
 .html_zad12 .zaglavlje li {
     display: inline-block;
     padding: 0.4rem 1rem;
@@ -33,10 +37,27 @@
     margin-top: 0.4rem;
 }
 
-.html_zad12 .zaglavlje li:hover {
+.html_zad12 .nav li:hover {
     background-color: var(--accent2-color);
 }
 
 .html_zad12 .sub_nav {
     display: none;
+}
+
+.html_zad12 .sub_nav li {
+    background-color: var(--accent2-color);
+}
+
+.html_zad12 .sub_nav li:hover {
+    color: var(--accent1-color);
+    background-color: var(--secondary-color);
+}
+
+.html_zad12 .nav a:hover+.sub_nav {
+    display: inline-block;
+}
+
+.html_zad12 .sub_nav:hover {
+    display: inline-block;
 }
