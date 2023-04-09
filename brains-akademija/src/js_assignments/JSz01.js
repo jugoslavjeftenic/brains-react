@@ -15,9 +15,9 @@ const JSz01 = () => {
 		for (let i = 0; i < niz1.length; i++) {
 			for (let j = i + 1; j < niz1.length; j++) {
 				if (niz1[j] < niz1[i]) {
-					let e = niz1[i];
+					let tmp = niz1[i];
 					niz1[i] = niz1[j];
-					niz1[j] = e;
+					niz1[j] = tmp;
 				}
 			}
 		}

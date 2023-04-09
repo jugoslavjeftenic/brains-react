@@ -22,7 +22,10 @@ const JSz02 = () => {
     let niz1 = [8, 1, 3, 6, 3, 6, 8, 9, 10, 0];
     let niz2 = [...niz1];
 
-    const sortiraj1 = () => {
+    const asc1 = 1;
+    const dsc1 = -1;
+
+    const sortiraj1 = (redosled) => {
         for (let i = 0; i < niz1.length; i++) {
             for (let j = i + 1; j < niz1.length; j++) {
                 if ((() => {
@@ -35,18 +38,18 @@ const JSz02 = () => {
                     else {
                         return 1;
                     }
-                })() < 0) {
-                    let e = niz1[i];
+                })() === redosled) {
+                    let tmp = niz1[i];
                     niz1[i] = niz1[j];
-                    niz1[j] = e;
+                    niz1[j] = tmp;
                 }
             }
         }
         return niz1;
     };
 
-    const asc = (a, b) => a - b;
-    const dsc = (a, b) => b - a;
+    const asc2 = (a, b) => a - b;
+    const dsc2 = (a, b) => b - a;
 
     const sortiraj2 = (redosled) => {
         return niz2.sort(redosled);
@@ -64,9 +67,11 @@ const JSz02 = () => {
                 <div className="code">
                     <pre>
                         <code>
-                            <div className="mt_0rem">prva metoda - funkcija:<br />{sortiraj1.toString()}</div>
-                            <div className="mt_2rem">druga metoda - redosled asc:<br />{asc.toString()}</div>
-                            <div className="mt_1rem">druga metoda - redosled dsc:<br />{dsc.toString()}</div>
+                            <div className="mt_0rem">prva metoda - redosled asc:<br />{asc1.toString()}</div>
+                            <div className="mt_0rem">prva metoda - redosled dsc:<br />{dsc1.toString()}</div>
+                            <div className="mt_1rem">prva metoda - funkcija:<br />{sortiraj1.toString()}</div>
+                            <div className="mt_2rem">druga metoda - redosled asc:<br />{asc2.toString()}</div>
+                            <div className="mt_1rem">druga metoda - redosled dsc:<br />{dsc2.toString()}</div>
                             <div className="mt_1rem">druga metoda - funkcija:<br />{sortiraj2.toString()}</div>
                         </code>
                     </pre>
@@ -74,9 +79,10 @@ const JSz02 = () => {
                 <div className="tekst">izlaz:</div>
                 <div className="code">
                     <code>
-                        <div className="mt_0rem">prva metoda: {sortiraj1().toString()}</div>
-                        <div className="mt_1rem">druga metoda: {sortiraj2(asc).toString()}</div>
-                        <div className="mt_0rem">druga metoda: {sortiraj2(dsc).toString()}</div>
+                        <div className="mt_0rem">prva metoda: {sortiraj1(asc1).toString()}</div>
+                        <div className="mt_0rem">prva metoda: {sortiraj1(dsc1).toString()}</div>
+                        <div className="mt_1rem">druga metoda: {sortiraj2(asc2).toString()}</div>
+                        <div className="mt_0rem">druga metoda: {sortiraj2(dsc2).toString()}</div>
                     </code>
                 </div>
             </div>
