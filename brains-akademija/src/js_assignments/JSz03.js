@@ -123,7 +123,7 @@ const JSz03 = () => {
 				<div className="code">
 					<pre>
 						<code>
-							<div className="mt_0rem">komparator:<br /><pre>{komparator.toString()}</pre></div>
+							<div className="mt_0rem">komparator:<br />{komparator.toString()}</div>
 							<div className="mt_2rem">split:<br />{split.toString()}</div>
 							<div className="mt_2rem">regex:<br />{regex.toString()}</div>
 							<div className="mt_2rem">redosled asc={asc.toString()}</div>
