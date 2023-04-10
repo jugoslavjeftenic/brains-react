@@ -40,7 +40,7 @@ const JSz01 = () => {
 				<div className="code">
 					<pre>
 						<code>
-							<div className="mt_0rem">prva metoda:<br />{sortiraj1.toString()}</div>
+							<div className="mt_0rem"><p>prva metoda:<br />{sortiraj1.toString()}</p></div>
 							<div className="mt_2rem">druga metoda:<br />{sortiraj2.toString()}</div>
 						</code>
 					</pre>
