@@ -28,6 +28,8 @@ const JSz01 = () => {
 		return niz2.sort((a, b) => a - b);
 	};
 
+	const kod = `${sortiraj1.toString()}`;
+
 	return (
 		<div className="wrapper js_zadatak">
 			<Header />
@@ -40,7 +42,8 @@ const JSz01 = () => {
 				<div className="code">
 					<pre>
 						<code>
-							<div className="mt_0rem"><span>prva metoda:<br />{sortiraj1.toString()}</span></div>
+							<div className="mt_0rem">prva metoda:<br />{sortiraj1.toString()}</div>
+							<div className="mt_0rem">prva metoda:<br />{kod}</div>
 							<div className="mt_2rem">druga metoda:<br />{sortiraj2.toString()}</div>
 						</code>
 					</pre>
