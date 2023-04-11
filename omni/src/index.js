@@ -39,6 +39,14 @@ import Zadatak_J8 from "./html_assignments/Zadatak_J8";
 import Zadatak_J9 from "./html_assignments/Zadatak_J9";
 import CSSExample_ListMainView from "./css_example/layout/CSSExample_ListMainView";
 import CSSExample_Dashboard from "./css_example/layout/CSSExampla_Dashboard";
+import JSXOsnove from "./jsx_examples/Osnove";
+import Stopwatch1 from "./jsx_examples/Stopwatch1";
+import HooksExample from "./jsx_examples/Hooks";
+import ConditionalExample from "./jsx_examples/Conditional";
+import EventsExample from "./jsx_examples/Events";
+import FetchExample from "./jsx_examples/Fetch";
+import ListsExample from "./jsx_examples/Lists";
+import Stopwatch2 from "./jsx_examples/Stopwatch2";
 
 const router = createBrowserRouter([
   {
@@ -92,7 +100,7 @@ const router = createBrowserRouter([
   {
     path: "/css_layout/css_example",
     element: <CSSExample />,
-  },
+  }, 
   {
     path: "/css_layout/css_list_view_example",
     element: <CSSExample_ListMainView/>
@@ -192,6 +200,38 @@ const router = createBrowserRouter([
   {
     path: "/js_assignments/z10",
     element: <JSV10 />,
+  },
+  {
+    path: "jsx/osnove",
+    element: <JSXOsnove/>
+  },
+  {
+    path: "jsx/stopwatch1",
+    element: <Stopwatch1/>
+  },
+  {
+    path: "jsx/hooks",
+    element: <HooksExample/>
+  },
+  {
+    path: "jsx/conditional",
+    element: <ConditionalExample/>
+  },
+  {
+    path: "jsx/events",
+    element: <EventsExample/>
+  },
+  {
+    path: "jsx/lists",
+    element: <ListsExample/>
+  },
+  {
+    path: "jsx/fetch",
+    element: <FetchExample/>
+  },
+  {
+    path: "jsx/stopwatch2",
+    element: <Stopwatch2/>
   },
 ]);
 

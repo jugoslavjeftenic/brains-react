@@ -58,6 +58,17 @@ function App() {
             </Link>
           </li>
         </ul>
+        <li>Deo 2 - Uvod u React</li>
+        <ul>
+          <li><Link to="jsx/osnove">React funkcionalne komponente</Link></li>
+          <li><Link to="jsx/stopwatch1">JSX - primer štoperice</Link></li>
+          <li><Link to="jsx/conditional">Kondicionalno renderovanje u React-u</Link></li>
+          <li><Link to="jsx/lists">Liste i React</Link></li>
+          <li><Link to="jsx/events">React događaji</Link></li>
+          <li><Link to="jsx/hooks">Hook programiranje u React: effect i state</Link></li>
+          <li><Link to="jsx/fetch">Fetch API i React</Link></li>
+          <li><Link to="jsx/stopwatch2">JSX - operativan primer štoperice</Link></li>
+        </ul>
         <li> Zadaci </li>
         <ul>
           <li>

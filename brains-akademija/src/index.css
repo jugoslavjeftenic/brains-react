@@ -24,13 +24,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-pre {
-	white-space: pre-wrap;
-}
-
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-	white-space: pre;
 }
 
 a {
