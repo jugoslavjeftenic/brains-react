@@ -47,7 +47,7 @@ const podaci2 = [
 
 //React zahteva da kada radimo sa listama, damo svakom elementu jedinstven ključ. To je ili ključ iz baze ili, ako nemamo bazu, nešto što generišemo _jedno_ i pridodamo podacima. Recimo vrednost brojača. Valja voditi računa da se ovi ključevi nikako ne mogu praviti u vreme renderovanja: tj. u funkciji koja tvori komponentu. Ključevi moraju da budu isti svaki put kada se stavka prikaže: to je njihova svrha. 
 const Example2 = () => {
-    const list = podaci2.map((p) => <li><NameComponent key={p.id} ime={p.ime} prezime={p.prezime}/></li>)
+    const list = podaci2.map((p) => <li key={p.id}><NameComponent  ime={p.ime} prezime={p.prezime}/></li>)
     return <div>
         <ul>
             {list}
