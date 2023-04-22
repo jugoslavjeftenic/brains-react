@@ -15,16 +15,16 @@ const Example1 = () => {
         <button onClick={klik}>Dugme koje reaguje na klik</button>
         <button onClick={() => console.log("Lambda klik!")}>Dugme koje reaguje na klik ali prosleđivanjem lambde.</button>
         <button onClick={klik()}>Dugme koje ne reaguje zato što smo prosledili povratnu vrednost 'klik' funkcije, a ne samu funkciju.</button>
-    </div>
-}
+    </div>;
+};
 
 // Funkcije koje reaguju na događaje (obrađivači ili 'handler'-i je termin koji se koristi) primaju jedan argument, konvencionalno nazvan 'e' koji je objekat koji daje i sve podatke o događaju i plus još ima metode kojima možemo da manipulišemo ponašanjem događaja. Tip podataka koje možemo dobiti jesu gde, tačno, u dugmetu je kliknuto, tačan timestamp kada je kliknuto, da li je u tom trenutku bio pritisnut neki modifikatorski taster, pozicija na ekranu koja odgovara pozicija klika, koji pointerski uređaj je odgovoran za klik i još dosta drugih osobina. Dokumentacija sadrži detalje. 
 const Example2 = () => {
     const klik = (e) => console.log(e);
     return <div>
         <button onClick={klik}>Dugme koje ispisuje sve detalje događaja</button>
-    </div>
-}
+    </div>;
+};
 
 // Vrlo često imamo kontrole koje se poklapaju: na kraju krajeve sve što je u div-u se tehnički preklapa sa njim. Onda se postavlja pitanje: ako sam kliknuo na dugme, da li sam onda automaski kliknuo i na div u kome se dugme nalazi (plus div iza toga i tako dalje...). React i JS kažu 'da.' Podrazumevano ponašanje za svaki događaj (osim Scroll) jeste da ako se desi nekom elementu, onda se desio i svakom sadržavajućem elementu u hijerarhiji stranice koji se nalazi iznad. 
 const Example3 = () => {
@@ -32,8 +32,8 @@ const Example3 = () => {
     const klik_div = () => console.log("Ja regaujem na klik div-a!");
     return <div onClick={klik_div}>
         <button onClick={klik_button}>Dugme koje demonstrira propagaciju događaja</button>
-    </div>
-}
+    </div>;
+};
 
 // Ponekad ne želimo ovu propagaciju nego da, kada jednom 'sredimo' događaj, da on ne ide nigde dalje. To se postiže tako što, nad 'event' objektom mi pozovemo 'stopPropagation' metodu što garantuje da događaj ne ide nigde dalje. 
 const Example4 = () => {
@@ -41,13 +41,13 @@ const Example4 = () => {
     const klik_button2 = (e) => {
         e.stopPropagation();
         console.log("Ja regaujem na klik dugmeta!");
-    }
+    };
     const klik_div = () => console.log("Ja regaujem na klik div-a!");
     return <div onClick={klik_div}>
         <button onClick={klik_button}>Dugme koje demonstrira propagaciju događaja</button>
         <button onClick={klik_button2}>Dugme koje demonstrira blokiranje propagacije događaja</button>
-    </div>
-}
+    </div>;
+};
 
 // Rekto se može desiti da postoji podrazumevano ponašanje koje se desi svaki put kada se desi neki događaj, bez potrebe da mi išta uradimo povodom toga. Recimo, forme imaju 'submit' događaj koji se desi kada se pritisne submit dugme u njima. Podrazumevano, ovo ponovo učita čitavu stranicu. Mi to obično ne želimo na modernim sajtovima. Mehanizam koji se koristi da se to blokira se opet oslanja na parametar e, samo što se ovaj put pozove .preventDefault() metoda. 
 const Example5 = () => {
@@ -55,15 +55,15 @@ const Example5 = () => {
     const klik_button2 = (e) => {
         e.preventDefault();
         console.log("Ja regaujem na klik dugmeta!");
-    }
-    return <div>        
+    };
+    return <div>
         <form onSubmit={klik_button}>
-        <input type="submit" value="Dugme sa podrazumevanim ponašanjem"/></form>
+            <input type="submit" value="Dugme sa podrazumevanim ponašanjem" /></form>
         <form onSubmit={klik_button2}>
-        <input type="submit" value="Dugme koje blokira podrazumevano ponašanje"/>
+            <input type="submit" value="Dugme koje blokira podrazumevano ponašanje" />
         </form>
-    </div>
-}
+    </div>;
+};
 
 // Imamo na raspolaganju jako puno događaja: više nego što možemo i da pobrojimo. U ovom primeru posmatramo samo neke od češćih događaja miša koji nam omogućavaju da razlikujemo klik od desnog klika od toga da je taster samo pritisnut (pošto je klik i pritiskanje i puštanje), samo pušten, samo pomeren preko teritorije komponente, ili ušao ili izašao na područije komponente. Imamo dovoljno događaja da možemo da reagujemo na ponašanje korisnika sa ekstremnim granularitetom. 
 const Example6 = () => {
@@ -76,68 +76,91 @@ const Example6 = () => {
         onMouseLeave={(e) => console.log(`Kursor miša izašao na ${e.clientX}, ${e.clientY}`)}
         onMouseMove={(e) => console.log(`Kursor miša se kreće na ${e.clientX}, ${e.clientY}`)}
     >
-    </div>
-}
+    </div>;
+};
 
 // Nećemo napraviti od ovoga katalog događaja (za to služi dokumentacija, i React i MDN) ali postoje i događaji koji nisu vezani za miš nego za tastaturu ili to da li neka kontrola ima fokus (tj. prima događaje sa tastature) ili ne. 
 const Example7 = () => {
     return <div>
-        A: <input 
-                type='text'
-                onFocus={(e) => console.log("A dobio fokus.")}
-                onBlur={(e) => console.log("A izgubio fokus.")}
-                onKeyDown={(e) => console.log(`Nad A pristisnut taster ${e.key}`)}
-                onKeyUp={(e) => console.log(`Nad A pušten taster ${e.key}`)}
-                onInput={(e) => console.log(`Nad A uneseno nešto.`)}
-                onChange={(e) => console.log(`A promenjen.`)}
-            /><br></br>
-        B: <input 
-                type='text'
-                onFocus={(e) => console.log("B dobio fokus.")}
-                onBlur={(e) => console.log("B izgubio fokus.")}
-                onKeyDown={(e) => console.log(`Nad B pristisnut taster ${e.key}`)}
-                onKeyUp={(e) => console.log(`Nad B pušten taster ${e.key}`)}
-                onInput={(e) => console.log(`Nad B uneseno nešto.`)}
-                onChange={(e) => console.log(`B promenjen.`)}
-            />
-    </div>
-}
+        A: <input
+            type='text'
+            onFocus={(e) => console.log("A dobio fokus.")}
+            onBlur={(e) => console.log("A izgubio fokus.")}
+            onKeyDown={(e) => console.log(`Nad A pristisnut taster ${e.key}`)}
+            onKeyUp={(e) => console.log(`Nad A pušten taster ${e.key}`)}
+            onInput={(e) => console.log(`Nad A uneseno nešto.`)}
+            onChange={(e) => console.log(`A promenjen.`)}
+        /><br></br>
+        B: <input
+            type='text'
+            onFocus={(e) => console.log("B dobio fokus.")}
+            onBlur={(e) => console.log("B izgubio fokus.")}
+            onKeyDown={(e) => console.log(`Nad B pristisnut taster ${e.key}`)}
+            onKeyUp={(e) => console.log(`Nad B pušten taster ${e.key}`)}
+            onInput={(e) => console.log(`Nad B uneseno nešto.`)}
+            onChange={(e) => console.log(`B promenjen.`)}
+        />
+    </div>;
+};
 
 // React i naročito React kontrole koje možemo da importujemo iz biblioteka imaju bolje načine da se ovo uradi, ali evo demonstracije kako možemo da koristimo događaje da napravimo tekst polje u koje korisnik __ne može__ da unese pogrešnu vrednost. 
 const Example8 = () => {
     return <div>
-        Uneti pozitivan celi broj: <input 
+        Uneti pozitivan celi broj: <input
             type="text"
             onBeforeInput={(e) => {
-                if(!e.data.match(/^[0-9]*$/)){
+                if (!e.data.match(/^[0-9]*$/)) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
             }}
         ></input>
-    </div>
-}
+    </div>;
+};
+
+const Example9 = () => {
+    let input = "";
+    const changeValue = (e) => {
+        input = e.target.value;
+    };
+    const klik5 = (e) => {
+        e.preventDefault();
+        // const poljZaUnos = document.querySelector(".polje-unos");
+        console.log(input);
+    };
+
+    return <div>
+        Uneti nesto: <input className="polje-unos"
+            onChange={changeValue}
+            type="text"></input>
+        <button onClick={klik5}>Dugme koje demonstrira propagaciju događaja</button>
+    </div>;
+
+
+};
 
 
 
 const EventsExample = () => {
     return <div>
-        <Example1/>
-        <hr/>
-        <Example2/>
-        <hr/>
-        <Example3/>
-        <hr/>
-        <Example4/>
-        <hr/>
-        <Example5/>
-        <hr/>
-        <Example6/>
-        <hr/>
-        <Example7/>
-        <hr/>
-        <Example8/>
+        <Example1 />
+        <hr />
+        <Example2 />
+        <hr />
+        <Example3 />
+        <hr />
+        <Example4 />
+        <hr />
+        <Example5 />
+        <hr />
+        <Example6 />
+        <hr />
+        <Example7 />
+        <hr />
+        <Example8 />
+        <hr />
+        <Example9 />
     </div>;
-}
+};
 
 export default EventsExample;
