@@ -3,8 +3,6 @@ package com.iktpreobuka.book_sample.entities.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-
 import com.iktpreobuka.book_sample.entities.Author;
 import com.iktpreobuka.book_sample.entities.Book;
 
@@ -91,5 +89,4 @@ public class BookDTO {
 		}
 		this.genre = b.getGenre().getName();
 	}
-	
 }

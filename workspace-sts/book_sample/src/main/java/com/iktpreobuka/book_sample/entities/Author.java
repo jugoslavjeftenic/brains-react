@@ -13,15 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.iktpreobuka.book_sample.entities.dto.GenreDTO;
-
 @Entity
 public class Author {
 	@Id
@@ -67,5 +58,4 @@ public class Author {
 		super();
 		this.books = new ArrayList<>();
 	} 
-
 }
