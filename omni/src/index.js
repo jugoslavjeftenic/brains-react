@@ -47,11 +47,16 @@ import EventsExample from "./jsx_examples/Events";
 import FetchExample from "./jsx_examples/Fetch";
 import ListsExample from "./jsx_examples/Lists";
 import Stopwatch2 from "./jsx_examples/Stopwatch2";
+import Zadaci from "./zadaci/Zadaci";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/zadaci",
+    element: <Zadaci />,
   },
   {
     path: "/hello_world",
@@ -100,14 +105,14 @@ const router = createBrowserRouter([
   {
     path: "/css_layout/css_example",
     element: <CSSExample />,
-  }, 
+  },
   {
     path: "/css_layout/css_list_view_example",
-    element: <CSSExample_ListMainView/>
+    element: <CSSExample_ListMainView />
   },
   {
     path: "/css_layout/css_dashboard",
-    element: <CSSExample_Dashboard/>
+    element: <CSSExample_Dashboard />
   },
   {
     path: "/html_assignment",
@@ -203,35 +208,35 @@ const router = createBrowserRouter([
   },
   {
     path: "jsx/osnove",
-    element: <JSXOsnove/>
+    element: <JSXOsnove />
   },
   {
     path: "jsx/stopwatch1",
-    element: <Stopwatch1/>
+    element: <Stopwatch1 />
   },
   {
     path: "jsx/hooks",
-    element: <HooksExample/>
+    element: <HooksExample />
   },
   {
     path: "jsx/conditional",
-    element: <ConditionalExample/>
+    element: <ConditionalExample />
   },
   {
     path: "jsx/events",
-    element: <EventsExample/>
+    element: <EventsExample />
   },
   {
     path: "jsx/lists",
-    element: <ListsExample/>
+    element: <ListsExample />
   },
   {
     path: "jsx/fetch",
-    element: <FetchExample/>
+    element: <FetchExample />
   },
   {
     path: "jsx/stopwatch2",
-    element: <Stopwatch2/>
+    element: <Stopwatch2 />
   },
 ]);
 

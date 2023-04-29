@@ -10,6 +10,10 @@ function App() {
         jednostavan koliko je to moguće.
       </p>
       <ul>
+        <li>Deo 0 - Izrađeni zadaci</li>
+        <ul>
+          <li><Link to="zadaci">Zadaci</Link></li>
+        </ul>
         <li>Deo 1 - Osnove</li>
         <ul>
           <li>
