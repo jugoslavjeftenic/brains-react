@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function T4komponenta1() {
+export default function T7komponenta1() {
     let proizvodi = [
         { "id": 1, "name": "Toster", "price": 29.99 },
         { "id": 2, "name": "Mikser", "price": 39.99 },

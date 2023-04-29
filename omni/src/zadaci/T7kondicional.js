@@ -83,7 +83,7 @@ const Korisnik = ({ korisnik }) => {
     </tr>;
 };
 
-const T4kondicional = () => {
+const T7kondicional = () => {
     return (
         <div>
             Zdravo, ja sam komponenta koja kondicionalno prikazuje elemente.
@@ -105,4 +105,4 @@ const T4kondicional = () => {
     );
 };
 
-export default T4kondicional;
+export default T7kondicional;

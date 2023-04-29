@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function T4prvaEksternaKomponenta() {
+export default function T7prvaEksternaKomponenta() {
 	return (
 		<div>Zdravo, ja sam importovana komponenta.</div>
 	);

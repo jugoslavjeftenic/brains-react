@@ -1,6 +1,6 @@
 import React from 'react';
 
-const T4komponenta2 = () => {
+const T7komponenta2 = () => {
     const proizvodi = [
         { "id": 1, "name": "Toster", "price": 29.99 },
         { "id": 2, "name": "Mikser", "price": 39.99 },
@@ -41,4 +41,4 @@ const T4komponenta2 = () => {
     );
 };
 
-export default T4komponenta2;
+export default T7komponenta2;
