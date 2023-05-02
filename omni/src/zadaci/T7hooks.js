@@ -44,3 +44,45 @@ export const T7hook2 = () => {
         </div>
     );
 };
+
+export const T7hook3 = () => {
+    const listaOsoba = [
+        { id: 1, ime: "Ana", prezime: "Maric" },
+        { id: 2, ime: "Ivan", prezime: "Kovacevic" },
+        { id: 3, ime: "Petra", prezime: "Novak" },
+        { id: 4, ime: "Marko", prezime: "Horvat" },
+        { id: 5, ime: "Lana", prezime: "Babic" },
+        { id: 6, ime: "Leo", prezime: "Miletic" },
+        { id: 7, ime: "Mia", prezime: "Simunovic" },
+        { id: 8, ime: "Filip", prezime: "Jankovic" },
+        { id: 9, ime: "Ema", prezime: "Knezevic" },
+        { id: 10, ime: "Iva", prezime: "Matijasevic" }
+    ];
+
+    // const [osobe, setOsobe] = useState(listaOsoba);
+    const [pretraga, setPretraga] = useState("");
+    const [rezultat, setRezultat] = useState(listaOsoba);
+
+    useEffect(() => {
+        setRezultat(listaOsoba);
+        setRezultat(prevRezultat => {
+            return prevRezultat.filter(o => {
+                return o.ime.toLowerCase().includes(pretraga.toLowerCase()) ||
+                    o.prezime.toLowerCase().includes(pretraga.toLowerCase());
+            });
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pretraga]);
+
+    return (
+        <div>
+            <div>Zdravo, ja sam komponenta koja pretrazuje korisnike po imenu ili prezimenu</div>
+            <form>
+                <input onChange={e => setPretraga(e.target.value)} type='text' />
+                <div>{rezultat.map(r => {
+                    return <div key={r.id}>{r.id} {r.ime} {r.prezime}</div>;
+                })}</div>
+            </form>
+        </div>
+    );
+};
