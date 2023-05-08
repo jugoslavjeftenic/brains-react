@@ -9,3 +9,8 @@ root.render(
 		<App />
 	</React.StrictMode>
 );
+
+// GitHub - frontend
+// https://github.com/jugoslavjeftenic/brains-react/tree/master/back-to-school
+// GitHub - backend
+// https://github.com/jugoslavjeftenic/brains-springboot/tree/master/be_t99_back_to_school
