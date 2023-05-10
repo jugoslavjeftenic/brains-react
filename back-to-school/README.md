@@ -14,3 +14,7 @@ Pored prikaza svih predmeta neophodno je omogućiti i "live" pretragu predmeta.
 
 Kreirati izgled stranice za prikaz predmeta kao na slici ispod.
 Za kreiranje izgleda neophodno je koristiti CSS.
+
+## Resenje
+Zavrsna aplikacija je postavljena na https://povratak-u-skolu.netlify.app/
+
