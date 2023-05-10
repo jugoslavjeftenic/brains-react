@@ -28,14 +28,14 @@ export default function Predmet({ predmet }) {
         <div className='predmet-box'>
             <div className='predmet-name'>{predmet.naziv}</div>
             <div className='predmet-id'>ID: {predmet.predmet_id}</div>
-            <div>
+            <div className='predmet-details'>
                 <ul>
                     <li>razred: {razred(predmet.razred)}</li>
                     <li>fond časova: {predmet.fondCasova}</li>
                 </ul>
             </div>
             <a href='https://google.com' target='blank'>
-                <div className='predmet-link'>Prikaži</div>
+                <div className='predmet-link'>PRIKAŽI...</div>
             </a>
         </div>
     );

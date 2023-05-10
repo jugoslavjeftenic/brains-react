@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import './predmeti.css';
+import logo from '../assets/icons/logo.svg';
 import Predmet from "./Predmet";
 
 export default function PredmetiApp() {
@@ -44,11 +45,10 @@ export default function PredmetiApp() {
 
     return (
         <div className="predmeti-app-box">
-            <div className="pretraga-box">
-                <input type="text" placeholder="Traži predmet" value={upit} onChange={(e) => {
-                    setUpit(e.target.value);
-                }} />
-            </div>
+            <div><img src={logo} className="logo" alt="logo" /></div>
+            <input className="pretraga-box" type="text" placeholder="Potraži predmet..." value={upit} onChange={(e) => {
+                setUpit(e.target.value);
+            }} />
             <div className="predmeti-box">
                 {predmetiFrontend.map((predmet) => {
                     return <Predmet key={predmet.predmet_id} predmet={predmet} />;

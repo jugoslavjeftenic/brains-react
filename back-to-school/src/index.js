@@ -10,6 +10,8 @@ root.render(
 	</React.StrictMode>
 );
 
+// Jugoslav Jeftenic
+
 // GitHub - frontend
 // https://github.com/jugoslavjeftenic/brains-react/tree/master/back-to-school
 // GitHub - backend
