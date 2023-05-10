@@ -11,8 +11,8 @@ root.render(
 );
 
 // Jugoslav Jeftenic
-
-// GitHub - frontend
+// web site: https://povratak-u-skolu.netlify.app/
+// GitHub - frontend (private)
 // https://github.com/jugoslavjeftenic/brains-react/tree/master/back-to-school
-// GitHub - backend
+// GitHub - backend (public)
 // https://github.com/jugoslavjeftenic/brains-springboot/tree/master/be_t99_back_to_school
