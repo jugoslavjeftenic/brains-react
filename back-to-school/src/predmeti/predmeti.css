@@ -1,3 +1,12 @@
+.predmeti-app-box {
+    margin: 0 0.1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 0.2rem;
+}
+
 .logo {
     height: 6rem;
 }
@@ -7,7 +16,6 @@
         animation: logo-spin infinite 2s ease-in-out;
     }
 }
-
 
 @keyframes logo-spin {
     0% {
@@ -23,15 +31,6 @@
     }
 }
 
-
-.predmeti-app-box {
-    margin: 0 0.1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    gap: 0.2rem;
-}
-
 .pretraga-box {
     color: var(--primary-text-color);
     width: 70%;
@@ -45,6 +44,30 @@
 
 .pretraga-box::placeholder {
     color: var(--primary-text-color);
+}
+
+.predmeti-ucitavam {
+    color: var(--primary-text-color);
+    display: block;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.predmeti-ucitavam.ucitano {
+    display: none;
+}
+
+.predmeti-greska {
+    color: var(--link-color);
+    display: none;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.predmeti-greska.greska {
+    display: block;
 }
 
 .predmeti-box {
