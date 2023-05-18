@@ -6,6 +6,7 @@ import T7komponenta2 from './T7komponenta2';
 import T7kondicional from './T7kondicional';
 import T7dogadjaj from './T7dogadjaj';
 import { T7hook1, T7hook2, T7hook3 } from './T7hooks';
+import { T7fetch1, T7fetch2 } from './T7fetch';
 
 const T7prvaKomponenta = () => {
     return <div>Zdravo, ja sam interna komponenta.</div>;
@@ -16,6 +17,8 @@ export default function Zadaci() {
         <div className='zadaci'>
             <ul>
                 <li>T7 - RestAPI, Events, Hooks</li><hr />
+                <ul><li><T7fetch2 /></li></ul><hr />
+                <ul><li><T7fetch1 /></li></ul><hr />
                 <ul><li><T7hook3 /></li></ul><hr />
                 <ul><li><T7hook2 /></li></ul><hr />
                 <ul><li><T7hook1 /></li></ul><hr />
