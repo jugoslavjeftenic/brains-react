@@ -9,9 +9,9 @@ const ShowGenres = () => {
             <h1>ShowGenres</h1>
             <div>
                 <ol>
-                    {genres.map((a) => {
-                        return <li key={a.id}>
-                            {a.name}
+                    {genres.map((g) => {
+                        return <li key={g.id}>
+                            {g.name}
                         </li>;
                     })}
                 </ol>

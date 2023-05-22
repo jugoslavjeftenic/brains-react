@@ -5,6 +5,53 @@
     margin: 10px;
 }
 
+.books_container_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 40px;
+    background-color: whitesmoke;
+}
+
+@media screen and (max-width: 700px) {
+    .books_container_header {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.input-container {
+    display: flex;
+    width: 40%;
+}
+
+.input_field {
+    flex: 1;
+    padding: 10px;
+    border: 0.3px solid grey;
+    border-radius: 2px 0 0 2px;
+}
+
+.search_btn {
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 0 2px 2px 0;
+}
+
+.select {
+    padding: 10px;
+    width: 35%;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+}
+
+.select option::first-letter {
+    text-transform: capitalize;
+}
+
 .book_card {
     display: flex;
     flex-direction: column;
