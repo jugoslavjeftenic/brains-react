@@ -1,39 +1,62 @@
-.App {
-	text-align: center;
+.container {
+    height: 100vh;
+    max-width: 1200px;
+    min-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr 22px;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+        "sidenav header scroller"
+        "sidenav main scroll"
+        "sidenav footer scroll";
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+.header_container {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background1-color);
+    padding: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+.sidenav_container {
+    grid-area: sidenav;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--background2-color);
 }
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+.sidenav_list {
+    list-style-type: none;
+    margin-top: 5rem;
+    padding: 0;
 }
 
-.App-link {
-	color: #61dafb;
+.sidenav_list_item_navlink {
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0;
+    color: var(--text2-color);
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
+.sidenav_list_item_navlink:hover {
+    background-color: var(--text2-color);
+    color: var(--background1-color);
+    cursor: pointer;
+    font-weight: bold;
+}
 
-	to {
-		transform: rotate(360deg);
-	}
+.scroller {
+    grid-area: scroller;
+    width: 100%;
+}
+
+.active {
+    background-color: var(--background2-color);
+    color: var(--text2-color);
+    font-weight: bold;
 }
