@@ -12,12 +12,16 @@ const Korisnici = () => {
     return (
         <div>
             <header className='korisnici-header-container'>
-                <div>
+                <div className='korisnici-header-input-container'>
+                    <button>Prikaži</button>
                     <select>
+                        <option>Sve korisnike</option>
                         <option>ID</option>
+                        <option>Ime</option>
+                        <option>Prezime</option>
+                        <option>Bez uloge</option>
                     </select>
-                    <input type='text' placeholder='Potraži...' />
-                    <button>Potraži</button>
+                    <input type='text' placeholder='Traži...' />
                 </div>
                 <button>
                     <NavLink to='novi-korisnik'>Novi korisnik</NavLink>

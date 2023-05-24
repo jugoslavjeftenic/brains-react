@@ -39,12 +39,12 @@
     width: 100%;
     display: inline-block;
     padding: 1rem 0;
-    color: var(--text2-color);
+    color: var(--text3-color);
     text-align: center;
 }
 
 .sidenav_list_item_navlink:hover {
-    background-color: var(--text2-color);
+    background-color: var(--text3-color);
     color: var(--background1-color);
     cursor: pointer;
     font-weight: bold;
@@ -57,6 +57,6 @@
 
 .active {
     background-color: var(--background2-color);
-    color: var(--text2-color);
+    color: var(--text3-color);
     font-weight: bold;
 }
