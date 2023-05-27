@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-import './App.css';
+// import './App.css';
 
 function App() {
 	return (
@@ -18,6 +18,12 @@ function App() {
 					</li>
 					<li className='sidenav_list_item'>
 						<NavLink className='sidenav_list_item_navlink' to='nastavnici'>Nastavnici</NavLink>
+					</li>
+					<li className='sidenav_list_item'>
+						<NavLink className='sidenav_list_item_navlink' to='predmeti'>Predmeti</NavLink>
+					</li>
+					<li className='sidenav_list_item'>
+						<NavLink className='sidenav_list_item_navlink' to='predaju'>Predaju</NavLink>
 					</li>
 				</ul>
 			</aside>

@@ -7,7 +7,7 @@ import Korisnik from './Korisnik';
 
 const Korisnici = () => {
     const korisnici = useLoaderData();
-    console.log(korisnici);
+    // console.log(korisnici);
 
     return (
         <div>
