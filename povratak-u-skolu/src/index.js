@@ -13,7 +13,7 @@ import Administratori from './korisnici/Administratori';
 import Nastavnici from './korisnici/Nastavnici';
 
 import Predmeti from './predmeti/Predmeti';
-import NoviPredmet from './predmeti/NoviPredmet';
+// import NoviPredmet from './predmeti/NoviPredmet';
 import Predaju from './predmeti/Predaju';
 
 const router = createBrowserRouter([
@@ -69,21 +69,21 @@ const router = createBrowserRouter([
 			{
 				path: '/predmeti',
 				element: <Predmeti />,
-				errorElement: <PageError />,
-				loader: async () => {
-					const fetchGenres = await fetch(`http://localhost:8080/api/v1/predmeti`);
-					if (fetchGenres.status === 404) {
-						throw new Response("Resurs nije nađen", { status: 404 });
-					}
-					const retVal = fetchGenres;
-					return retVal;
-				},
-				children: [
-					{
-						path: 'novi-predmet',
-						element: <NoviPredmet />
-					}
-				]
+				// errorElement: <PageError />,
+				// loader: async () => {
+				// 	const fetchGenres = await fetch(`http://localhost:8080/api/v1/predmeti`);
+				// 	if (fetchGenres.status === 404) {
+				// 		throw new Response("Resurs nije nađen", { status: 404 });
+				// 	}
+				// 	const retVal = fetchGenres;
+				// 	return retVal;
+				// },
+				// children: [
+				// 	{
+				// 		path: 'novi-predmet',
+				// 		element: <NoviPredmet />
+				// 	}
+				// ]
 			},
 			// {
 			// 	path: '/predmeti/novi-predmet',
