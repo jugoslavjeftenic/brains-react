@@ -1,24 +1,27 @@
 import React, { useRef, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Box, Button, Container, FormControl, MenuItem, Select, TextField } from '@mui/material';
+import { Alert, Box, Button, CircularProgress, Container, FormControl, MenuItem, Select, TextField } from '@mui/material';
 
 const Predmeti = () => {
     const navigate = useNavigate();
-    const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'none']);
+    const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'number', 'none']);
     const fetchParam = useRef('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(Error());
     const [fetchedData, setFetchedData] = useState([]);
 
     const handleFetchSelect = (e) => {
         const choice = e.target.value;
+        setError(Error());
         switch (choice) {
             case '1':
-                setSelectWhatToFetch(['1', 'upišite ID predmeta...', 'inline-flex']);
+                setSelectWhatToFetch(['1', 'upišite ID predmeta...', 'number', 'inline-flex']);
                 break;
             case '2':
-                setSelectWhatToFetch(['2', 'upišite početak naziva...', 'inline-flex']);
+                setSelectWhatToFetch(['2', 'upišite početak naziva...', 'text', 'inline-flex']);
                 break;
             default:
-                setSelectWhatToFetch(['0', '', 'none']);
+                setSelectWhatToFetch(['0', '', 'text', 'none']);
         }
     };
 
@@ -30,12 +33,23 @@ const Predmeti = () => {
         let cancel = false;
         const goFetch = async () => {
             try {
+                setLoading(true);
                 let fetchResult;
                 switch (selectWhatToFetch[0]) {
                     case '1':
+                        if (isNaN(parseInt(fetchParam.current))) {
+                            throw Error(`Upisani ID nije broj! (upisano: ${fetchParam.current})`);
+                        }
+                        if (parseInt(fetchParam.current) < 1) {
+                            throw Error(`Upisani ID mora da bude veći od nule! (upisano: ${fetchParam.current})`);
+                        }
                         fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
                         break;
                     case '2':
+                        if (!fetchParam.current) {
+                            console.log('usao u if');
+                            throw Error(`Upišite početak naziva predmeta!`);
+                        }
                         fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
                         break;
                     default:
@@ -47,15 +61,17 @@ const Predmeti = () => {
                     f = [];
                     f.push(notArrayFetched);
                 }
+                setError(Error());
                 if (!cancel) {
                     setFetchedData(f);
                 }
             }
-            catch (error) {
-                console.error("Doslo je do greske: " + error.message);
+            catch (err) {
+                setError(err);
+                console.error(Error('Uhvaćena greška: ' + err.message ?? err));
             }
             finally {
-                //
+                setLoading(false);
             }
         };
         goFetch();
@@ -115,14 +131,16 @@ const Predmeti = () => {
                             variant='outlined'
                             id='predmeti-fetch-input'
                             label={selectWhatToFetch[1]}
+                            type={selectWhatToFetch[2]}
                             sx={{
-                                display: () => selectWhatToFetch[2],
+                                display: () => selectWhatToFetch[3],
                                 flexDirection: 'row',
                                 width: 200,
                                 height: 50,
                                 marginBottom: 1,
                             }}
                             onChange={handleFetchParam}
+                            error={error.message ? true : false}
                         />
                     </FormControl>
                 </Box>
@@ -131,6 +149,20 @@ const Predmeti = () => {
                 </Button>
             </Box>
             <Outlet></Outlet>
+            <Box sx={{
+                display: () => loading ? 'block' : 'none',
+                textAlign: 'center',
+                margin: 10,
+            }}>
+                <CircularProgress />
+            </Box>
+            <Box sx={{
+                display: () => error.message ? 'block' : 'none',
+                textAlign: 'center',
+                margin: 1,
+            }}>
+                <Alert variant='filled' severity='warning'>{error.message}</Alert>
+            </Box>
             <ol>
                 {fetchedData.map((p) => {
                     return (
