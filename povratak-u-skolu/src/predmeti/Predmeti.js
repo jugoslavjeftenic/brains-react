@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Alert, Box, Button, CircularProgress, Container, FormControl, MenuItem, Select, TextField } from '@mui/material';
+import { Alert, Box, Button, CircularProgress, Container, FormControl, Grid, MenuItem, Select, TextField } from '@mui/material';
+import Predmet from './Predmet';
 
 const Predmeti = () => {
     const navigate = useNavigate();
@@ -38,10 +39,10 @@ const Predmeti = () => {
                 switch (selectWhatToFetch[0]) {
                     case '1':
                         if (isNaN(parseInt(fetchParam.current))) {
-                            throw Error(`Upisani ID nije broj! (upisano: ${fetchParam.current})`);
+                            throw Error(`Upisani ID nije broj! (upisano: "${fetchParam.current})"`);
                         }
                         if (parseInt(fetchParam.current) < 1) {
-                            throw Error(`Upisani ID mora da bude veći od nule! (upisano: ${fetchParam.current})`);
+                            throw Error(`Upisani ID mora da bude veći od nule! (upisano: "${fetchParam.current})"`);
                         }
                         fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
                         break;
@@ -82,16 +83,18 @@ const Predmeti = () => {
 
     return (
         <Container>
-            <Box sx={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                marginBottom: 3,
-            }}>
-                <Box sx={{
+            <Box
+                sx={{
                     display: 'flex',
                     flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    marginBottom: 3,
                 }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                    }}>
                     <Button
                         variant='contained'
                         disableElevation
@@ -163,13 +166,13 @@ const Predmeti = () => {
             }}>
                 <Alert variant='filled' severity='warning'>{error.message}</Alert>
             </Box>
-            <ol>
-                {fetchedData.map((p) => {
+            <Grid container spacing={3}>
+                {fetchedData.map((fd) => {
                     return (
-                        <li key={p.predmet_id}>{p.naziv} {p.razred} {p.fondCasova}</li>
+                        <Predmet key={fd.predmet_id} predmet={fd} />
                     );
                 })}
-            </ol>
+            </Grid>
         </Container>
     );
 };
