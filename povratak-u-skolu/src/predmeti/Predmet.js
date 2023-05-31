@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent, CardHeader, Grid, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, CardHeader, Grid, IconButton, Typography } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Predmet = ({ predmet }) => {
     const handleEdit = () => {
@@ -15,6 +17,9 @@ const Predmet = ({ predmet }) => {
             <Card
                 variant='outlined'
                 sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
                     height: '100%',
                     minWidth: 200,
                 }}
@@ -37,8 +42,12 @@ const Predmet = ({ predmet }) => {
                         flexWrap: 'wrap',
                         justifyContent: 'center',
                     }}>
-                    <Button variant='outlined' size='small' onClick={handleEdit}>Izmeni</Button>
-                    <Button variant='outlined' size='small' onClick={handleDelete}>Izbriši</Button>
+                    <IconButton aria-label="edit" color="primary" onClick={handleEdit}>
+                        <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete" color="primary" onClick={handleDelete}>
+                        <DeleteIcon />
+                    </IconButton>
                 </CardActions>
             </Card>
         </Grid>

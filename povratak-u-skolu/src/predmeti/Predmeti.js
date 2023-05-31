@@ -39,10 +39,10 @@ const Predmeti = () => {
                 switch (selectWhatToFetch[0]) {
                     case '1':
                         if (isNaN(parseInt(fetchParam.current))) {
-                            throw Error(`Upisani ID nije broj! (upisano: "${fetchParam.current})"`);
+                            throw Error(`Upisani ID nije broj!`);
                         }
                         if (parseInt(fetchParam.current) < 1) {
-                            throw Error(`Upisani ID mora da bude veći od nule! (upisano: "${fetchParam.current})"`);
+                            throw Error(`Upisani ID mora da bude veći od nule!`);
                         }
                         fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
                         break;
@@ -163,6 +163,7 @@ const Predmeti = () => {
                 display: () => error.message ? 'block' : 'none',
                 textAlign: 'center',
                 margin: 1,
+                marginBottom: 4,
             }}>
                 <Alert variant='filled' severity='warning'>{error.message}</Alert>
             </Box>
