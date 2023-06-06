@@ -1,15 +1,32 @@
-import { createContext, useEffect, useMemo, useState } from 'react';
-import { AppBar, Box, Button, CssBaseline, Divider, Drawer, IconButton, Stack, ThemeProvider, Toolbar, Typography, createTheme } from '@mui/material';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { AppBar, Box, Button, Divider, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import { ChevronLeft, Menu } from '@mui/icons-material';
-import { useLogin } from './login_logic';
-import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { ThemeProvider, createTheme, styled, useTheme } from '@mui/material/styles';
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+}));
 
 const AppMain = () => {
+    const lightTheme = createTheme({
+        palette: {
+            mode: 'light'
+        }
+    });
+    const theme = useTheme(lightTheme);
+
     // Stanje aside menija
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
     return (
-        <div>
+        <ThemeProvider theme={theme}>
             <Stack direction='column'>
                 <AppBar
                     sx={{
@@ -43,6 +60,11 @@ const AppMain = () => {
                     open={isOpenDrawer}
                     onClose={(e) => setIsOpenDrawer(false)}
                 >
+                    <DrawerHeader>
+                        <IconButton>
+                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                        </IconButton>
+                    </DrawerHeader>
                     <Box>
                         <IconButton onClick={(e) => setIsOpenDrawer(false)}>
                             <ChevronLeft />
@@ -59,7 +81,7 @@ const AppMain = () => {
                 <Outlet />
             </Box>
 
-        </div>
+        </ThemeProvider>
     );
 };
 

@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { useLogin } from './login_logic';
 import Login from './Login';
 import './App.css';
+import AppMain from './AppMain';
 
 // Definisanje palete za temu
 const create_palette = (mode) => {
@@ -36,7 +37,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<UserContext.Provider value={{ user, login, logout }}>
 				<CssBaseline />
-				{user ? <h1>Glavna strana</h1> : <Login />}
+				{user ? <AppMain /> : <Login />}
 			</UserContext.Provider>
 		</ThemeProvider>
 	);
