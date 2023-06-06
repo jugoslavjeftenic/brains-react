@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 export const useLogin = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
-
     return [
         user,
         (userData) => {
