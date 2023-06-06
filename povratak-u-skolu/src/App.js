@@ -41,5 +41,6 @@ function App() {
 		</ThemeProvider>
 	);
 }
+// const { user, login, logout } = useContext(UserContext);
 
 export default App;
