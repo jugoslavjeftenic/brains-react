@@ -78,6 +78,10 @@ const AppMain = () => {
                                 margin: '0.2rem',
                                 mb: '0.4rem',
                             }}
+                            onClick={() => {
+                                setIsOpenDrawer(false);
+                                navigate('predmeti');
+                            }}
                         >Korisnici</Button>
                         <Button
                             variant='contained'
@@ -85,7 +89,10 @@ const AppMain = () => {
                                 margin: '0.2rem',
                                 mb: '0.4rem',
                             }}
-                            onClick={() => navigate('predmeti')}
+                            onClick={() => {
+                                setIsOpenDrawer(false);
+                                navigate('predmeti');
+                            }}
                         >Predmeti</Button>
                     </Stack>
                 </Drawer>
