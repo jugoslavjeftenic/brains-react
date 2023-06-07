@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { AppBar, Box, Button, Drawer, FormControlLabel, FormGroup, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
@@ -21,6 +21,9 @@ const AppMain = () => {
 
     // Stanje Drawer-a
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
+    // Navigacija
+    const navigate = useNavigate();
 
     return (
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
@@ -82,6 +85,7 @@ const AppMain = () => {
                                 margin: '0.2rem',
                                 mb: '0.4rem',
                             }}
+                            onClick={() => navigate('predmeti')}
                         >Predmeti</Button>
                     </Stack>
                 </Drawer>

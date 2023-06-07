@@ -14,23 +14,15 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: '/korisnici',
+				path: 'korisnici',
 				element: <Korisnici />,
 			},
 			{
-				path: '/predmet',
+				path: 'predmeti',
 				element: <Predmeti />,
 			},
 		]
 	},
-	// {
-	// 	path: '/korisnici',
-	// 	element: <Korisnici />,
-	// },
-	// {
-	// 	path: '/predmet',
-	// 	element: <Predmeti />,
-	// },
 	{
 		path: '/login',
 		element: <Login />,
