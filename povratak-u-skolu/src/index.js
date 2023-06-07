@@ -4,13 +4,33 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 // import './index.css';
 
 import App from './App';
+import Korisnici from './korisnici/Korisnici';
+import Predmeti from './predmeti/Predmeti';
 import Login from './Login';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
+		children: [
+			{
+				path: '/korisnici',
+				element: <Korisnici />,
+			},
+			{
+				path: '/predmet',
+				element: <Predmeti />,
+			},
+		]
 	},
+	// {
+	// 	path: '/korisnici',
+	// 	element: <Korisnici />,
+	// },
+	// {
+	// 	path: '/predmet',
+	// 	element: <Predmeti />,
+	// },
 	{
 		path: '/login',
 		element: <Login />,

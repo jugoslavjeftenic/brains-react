@@ -1,32 +1,29 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar, Box, Button, Divider, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
-import { ChevronLeft, Menu } from '@mui/icons-material';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { ThemeProvider, createTheme, styled, useTheme } from '@mui/material/styles';
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-}));
+import { AppBar, Box, Button, Drawer, FormControlLabel, FormGroup, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
+import MenuOpenTwoToneIcon from '@mui/icons-material/MenuOpenTwoTone';
 
 const AppMain = () => {
+    // Teme
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const lightTheme = createTheme({
         palette: {
             mode: 'light'
         }
     });
-    const theme = useTheme(lightTheme);
+    const darkTheme = createTheme({
+        palette: {
+            mode: 'dark'
+        }
+    });
 
-    // Stanje aside menija
+    // Stanje Drawer-a
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <Stack direction='column'>
                 <AppBar
                     sx={{
@@ -38,17 +35,23 @@ const AppMain = () => {
                 >
                     <Toolbar>
                         <IconButton onClick={(e) => setIsOpenDrawer(true)}>
-                            <Menu />
+                            <MenuTwoToneIcon fontSize='large' />
                         </IconButton>
                     </Toolbar>
                     <Typography
-                        variant='h6'
+                        variant='h5'
                         sx={{
                             flexGrow: 1,
-                            pl: '2rem',
+                            // pl: '1rem',
                             // textAlign: 'center',
                         }}
                     >eDnevnik</Typography>
+                    <FormGroup>
+                        <FormControlLabel
+                            control={< Switch checked={isDarkMode} onChange={(e) => setIsDarkMode(!isDarkMode)} />}
+                            label='Dark mode'
+                        />
+                    </FormGroup>
                     <Typography
                         sx={{
                             pr: '2rem',
@@ -60,20 +63,26 @@ const AppMain = () => {
                     open={isOpenDrawer}
                     onClose={(e) => setIsOpenDrawer(false)}
                 >
-                    <DrawerHeader>
-                        <IconButton>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                    </DrawerHeader>
-                    <Box>
-                        <IconButton onClick={(e) => setIsOpenDrawer(false)}>
-                            <ChevronLeft />
+                    <Box textAlign={'right'}>
+                        <IconButton sx={{ padding: '1rem' }} onClick={(e) => setIsOpenDrawer(false)}>
+                            <MenuOpenTwoToneIcon fontSize='large' />
                         </IconButton>
                     </Box>
-                    <Divider />
-                    <Stack direction='column'>
-                        <Button>Dugme 1</Button>
-                        <Button>Dugme 2</Button>
+                    <Stack direction='column' sx={{ padding: '0.2rem' }}>
+                        <Button
+                            variant='contained'
+                            sx={{
+                                margin: '0.2rem',
+                                mb: '0.4rem',
+                            }}
+                        >Korisnici</Button>
+                        <Button
+                            variant='contained'
+                            sx={{
+                                margin: '0.2rem',
+                                mb: '0.4rem',
+                            }}
+                        >Predmeti</Button>
                     </Stack>
                 </Drawer>
             </Stack>
