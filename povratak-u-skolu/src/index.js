@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App';
+import Login from './login/Login';
 import Korisnici from './korisnici/Korisnici';
 import Predmeti from './predmeti/Predmeti';
-import Login from './login/Login';
 
 const router = createBrowserRouter([
 	{

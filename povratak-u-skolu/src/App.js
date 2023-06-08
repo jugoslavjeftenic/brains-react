@@ -7,8 +7,8 @@ import Login from './login/Login';
 import AppMain from './AppMain';
 
 // Definisanje UserContext-a
-export const UserContext = createContext(null);
 // const { user, login, logout } = useContext(UserContext);
+export const UserContext = createContext(null);
 
 function App() {
 	// Autentifikacija

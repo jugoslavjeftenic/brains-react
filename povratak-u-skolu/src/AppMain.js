@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { AppBar, Box, Button, Drawer, FormControlLabel, FormGroup, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import MenuOpenTwoToneIcon from '@mui/icons-material/MenuOpenTwoTone';
 
+import { UserContext } from './App';
+
 const AppMain = () => {
+    const { user } = useContext(UserContext);
+    const navigate = useNavigate();
+
     // Teme
     const [isDarkMode, setIsDarkMode] = useState(false);
     const lightTheme = createTheme({
@@ -21,9 +26,6 @@ const AppMain = () => {
 
     // Stanje Drawer-a
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-
-    // Navigacija
-    const navigate = useNavigate();
 
     return (
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
@@ -43,11 +45,7 @@ const AppMain = () => {
                     </Toolbar>
                     <Typography
                         variant='h5'
-                        sx={{
-                            flexGrow: 1,
-                            // pl: '1rem',
-                            // textAlign: 'center',
-                        }}
+                        sx={{ flexGrow: 1 }}
                     >eDnevnik</Typography>
                     <FormGroup>
                         <FormControlLabel
@@ -56,10 +54,8 @@ const AppMain = () => {
                         />
                     </FormGroup>
                     <Typography
-                        sx={{
-                            pr: '2rem',
-                        }}
-                    >Zdravo</Typography>
+                        sx={{ pr: '2rem', }}
+                    >{user.user}</Typography>
                 </AppBar>
                 <Drawer
                     anchor='left'
@@ -74,10 +70,7 @@ const AppMain = () => {
                     <Stack direction='column' sx={{ padding: '0.2rem' }}>
                         <Button
                             variant='contained'
-                            sx={{
-                                margin: '0.2rem',
-                                mb: '0.4rem',
-                            }}
+                            sx={{ margin: '0.2rem', mb: '0.4rem' }}
                             onClick={() => {
                                 setIsOpenDrawer(false);
                                 navigate('predmeti');
@@ -85,10 +78,7 @@ const AppMain = () => {
                         >Korisnici</Button>
                         <Button
                             variant='contained'
-                            sx={{
-                                margin: '0.2rem',
-                                mb: '0.4rem',
-                            }}
+                            sx={{ margin: '0.2rem', mb: '0.4rem' }}
                             onClick={() => {
                                 setIsOpenDrawer(false);
                                 navigate('predmeti');
@@ -97,10 +87,7 @@ const AppMain = () => {
                     </Stack>
                 </Drawer>
             </Stack>
-            <Box sx={{ pt: '4rem' }}>
-                <Outlet />
-            </Box>
-
+            <Box sx={{ pt: '4rem' }}><Outlet /></Box>
         </ThemeProvider>
     );
 };
