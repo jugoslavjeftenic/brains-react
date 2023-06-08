@@ -1,17 +1,20 @@
 import { useRef, useState } from "react";
 import { Box, Button, Container, MenuItem, Select, TextField } from "@mui/material";
 
+import LoadingComponent from "../components/LoadingComponent";
+import WarningComponent from "../components/WarningComponent";
+import ErrorComponent from "../components/ErrorComponent";
 import Predmet from "./Predmet";
 
 const Predmeti = () => {
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(Error());
+    const [warning, setWarning] = useState(null);
+    const [error, setError] = useState(null);
 
     // Priprema za dobavljanje podataka sa bekenda
     const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'number', 'none']);
     const handleFetchSelect = (e) => {
         const choice = e.target.value;
-        setError(Error());
         switch (choice) {
             case '1':
                 setSelectWhatToFetch(['1', 'upišite ID predmeta...', 'number', 'inline-flex']);
@@ -24,52 +27,53 @@ const Predmeti = () => {
         }
     };
     const fetchParam = useRef('');
-    // const handleFetchParam = (e) => {
-    //     fetchParam.current = e.target.value;
-    // };
 
     // Dobavljanje podataka sa bekenda
     const [fetchedData, setFetchedData] = useState([]);
     const handleFetch = () => {
+        // reset poruka
+        setLoading(true);
+        setWarning(null);
+        setError(null);
+
         let cancel = false;
         const goFetch = async () => {
             try {
-                setLoading(true);
-                let fetchResult;
+                let response;
                 switch (selectWhatToFetch[0]) {
                     case '1':
                         if (isNaN(parseInt(fetchParam.current))) {
-                            throw Error(`Upisani ID nije broj!`);
+                            return setWarning('Molim Vas da upišete ID predmeta!');
                         }
                         if (parseInt(fetchParam.current) < 1) {
-                            throw Error(`Upisani ID mora da bude veći od nule!`);
+                            return setWarning(`Upisani ID mora da bude veći od nule!`);
                         }
-                        fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
+                        response = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
                         break;
                     case '2':
                         if (!fetchParam.current) {
                             console.log('usao u if');
-                            throw Error(`Upišite početak naziva predmeta!`);
+                            return setWarning(`Upišite početak naziva predmeta!`);
                         }
-                        fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
+                        response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
                         break;
                     default:
-                        fetchResult = await fetch("http://localhost:8080/api/v1/predmeti");
+                        response = await fetch("http://localhost:8080/api/v1/predmeti");
                 }
-                let f = await fetchResult.json();
+                let f = await response.json();
                 if (!Array.isArray(f)) {
                     let notArrayFetched = f;
                     f = [];
                     f.push(notArrayFetched);
                 }
-                setError(Error());
+                // setError(Error());
                 if (!cancel) {
                     setFetchedData(f);
                 }
             }
-            catch (err) {
-                setError(err);
-                console.error(Error('Uhvaćena greška: ' + err.message ?? err));
+            catch (error) {
+                // hvatanje greski van HTTP odgovora
+                setError(new Error(error));
             }
             finally {
                 setLoading(false);
@@ -141,14 +145,26 @@ const Predmeti = () => {
                             maxWidth: 300,
                         }}
                         onChange={(e) => fetchParam.current = e.target.value}
-                        // onChange={handleFetchParam}
-                        error={error.message ? true : false}
+                        error={warning ? true : false}
+                    // error={error.message ? true : false}
                     />
                 </Box>
                 <Button
                     variant='outlined'
                     size='large'
                 >Novi predmet</Button>
+            </Box>
+            <Box
+                sx={{
+                    alignSelf: 'center',
+                    // maxWidth: 600,
+                    mt: 10,
+                    mb: 10,
+                }}
+            >
+                {loading && <LoadingComponent loading={loading} />}
+                {warning && <WarningComponent warning={warning} />}
+                {error && <ErrorComponent error={error.message} />}
             </Box>
             <Box
                 sx={{
