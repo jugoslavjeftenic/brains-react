@@ -31,7 +31,7 @@ const Predmeti = () => {
     // Dobavljanje podataka sa bekenda
     const [fetchedData, setFetchedData] = useState([]);
     const handleFetch = () => {
-        // reset poruka
+        // reset upozorenja
         setLoading(true);
         setWarning(null);
         setError(null);
@@ -42,6 +42,7 @@ const Predmeti = () => {
                 let response;
                 switch (selectWhatToFetch[0]) {
                     case '1':
+                        // Predmet se dobavlja po ID-u
                         if (isNaN(parseInt(fetchParam.current))) {
                             return setWarning('Molim Vas da upišete ID predmeta!');
                         }
@@ -51,12 +52,14 @@ const Predmeti = () => {
                         response = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
                         break;
                     case '2':
+                        // Predmeti se dobavljaju po pocetku naziva
                         if (!fetchParam.current) {
                             return setWarning(`Upišite početak naziva predmeta!`);
                         }
                         response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
                         break;
                     default:
+                        // Dobavljaju se svi predmeti
                         response = await fetch("http://localhost:8080/api/v1/predmeti");
                 }
                 let f = await response.json();
@@ -74,6 +77,7 @@ const Predmeti = () => {
                 setError(new Error(error));
             }
             finally {
+                // reset upozorenja
                 setLoading(false);
             }
         };

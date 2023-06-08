@@ -21,7 +21,7 @@ const Login = () => {
     // kredencije: adm.zeleni/lozinka
 
     const handleLogin = async () => {
-        // reset poruka
+        // reset upozorenja
         setLoading(true);
         setWarning(null);
         setError(null);
@@ -54,7 +54,7 @@ const Login = () => {
             setError(new Error(error));
         }
         finally {
-            // reset poruka
+            // reset upozorenja
             setLoading(false);
         }
     };
