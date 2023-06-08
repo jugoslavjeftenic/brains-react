@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Box, Button, Container, MenuItem, Select, TextField } from '@mui/material';
 
+import { UserContext } from '../App';
 import LoadingComponent from '../components/LoadingComponent';
 import WarningComponent from '../components/WarningComponent';
 import ErrorComponent from '../components/ErrorComponent';
 import Predmet from './Predmet';
 
 const Predmeti = () => {
+    const { user } = useContext(UserContext);
     const [loading, setLoading] = useState(false);
     const [warning, setWarning] = useState(null);
     const [error, setError] = useState(null);
@@ -50,29 +52,55 @@ const Predmeti = () => {
                         if (parseInt(fetchParam.current) < 1) {
                             return setWarning(`Upisani ID mora da bude veći od nule!`);
                         }
-                        response = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
+                        response = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`, {
+                            headers: {
+                                'Authorization': `Bearer ${user.token}`
+                            }
+                        });
                         break;
                     case '2':
                         // Predmeti se dobavljaju po pocetku naziva
                         if (!fetchParam.current) {
                             return setWarning(`Upišite početak naziva predmeta!`);
                         }
-                        response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
+                        response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`, {
+                            headers: {
+                                'Authorization': `Bearer ${user.token}`
+                            }
+                        });
                         break;
                     default:
                         // Dobavljaju se svi predmeti
-                        response = await fetch("http://localhost:8080/api/v1/predmeti");
+                        response = await fetch(`http://localhost:8080/api/v1/predmeti`, {
+                            headers: {
+                                'Authorization': `Bearer ${user.token}`
+                            }
+                        });
                 }
-                let f = await response.json();
-                // U slucaju da bekend nije poslao niz, prepakuje se u niz
-                if (!Array.isArray(f)) {
-                    let notArrayFetched = f;
-                    f = [];
-                    f.push(notArrayFetched);
+                if (response.ok) {
+                    let f = await response.json();
+                    // U slucaju da bekend nije poslao niz, prepakuje se u niz
+                    if (!Array.isArray(f)) {
+                        let notArrayFetched = f;
+                        f = [];
+                        f.push(notArrayFetched);
+                    }
+                    if (!cancel) {
+                        setFetchedData(f);
+                        setFilteredData(fetchedData);
+                    }
                 }
-                if (!cancel) {
-                    setFetchedData(f);
-                    setFilteredData(fetchedData);
+                else {
+                    // hvatanje neuspesnog HTTP odgovora
+                    if (response.status === 403) {
+                        setWarning(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
+                    }
+                    else if (response.status === 404) {
+                        setWarning(`Nije pronađen predmet sa ID-om: ${fetchParam.current} (HTTP kod: ${response.status})`);
+                    }
+                    else {
+                        setWarning(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
+                    }
                 }
             }
             catch (error) {
@@ -91,8 +119,8 @@ const Predmeti = () => {
     };
 
     // Filtriranje dobavljenih podataka
-    const [filter, setFilter] = useState('');
     const [showFilterField, setShowFilterField] = useState(false);
+    const [filter, setFilter] = useState('');
     useEffect(() => {
         if (fetchedData.length > 0) {
             setShowFilterField(true);
@@ -175,11 +203,7 @@ const Predmeti = () => {
                     id='predmeti-search-input'
                     label={'Filtriraj po nazivu...'}
                     type={'text'}
-                    sx={{
-                        // display: () => filteredData.length > 0 ? 'inline-flex' : 'none',
-                        // flexGrow: 1,
-                        maxWidth: 300,
-                    }}
+                    sx={{ maxWidth: 300 }}
                     onChange={(e) => setFilter(e.target.value)}
                 />}
                 <Button
