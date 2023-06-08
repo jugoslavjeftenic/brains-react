@@ -4,10 +4,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const Predmet = ({ predmet }) => {
+    // TODO edit predmeta
     const handleEdit = () => {
         return null;
     };
 
+    // TODO delete predmeta
     const handleDelete = () => {
         return null;
     };
@@ -26,9 +28,7 @@ const Predmet = ({ predmet }) => {
         >
             <CardHeader
                 title={predmet.naziv}
-                titleTypographyProps={{
-                    variant: 'h6',
-                }}
+                titleTypographyProps={{ variant: 'h6' }}
                 sx={{
                     alignItems: 'start',
                     height: 100,
@@ -46,10 +46,10 @@ const Predmet = ({ predmet }) => {
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
-                <IconButton aria-label="edit" color="primary" onClick={handleEdit}>
+                <IconButton aria-label='edit' color='primary' onClick={handleEdit}>
                     <EditIcon />
                 </IconButton>
-                <IconButton aria-label="delete" color="primary" onClick={handleDelete}>
+                <IconButton aria-label='delete' color='primary' onClick={handleDelete}>
                     <DeleteIcon />
                 </IconButton>
             </CardActions>

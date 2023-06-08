@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { Box, Button, Container, MenuItem, Select, TextField } from "@mui/material";
+import { useRef, useState } from 'react';
+import { Box, Button, Container, MenuItem, Select, TextField } from '@mui/material';
 
-import LoadingComponent from "../components/LoadingComponent";
-import WarningComponent from "../components/WarningComponent";
-import ErrorComponent from "../components/ErrorComponent";
-import Predmet from "./Predmet";
+import LoadingComponent from '../components/LoadingComponent';
+import WarningComponent from '../components/WarningComponent';
+import ErrorComponent from '../components/ErrorComponent';
+import Predmet from './Predmet';
 
 const Predmeti = () => {
     const [loading, setLoading] = useState(false);
@@ -63,6 +63,7 @@ const Predmeti = () => {
                         response = await fetch("http://localhost:8080/api/v1/predmeti");
                 }
                 let f = await response.json();
+                // U slucaju da nije dobavljen niz prepakuje se u niz
                 if (!Array.isArray(f)) {
                     let notArrayFetched = f;
                     f = [];
@@ -126,9 +127,7 @@ const Predmeti = () => {
                         size='large'
                         id='predmeti-fetch-select'
                         value={selectWhatToFetch[0]}
-                        sx={{
-                            width: 190,
-                        }}
+                        sx={{ width: 190 }}
                         onChange={handleFetchSelect}
                     >
                         <MenuItem value='0'>sve predmete</MenuItem>
@@ -155,9 +154,7 @@ const Predmeti = () => {
                 >Novi predmet</Button>
             </Box>
             <Box
-                sx={{
-                    alignSelf: 'center',
-                }}
+                sx={{ alignSelf: 'center' }}
             >
                 {loading && <Box sx={{ mt: 5, mb: 5 }}><LoadingComponent loading={loading} sx={{ mt: 10, mb: 10 }} /></Box>}
                 {warning && <Box sx={{ mt: 5, mb: 5 }}><WarningComponent warning={warning} /></Box>}
