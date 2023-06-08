@@ -52,7 +52,6 @@ const Predmeti = () => {
                         break;
                     case '2':
                         if (!fetchParam.current) {
-                            console.log('usao u if');
                             return setWarning(`Upišite početak naziva predmeta!`);
                         }
                         response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
@@ -66,7 +65,6 @@ const Predmeti = () => {
                     f = [];
                     f.push(notArrayFetched);
                 }
-                // setError(Error());
                 if (!cancel) {
                     setFetchedData(f);
                 }
@@ -145,8 +143,6 @@ const Predmeti = () => {
                             maxWidth: 300,
                         }}
                         onChange={(e) => fetchParam.current = e.target.value}
-                        error={warning ? true : false}
-                    // error={error.message ? true : false}
                     />
                 </Box>
                 <Button
@@ -157,14 +153,11 @@ const Predmeti = () => {
             <Box
                 sx={{
                     alignSelf: 'center',
-                    // maxWidth: 600,
-                    mt: 10,
-                    mb: 10,
                 }}
             >
-                {loading && <LoadingComponent loading={loading} />}
-                {warning && <WarningComponent warning={warning} />}
-                {error && <ErrorComponent error={error.message} />}
+                {loading && <Box sx={{ mt: 5, mb: 5 }}><LoadingComponent loading={loading} sx={{ mt: 10, mb: 10 }} /></Box>}
+                {warning && <Box sx={{ mt: 5, mb: 5 }}><WarningComponent warning={warning} /></Box>}
+                {error && <Box sx={{ mt: 5, mb: 5 }}><ErrorComponent error={error.message} sx={{ mt: 10, mb: 10 }} /></Box>}
             </Box>
             <Box
                 sx={{

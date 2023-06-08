@@ -99,9 +99,15 @@ const Login = () => {
                 />
                 <Button onClick={handleLogin}>Login</Button>
             </Box>
-            {loading && <LoadingComponent loading={loading} />}
-            {warning && <WarningComponent warning={warning} />}
-            {error && <ErrorComponent error={error.message} />}
+            <Box
+                sx={{
+                    alignSelf: 'center',
+                }}
+            >
+                {loading && <LoadingComponent loading={loading} />}
+                {warning && <WarningComponent warning={warning} />}
+                {error && <ErrorComponent error={error.message} />}
+            </Box>
         </Container>
     );
 };
