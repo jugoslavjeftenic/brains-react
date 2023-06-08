@@ -2,8 +2,8 @@ import { createContext } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
-import { useLogin } from './login_logic';
-import Login from './Login';
+import { useLogin } from './login/login_logic';
+import Login from './login/Login';
 import AppMain from './AppMain';
 
 // Definisanje UserContext-a

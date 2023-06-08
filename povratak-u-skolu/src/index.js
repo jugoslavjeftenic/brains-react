@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Korisnici from './korisnici/Korisnici';
 import Predmeti from './predmeti/Predmeti';
-import Login from './Login';
+import Login from './login/Login';
 
 const router = createBrowserRouter([
 	{

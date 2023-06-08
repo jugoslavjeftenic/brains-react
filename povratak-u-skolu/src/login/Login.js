@@ -1,24 +1,24 @@
-import { useContext, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { useContext, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
 
-import logo from './assets/icons/logo.svg';
-import { UserContext } from "./App";
+import logo from '../assets/icons/logo.svg';
+import { UserContext } from '../App';
 
-import LoadingComponent from "./components/LoadingComponent";
-import WarningComponent from "./components/WarningComponent";
-import ErrorComponent from "./components/ErrorComponent";
+import LoadingComponent from '../components/LoadingComponent';
+import WarningComponent from '../components/WarningComponent';
+import ErrorComponent from '../components/ErrorComponent';
 
 const Login = () => {
     const { login } = useContext(UserContext);
+    const navigate = useNavigate();
+
     const [loading, setLoading] = useState(false);
     const [warning, setWarning] = useState(null);
     const [error, setError] = useState(null);
+
     const userName = useRef('');
     const userPassword = useRef('');
-    const navigate = useNavigate();
-
-    // kredencije: adm.zeleni/lozinka
 
     const handleLogin = async () => {
         // reset upozorenja
@@ -80,8 +80,8 @@ const Login = () => {
                     mb: 5,
                 }}
             >
-                <img src={logo} className="logo" alt="logo" />
-                <Typography variant="h4" textAlign={'center'} mb={6}>Dobrodošli u eDnevnik</Typography>
+                <img src={logo} className='logo' alt='logo' />
+                <Typography variant='h4' textAlign={'center'} mb={6}>Dobrodošli u eDnevnik</Typography>
                 <TextField
                     id='username'
                     label='korisničko ime'
