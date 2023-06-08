@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Box, Button, Container, MenuItem, Select, TextField } from '@mui/material';
 
 import LoadingComponent from '../components/LoadingComponent';
@@ -30,6 +30,7 @@ const Predmeti = () => {
 
     // Dobavljanje podataka sa bekenda
     const [fetchedData, setFetchedData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
     const handleFetch = () => {
         // reset upozorenja
         setLoading(true);
@@ -63,7 +64,7 @@ const Predmeti = () => {
                         response = await fetch("http://localhost:8080/api/v1/predmeti");
                 }
                 let f = await response.json();
-                // U slucaju da nije dobavljen niz prepakuje se u niz
+                // U slucaju da bekend nije poslao niz, prepakuje se u niz
                 if (!Array.isArray(f)) {
                     let notArrayFetched = f;
                     f = [];
@@ -71,6 +72,7 @@ const Predmeti = () => {
                 }
                 if (!cancel) {
                     setFetchedData(f);
+                    setFilteredData(fetchedData);
                 }
             }
             catch (error) {
@@ -87,6 +89,25 @@ const Predmeti = () => {
             cancel = true;
         };
     };
+
+    // Filtriranje dobavljenih podataka
+    const [filter, setFilter] = useState('');
+    const [showFilterField, setShowFilterField] = useState(false);
+    useEffect(() => {
+        if (fetchedData.length > 0) {
+            setShowFilterField(true);
+        }
+        else {
+            setShowFilterField(false);
+        }
+        if (filter !== '') {
+            setFilteredData(fetchedData.filter(u => {
+                return u.naziv.toLowerCase().includes(filter.toLowerCase());
+            }));
+        } else {
+            setFilteredData(fetchedData);
+        }
+    }, [filter, fetchedData]);
 
     return (
         <Container
@@ -148,6 +169,19 @@ const Predmeti = () => {
                         onChange={(e) => fetchParam.current = e.target.value}
                     />
                 </Box>
+                {showFilterField && <TextField
+                    variant='outlined'
+                    size='large'
+                    id='predmeti-search-input'
+                    label={'Filtriraj po nazivu...'}
+                    type={'text'}
+                    sx={{
+                        // display: () => filteredData.length > 0 ? 'inline-flex' : 'none',
+                        // flexGrow: 1,
+                        maxWidth: 300,
+                    }}
+                    onChange={(e) => setFilter(e.target.value)}
+                />}
                 <Button
                     variant='outlined'
                     size='large'
@@ -170,7 +204,7 @@ const Predmeti = () => {
                     mb: 2,
                 }}
             >
-                {fetchedData.map((fd) => {
+                {filteredData.map((fd) => {
                     return (
                         <Predmet key={fd.predmet_id} predmet={fd} />
                     );
