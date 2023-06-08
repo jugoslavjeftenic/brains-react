@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
 import { Box, Button, Container, MenuItem, Select, TextField } from "@mui/material";
 
+import Predmet from "./Predmet";
+
 const Predmeti = () => {
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(Error());
 
-    // Priprema za fetch
+    // Priprema za dobavljanje podataka sa bekenda
     const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'number', 'none']);
     const handleFetchSelect = (e) => {
         const choice = e.target.value;
@@ -25,6 +28,59 @@ const Predmeti = () => {
     //     fetchParam.current = e.target.value;
     // };
 
+    // Dobavljanje podataka sa bekenda
+    const [fetchedData, setFetchedData] = useState([]);
+    const handleFetch = () => {
+        let cancel = false;
+        const goFetch = async () => {
+            try {
+                setLoading(true);
+                let fetchResult;
+                switch (selectWhatToFetch[0]) {
+                    case '1':
+                        if (isNaN(parseInt(fetchParam.current))) {
+                            throw Error(`Upisani ID nije broj!`);
+                        }
+                        if (parseInt(fetchParam.current) < 1) {
+                            throw Error(`Upisani ID mora da bude veći od nule!`);
+                        }
+                        fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`);
+                        break;
+                    case '2':
+                        if (!fetchParam.current) {
+                            console.log('usao u if');
+                            throw Error(`Upišite početak naziva predmeta!`);
+                        }
+                        fetchResult = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`);
+                        break;
+                    default:
+                        fetchResult = await fetch("http://localhost:8080/api/v1/predmeti");
+                }
+                let f = await fetchResult.json();
+                if (!Array.isArray(f)) {
+                    let notArrayFetched = f;
+                    f = [];
+                    f.push(notArrayFetched);
+                }
+                setError(Error());
+                if (!cancel) {
+                    setFetchedData(f);
+                }
+            }
+            catch (err) {
+                setError(err);
+                console.error(Error('Uhvaćena greška: ' + err.message ?? err));
+            }
+            finally {
+                setLoading(false);
+            }
+        };
+        goFetch();
+        return () => {
+            cancel = true;
+        };
+    };
+
     return (
         <Container
             sx={{
@@ -38,14 +94,16 @@ const Predmeti = () => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
-                    gap: 1,
+                    columnGap: 1,
+                    rowGap: 2,
                 }}
             >
                 <Box
                     sx={{
                         display: 'flex',
                         flexWrap: 'wrap',
-                        gap: 1,
+                        columnGap: 1,
+                        rowGap: 2,
                         flexGrow: 1,
                     }}
                 >
@@ -53,7 +111,7 @@ const Predmeti = () => {
                         variant='contained'
                         size='large'
                         disableElevation
-                    // onClick={handleFetch}
+                        onClick={handleFetch}
                     >
                         Dobavi
                     </Button>
@@ -79,7 +137,6 @@ const Predmeti = () => {
                         type={selectWhatToFetch[2]}
                         sx={{
                             display: () => selectWhatToFetch[3],
-                            // width: 200,
                             flexGrow: 1,
                             maxWidth: 300,
                         }}
@@ -92,6 +149,22 @@ const Predmeti = () => {
                     variant='outlined'
                     size='large'
                 >Novi predmet</Button>
+            </Box>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: 1,
+                    mt: 2,
+                    mb: 2,
+                }}
+            >
+                {fetchedData.map((fd) => {
+                    return (
+                        <Predmet key={fd.predmet_id} predmet={fd} />
+                    );
+                })}
             </Box>
         </Container>
     );
