@@ -100,9 +100,7 @@ const Login = () => {
                 <Button onClick={handleLogin}>Login</Button>
             </Box>
             <Box
-                sx={{
-                    alignSelf: 'center',
-                }}
+                sx={{ alignSelf: 'center' }}
             >
                 {loading && <LoadingComponent loading={loading} />}
                 {warning && <WarningComponent warning={warning} />}
