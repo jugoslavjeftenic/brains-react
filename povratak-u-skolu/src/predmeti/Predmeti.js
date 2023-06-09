@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Box, Button, Container, MenuItem, Select, TextField } from '@mui/material';
 
 import { UserContext } from '../App';
@@ -9,6 +10,7 @@ import Predmet from './Predmet';
 
 const Predmeti = () => {
     const { user } = useContext(UserContext);
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [warning, setWarning] = useState(null);
     const [error, setError] = useState(null);
@@ -209,8 +211,10 @@ const Predmeti = () => {
                 <Button
                     variant='outlined'
                     size='large'
+                    onClick={() => navigate('novi-predmet')}
                 >Novi predmet</Button>
             </Box>
+            <Outlet />
             <Box
                 sx={{ alignSelf: 'center' }}
             >

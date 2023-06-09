@@ -6,6 +6,7 @@ import App from './App';
 import Login from './login/Login';
 import Korisnici from './korisnici/Korisnici';
 import Predmeti from './predmeti/Predmeti';
+import NoviPredmet from './predmeti/NoviPredmet';
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +20,12 @@ const router = createBrowserRouter([
 			{
 				path: 'predmeti',
 				element: <Predmeti />,
+				children: [
+					{
+						path: 'novi-predmet',
+						element: <NoviPredmet />,
+					},
+				]
 			},
 		]
 	},
