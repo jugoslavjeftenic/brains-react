@@ -139,6 +139,17 @@ const Predmeti = () => {
         }
     }, [filter, fetchedData]);
 
+    // Promena znacaja dugmica 'Dobavi' i 'Novi Predmet'
+    const [toggleBtnNoviPredmet, setToggleBtnNoviPredmet] = useState(false);
+    useEffect(() => {
+        if (toggleBtnNoviPredmet) {
+            navigate('novi-predmet');
+        }
+        else {
+            navigate('/predmeti');
+        }
+    }, [toggleBtnNoviPredmet, navigate]);
+
     return (
         <Container
             sx={{
@@ -166,7 +177,7 @@ const Predmeti = () => {
                     }}
                 >
                     <Button
-                        variant='contained'
+                        variant={toggleBtnNoviPredmet ? 'outlined' : 'contained'}
                         size='large'
                         disableElevation
                         onClick={handleFetch}
@@ -209,12 +220,22 @@ const Predmeti = () => {
                     onChange={(e) => setFilter(e.target.value)}
                 />}
                 <Button
-                    variant='outlined'
+                    variant={toggleBtnNoviPredmet ? 'contained' : 'outlined'}
                     size='large'
-                    onClick={() => navigate('novi-predmet')}
+                    disableElevation
+                    onClick={() => setToggleBtnNoviPredmet(!toggleBtnNoviPredmet)}
                 >Novi predmet</Button>
             </Box>
-            <Outlet />
+            {toggleBtnNoviPredmet && <Box
+                width={'100%'}
+                mt={5}
+                mb={5}
+                borderRadius={2}
+                p={1}
+                sx={{ alignSelf: 'center', boxShadow: 3 }}
+            >
+                <Outlet />
+            </Box>}
             <Box
                 sx={{ alignSelf: 'center' }}
             >
