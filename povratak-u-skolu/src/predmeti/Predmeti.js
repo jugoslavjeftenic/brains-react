@@ -150,6 +150,12 @@ const Predmeti = () => {
         }
     }, [toggleBtnNoviPredmet, navigate]);
 
+    // Osvezavanje prikaza nakon brisanja predmeta
+    // const handleDelete = (predmetId) => {
+    //     const fb = showBooks.filter((b) => b.id != bookId);
+    //     setShowBooks(fb);
+    // };
+
     return (
         <Container
             sx={{
@@ -255,7 +261,7 @@ const Predmeti = () => {
             >
                 {filteredData.map((fd) => {
                     return (
-                        <Predmet key={fd.predmet_id} predmet={fd} />
+                        <Predmet key={fd.predmet_id} predmet={fd} onDelete={handleFetch} />
                     );
                 })}
             </Box>
