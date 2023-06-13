@@ -5,12 +5,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import { UserContext } from '../App';
 import DeleteModal from '../components/DeleteModal';
+import PredmetEditModal from './PredmetEditModal';
 
 const Predmet = ({ predmet, onDelete }) => {
     const { user } = useContext(UserContext);
-    const [fetchedData, setFetchedData] = useState([]);
+    // const [fetchedData, setFetchedData] = useState([]);
 
-    // TODO edit predmeta
+    // Izmena predmeta
+    const [editModalOpen, setEditModalOpen] = useState(false);
     const handleEdit = () => {
         return null;
     };
@@ -37,7 +39,7 @@ const Predmet = ({ predmet, onDelete }) => {
                         f.push(notArrayFetched);
                     }
                     if (!cancel) {
-                        setFetchedData(f);
+                        // setFetchedData(f);
                         onDelete();
                     }
                 }
@@ -97,9 +99,19 @@ const Predmet = ({ predmet, onDelete }) => {
                     flexWrap: 'wrap',
                     justifyContent: 'center',
                 }}>
-                <IconButton aria-label='edit' color='primary' onClick={handleEdit}>
+
+                {/* Izmena predmeta */}
+                <IconButton
+                    aria-label='edit'
+                    color='primary'
+                    onClick={() => setEditModalOpen(true)}
+                >
                     <EditIcon />
                 </IconButton>
+                {editModalOpen && <PredmetEditModal
+                    onCancel={() => setEditModalOpen(false)}
+                    object={predmet}
+                />}
 
                 {/* Brisanje predmeta */}
                 <IconButton

@@ -26,7 +26,7 @@ const DeleteModal = ({ onCancel, onDelete, title, object }) => {
             <DialogContent sx={{ ml: 'auto', mr: 'auto' }}>
                 {Object.entries(object).map(([key, value]) => {
                     return (
-                        <DialogContentText key={value}>
+                        <DialogContentText key={key}>
                             `{key}: {value}`
                         </DialogContentText>
                     );
