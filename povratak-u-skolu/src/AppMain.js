@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { AppBar, Box, Button, Drawer, FormControlLabel, FormGroup, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import MenuOpenTwoToneIcon from '@mui/icons-material/MenuOpenTwoTone';
 
@@ -11,24 +10,11 @@ const AppMain = () => {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
-    // Teme
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const lightTheme = createTheme({
-        palette: {
-            mode: 'light'
-        }
-    });
-    const darkTheme = createTheme({
-        palette: {
-            mode: 'dark'
-        }
-    });
-
     // Stanje Drawer-a
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
     return (
-        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <>
             <Stack direction='column'>
                 <AppBar
                     sx={{
@@ -47,12 +33,6 @@ const AppMain = () => {
                         variant='h5'
                         sx={{ flexGrow: 1 }}
                     >eDnevnik</Typography>
-                    <FormGroup>
-                        <FormControlLabel
-                            control={< Switch checked={isDarkMode} onChange={(e) => setIsDarkMode(!isDarkMode)} />}
-                            label='Dark mode'
-                        />
-                    </FormGroup>
                     <Typography
                         sx={{ pr: '2rem', }}
                     >{user.user}</Typography>
@@ -75,7 +55,7 @@ const AppMain = () => {
                                 setIsOpenDrawer(false);
                                 navigate('predmeti');
                             }}
-                        >Korisnici</Button>
+                        >Predmeti</Button>
                         <Button
                             variant='contained'
                             sx={{ margin: '0.2rem', mb: '0.4rem' }}
@@ -83,12 +63,12 @@ const AppMain = () => {
                                 setIsOpenDrawer(false);
                                 navigate('predmeti');
                             }}
-                        >Predmeti</Button>
+                        >Predaju</Button>
                     </Stack>
                 </Drawer>
             </Stack>
             <Box sx={{ pt: '4rem' }}><Outlet /></Box>
-        </ThemeProvider>
+        </>
     );
 };
 
