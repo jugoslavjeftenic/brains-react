@@ -7,7 +7,7 @@ import MenuOpenTwoToneIcon from '@mui/icons-material/MenuOpenTwoTone';
 import { UserContext } from './App';
 
 const AppMain = () => {
-    const { user } = useContext(UserContext);
+    const { user, logout } = useContext(UserContext);
     const navigate = useNavigate();
 
     // Stanje Drawer-a
@@ -64,6 +64,13 @@ const AppMain = () => {
                                 navigate('predmeti');
                             }}
                         >Predaju</Button>
+                        <Button
+                            variant='text'
+                            sx={{ margin: '0.2rem', mb: '0.4rem' }}
+                            onClick={() => {
+                                logout();
+                            }}
+                        >Odjavi se</Button>
                     </Stack>
                 </Drawer>
             </Stack>
