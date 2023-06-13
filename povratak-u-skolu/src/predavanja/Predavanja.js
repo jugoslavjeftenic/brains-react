@@ -9,11 +9,18 @@ import ErrorComponent from "../components/ErrorComponent";
 import Predavanje from "./Predavanje";
 
 const Predavanja = () => {
-    const { user } = useContext(UserContext);
+    const { user, role } = useContext(UserContext);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [warning, setWarning] = useState(null);
     const [error, setError] = useState(null);
+
+    // Role-playing
+    useEffect(() => {
+        if (!role.adm) {
+            navigate('/');
+        }
+    });
 
     // Priprema za dobavljanje podataka sa bekenda
     const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'number', 'none']);
@@ -141,15 +148,15 @@ const Predavanja = () => {
 
 
     // Promena znacaja dugmica 'Dobavi' i 'Novi Predmet'
-    const [toggleBtnNoviPredmet, setToggleBtnNoviPredmet] = useState(false);
+    const [toggleBtnNovoPredavanje, setToggleBtnNovoPredavanje] = useState(false);
     useEffect(() => {
-        if (toggleBtnNoviPredmet) {
-            navigate('novi-predmet');
+        if (toggleBtnNovoPredavanje) {
+            navigate('novo-predavanje');
         }
         else {
-            navigate('/predmeti');
+            navigate('/predavanja');
         }
-    }, [toggleBtnNoviPredmet, navigate]);
+    }, [toggleBtnNovoPredavanje, navigate]);
 
     return (
         <Container
@@ -178,7 +185,7 @@ const Predavanja = () => {
                     }}
                 >
                     <Button
-                        variant={toggleBtnNoviPredmet ? 'outlined' : 'contained'}
+                        variant={toggleBtnNovoPredavanje ? 'outlined' : 'contained'}
                         size='large'
                         disableElevation
                         onClick={handleFetch}
@@ -221,13 +228,13 @@ const Predavanja = () => {
                     onChange={(e) => setFilter(e.target.value)}
                 />}
                 <Button
-                    variant={toggleBtnNoviPredmet ? 'contained' : 'outlined'}
+                    variant={toggleBtnNovoPredavanje ? 'contained' : 'outlined'}
                     size='large'
                     disableElevation
-                    onClick={() => setToggleBtnNoviPredmet(!toggleBtnNoviPredmet)}
-                >Novi predmet</Button>
+                    onClick={() => setToggleBtnNovoPredavanje(!toggleBtnNovoPredavanje)}
+                >Novo predavanje</Button>
             </Box>
-            {toggleBtnNoviPredmet && <Box
+            {toggleBtnNovoPredavanje && <Box
                 width={'100%'}
                 mt={5}
                 mb={5}

@@ -13,9 +13,11 @@ export const UserContext = createContext(null);
 function App() {
 	// Autentifikacija
 	const [user, login, logout] = useLogin();
+	// Autorizacija
+	const role = user !== null ? { [user.user.slice(0, 3)]: true } : {};
 
 	return (
-		<UserContext.Provider value={{ user, login, logout }}>
+		<UserContext.Provider value={{ user, role, login, logout }}>
 			<CssBaseline />
 			{user ? <AppMain /> : <Login />}
 		</UserContext.Provider>

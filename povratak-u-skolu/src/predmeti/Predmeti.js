@@ -9,11 +9,18 @@ import ErrorComponent from '../components/ErrorComponent';
 import Predmet from './Predmet';
 
 const Predmeti = () => {
-    const { user } = useContext(UserContext);
+    const { user, role } = useContext(UserContext);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [warning, setWarning] = useState(null);
     const [error, setError] = useState(null);
+
+    // Role-playing
+    useEffect(() => {
+        if (!role.adm) {
+            navigate('/');
+        }
+    });
 
     // Priprema za dobavljanje podataka sa bekenda
     const [selectWhatToFetch, setSelectWhatToFetch] = useState(['0', '', 'number', 'none']);
