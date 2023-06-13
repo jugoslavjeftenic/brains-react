@@ -13,8 +13,58 @@ const Predmet = ({ predmet, onDelete }) => {
 
     // Izmena predmeta
     const [editModalOpen, setEditModalOpen] = useState(false);
-    const handleEdit = () => {
-        return null;
+    const handleEdit = (naziv, razred, fond) => {
+        let cancel = false;
+        const goFetch = async () => {
+            try {
+                let response;
+                response = await fetch(`http://localhost:8080/api/v1/predmeti/${predmet.predmet_id}`, {
+                    method: "PUT",
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        naziv: naziv,
+                        razred: razred,
+                        fondCasova: fond,
+                    }),
+                });
+                if (response.ok) {
+                    let f = await response.json();
+                    // U slucaju da bekend nije poslao niz, prepakuje se u niz
+                    if (!Array.isArray(f)) {
+                        let notArrayFetched = f;
+                        f = [];
+                        f.push(notArrayFetched);
+                    }
+                    if (!cancel) {
+                        // setFetchedData(f);
+                        onDelete();
+                    }
+                }
+                else {
+                    // hvatanje neuspesnog HTTP odgovora
+                    if (response.status === 403) {
+                        // setWarning(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
+                    }
+                    else {
+                        // setWarning(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
+                    }
+                }
+            } catch (error) {
+                // hvatanje greski van HTTP odgovora
+                // setError(new Error(error));
+            }
+            finally {
+                // Zatvaram modal
+                setEditModalOpen(false);
+            }
+        };
+        goFetch();
+        return () => {
+            cancel = true;
+        };
     };
 
     // Brisanje predmeta
@@ -110,6 +160,7 @@ const Predmet = ({ predmet, onDelete }) => {
                 </IconButton>
                 {editModalOpen && <PredmetEditModal
                     onCancel={() => setEditModalOpen(false)}
+                    onSubmit={handleEdit}
                     object={predmet}
                 />}
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 
-const PredmetEditModal = ({ onCancel, object }) => {
+const PredmetEditModal = ({ onCancel, onSubmit, object }) => {
     const [naziv, setNaziv] = useState(object.naziv);
     const [razred, setRazred] = useState(object.razred);
     const [fond, setFond] = useState(object.fondCasova);
@@ -89,7 +89,7 @@ const PredmetEditModal = ({ onCancel, object }) => {
                 <Button
                     variant='contained'
                     color='info'
-                    onClick={() => onCancel()}
+                    onClick={() => onSubmit(naziv, razred, fond)}
                 >Potvrđujem</Button>
             </DialogActions>
         </Dialog>
