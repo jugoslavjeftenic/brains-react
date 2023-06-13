@@ -61,9 +61,9 @@ const AppMain = () => {
                             sx={{ margin: '0.2rem', mb: '0.4rem' }}
                             onClick={() => {
                                 setIsOpenDrawer(false);
-                                navigate('predmeti');
+                                navigate('predavanja');
                             }}
-                        >Predaju</Button>
+                        >Predavanja</Button>
                         <Button
                             variant='text'
                             sx={{ margin: '0.2rem', mb: '0.4rem' }}

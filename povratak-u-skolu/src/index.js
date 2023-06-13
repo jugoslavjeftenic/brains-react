@@ -4,9 +4,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import Login from './login/Login';
-import Korisnici from './korisnici/Korisnici';
 import Predmeti from './predmeti/Predmeti';
-import NoviPredmet from './predmeti/NoviPredmet';
+import PredmetNew from './predmeti/PredmetNew';
+import Predavanja from './predavanja/Predavanja';
 
 const router = createBrowserRouter([
 	{
@@ -14,18 +14,18 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: 'korisnici',
-				element: <Korisnici />,
-			},
-			{
 				path: 'predmeti',
 				element: <Predmeti />,
 				children: [
 					{
 						path: 'novi-predmet',
-						element: <NoviPredmet />,
+						element: <PredmetNew />,
 					},
 				]
+			},
+			{
+				path: 'predavanja',
+				element: <Predavanja />,
 			},
 		]
 	},

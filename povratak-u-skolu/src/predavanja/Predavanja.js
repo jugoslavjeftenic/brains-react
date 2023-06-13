@@ -1,14 +1,14 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { Box, Button, Container, MenuItem, Select, TextField } from '@mui/material';
+import { useContext, useEffect, useRef, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { Box, Button, Container, MenuItem, Select, TextField } from "@mui/material";
 
-import { UserContext } from '../App';
-import LoadingComponent from '../components/LoadingComponent';
-import WarningComponent from '../components/WarningComponent';
-import ErrorComponent from '../components/ErrorComponent';
-import Predmet from './Predmet';
+import { UserContext } from "../App";
+import LoadingComponent from "../components/LoadingComponent";
+import WarningComponent from "../components/WarningComponent";
+import ErrorComponent from "../components/ErrorComponent";
+import Predavanje from "./Predavanje";
 
-const Predmeti = () => {
+const Predavanja = () => {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -139,6 +139,7 @@ const Predmeti = () => {
         }
     }, [filter, fetchedData]);
 
+
     // Promena znacaja dugmica 'Dobavi' i 'Novi Predmet'
     const [toggleBtnNoviPredmet, setToggleBtnNoviPredmet] = useState(false);
     useEffect(() => {
@@ -255,7 +256,7 @@ const Predmeti = () => {
             >
                 {filteredData.map((fd) => {
                     return (
-                        <Predmet key={fd.predmet_id} predmet={fd} onDelete={handleFetch} />
+                        <Predavanje key={fd.predmet_id} predmet={fd} onDelete={handleFetch} />
                     );
                 })}
             </Box>
@@ -263,4 +264,4 @@ const Predmeti = () => {
     );
 };
 
-export default Predmeti;
+export default Predavanja;
