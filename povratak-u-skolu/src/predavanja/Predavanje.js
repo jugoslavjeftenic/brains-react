@@ -16,22 +16,22 @@ const Predavanje = ({ predavanje, onDelete }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                height: 260,
+                height: 280,
                 width: 280,
                 borderRadius: 5
             }}
         >
             <CardHeader
-                title={predavanje.predmet.naziv}
+                title={predavanje.nastavnik.korisnik.ime + ' ' + predavanje.nastavnik.korisnik.prezime}
                 titleTypographyProps={{ variant: 'h6' }}
+                subheader={predavanje.nastavnik.korisnickoIme}
                 sx={{
                     alignItems: 'start',
-                    height: 100,
+                    pb: 0
                 }}
             />
-            <CardContent
-            >
-                <Typography variant='body2'>ID: {predavanje.predmet.predmet_id}</Typography>
+            <CardContent>
+                <Typography variant='subtitle1'>{predavanje.predmet.naziv}</Typography>
                 <Typography variant='body2'>razred: {predavanje.predmet.razred}</Typography>
                 <Typography variant='body2'>fond časova: {predavanje.predmet.fondCasova}</Typography>
             </CardContent>

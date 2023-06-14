@@ -28,10 +28,7 @@ const Predavanja = () => {
         const choice = e.target.value;
         switch (choice) {
             case '1':
-                setSelectWhatToFetch(['1', 'upišite ID predmeta...', 'number', 'inline-flex']);
-                break;
-            case '2':
-                setSelectWhatToFetch(['2', 'upišite početak naziva predmeta...', 'text', 'inline-flex']);
+                setSelectWhatToFetch(['1', 'upišite ID predavanja...', 'number', 'inline-flex']);
                 break;
             default:
                 setSelectWhatToFetch(['0', '', 'text', 'none']);
@@ -54,33 +51,22 @@ const Predavanja = () => {
                 let response;
                 switch (selectWhatToFetch[0]) {
                     case '1':
-                        // Predmet se dobavlja po ID-u
+                        // Predavanje se dobavlja po ID-u
                         if (isNaN(parseInt(fetchParam.current))) {
-                            return setWarning('Molim Vas da upišete ID predmeta!');
+                            return setWarning('Molim Vas da upišete ID predavanja!');
                         }
                         if (parseInt(fetchParam.current) < 1) {
                             return setWarning(`Upisani ID mora da bude veći od nule!`);
                         }
-                        response = await fetch(`http://localhost:8080/api/v1/predmeti/${parseInt(fetchParam.current)}`, {
-                            headers: {
-                                'Authorization': `Bearer ${user.token}`
-                            }
-                        });
-                        break;
-                    case '2':
-                        // Predmeti se dobavljaju po pocetku naziva
-                        if (!fetchParam.current) {
-                            return setWarning(`Upišite početak naziva predmeta!`);
-                        }
-                        response = await fetch(`http://localhost:8080/api/v1/predmeti/by-naziv/${fetchParam.current}`, {
+                        response = await fetch(`http://localhost:8080/api/v1/predaju/${parseInt(fetchParam.current)}`, {
                             headers: {
                                 'Authorization': `Bearer ${user.token}`
                             }
                         });
                         break;
                     default:
-                        // Dobavljaju se svi predmeti
-                        response = await fetch(`http://localhost:8080/api/v1/predmeti`, {
+                        // Dobavljaju se sva predavanja
+                        response = await fetch(`http://localhost:8080/api/v1/predaju`, {
                             headers: {
                                 'Authorization': `Bearer ${user.token}`
                             }
@@ -105,7 +91,7 @@ const Predavanja = () => {
                         setWarning(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
                     }
                     else if (response.status === 404) {
-                        setWarning(`Nije pronađen predmet sa ID-om: ${fetchParam.current} (HTTP kod: ${response.status})`);
+                        setWarning(`Nije pronađeno predavanje sa ID-om: ${fetchParam.current} (HTTP kod: ${response.status})`);
                     }
                     else {
                         setWarning(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
@@ -195,19 +181,18 @@ const Predavanja = () => {
                     <Select
                         variant='outlined'
                         size='large'
-                        id='predmeti-fetch-select'
+                        id='predavanja-fetch-select'
                         value={selectWhatToFetch[0]}
                         sx={{ width: 190 }}
                         onChange={handleFetchSelect}
                     >
-                        <MenuItem value='0'>sve predmete</MenuItem>
+                        <MenuItem value='0'>sva predavanja</MenuItem>
                         <MenuItem value='1'>po ID-u</MenuItem>
-                        <MenuItem value='2'>po početku naziva</MenuItem>
                     </Select>
                     <TextField
                         variant='outlined'
                         size='large'
-                        id='predmeti-fetch-input'
+                        id='predavanja-fetch-input'
                         label={selectWhatToFetch[1]}
                         type={selectWhatToFetch[2]}
                         sx={{
@@ -221,8 +206,8 @@ const Predavanja = () => {
                 {showFilterField && <TextField
                     variant='outlined'
                     size='large'
-                    id='predmeti-search-input'
-                    label={'Filtriraj po nazivu...'}
+                    id='predavanja-search-input'
+                    label={'Filtriraj po predmetu...'}
                     type={'text'}
                     sx={{ maxWidth: 300 }}
                     onChange={(e) => setFilter(e.target.value)}
@@ -261,9 +246,10 @@ const Predavanja = () => {
                     mb: 2,
                 }}
             >
+                {console.log(filteredData)}
                 {filteredData.map((fd) => {
                     return (
-                        <Predavanje key={fd.predmet_id} predmet={fd} onDelete={handleFetch} />
+                        <Predavanje key={fd.predaje_id} predavanje={fd} onDelete={handleFetch} />
                     );
                 })}
             </Box>
