@@ -117,7 +117,7 @@ const Predavanja = () => {
     const [showFilterField, setShowFilterField] = useState(false);
     const [filter, setFilter] = useState('');
     useEffect(() => {
-        if (fetchedData.length > 0) {
+        if (fetchedData.length > 1) {
             setShowFilterField(true);
         }
         else {
@@ -125,7 +125,10 @@ const Predavanja = () => {
         }
         if (filter !== '') {
             setFilteredData(fetchedData.filter(u => {
-                return u.naziv.toLowerCase().includes(filter.toLowerCase());
+                return u.predmet.naziv.toLowerCase().includes(filter.toLowerCase()) ||
+                    u.nastavnik.korisnickoIme.toLowerCase().includes(filter.toLowerCase()) ||
+                    u.nastavnik.korisnik.ime.toLowerCase().includes(filter.toLowerCase()) ||
+                    u.nastavnik.korisnik.prezime.toLowerCase().includes(filter.toLowerCase());
             }));
         } else {
             setFilteredData(fetchedData);
@@ -207,7 +210,7 @@ const Predavanja = () => {
                     variant='outlined'
                     size='large'
                     id='predavanja-search-input'
-                    label={'Filtriraj po predmetu...'}
+                    label={'Filtriraj...'}
                     type={'text'}
                     sx={{ maxWidth: 300 }}
                     onChange={(e) => setFilter(e.target.value)}

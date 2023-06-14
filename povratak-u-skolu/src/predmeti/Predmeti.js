@@ -131,7 +131,7 @@ const Predmeti = () => {
     const [showFilterField, setShowFilterField] = useState(false);
     const [filter, setFilter] = useState('');
     useEffect(() => {
-        if (fetchedData.length > 0) {
+        if (fetchedData.length > 1) {
             setShowFilterField(true);
         }
         else {
