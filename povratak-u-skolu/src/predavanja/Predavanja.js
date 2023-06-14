@@ -249,7 +249,6 @@ const Predavanja = () => {
                     mb: 2,
                 }}
             >
-                {console.log(filteredData)}
                 {filteredData.map((fd) => {
                     return (
                         <Predavanje key={fd.predaje_id} predavanje={fd} onDelete={handleFetch} />

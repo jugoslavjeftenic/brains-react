@@ -7,6 +7,7 @@ import Login from './login/Login';
 import Predmeti from './predmeti/Predmeti';
 import PredmetNew from './predmeti/PredmetNew';
 import Predavanja from './predavanja/Predavanja';
+import PredavanjeNew from './predavanja/PredavanjeNew';
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
 			{
 				path: 'predavanja',
 				element: <Predavanja />,
+				children: [
+					{
+						path: 'novo-predavanje',
+						element: <PredavanjeNew />,
+					},
+				]
 			},
 		]
 	},
