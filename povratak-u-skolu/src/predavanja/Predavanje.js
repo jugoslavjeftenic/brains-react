@@ -5,11 +5,62 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import { UserContext } from '../App';
 import DeleteModal from '../components/DeleteModal';
+import PredavanjeEditModal from './PredavanjeEditModal';
 
 const Predavanje = ({ predavanje, onDelete }) => {
     const { user } = useContext(UserContext);
 
-    // Brisanje predmeta
+    // Izmena predavanja
+    const [editModalOpen, setEditModalOpen] = useState(false);
+    const handleEdit = (nastavnik, predmet) => {
+        let cancel = false;
+        const goFetch = async () => {
+            try {
+                let response;
+                response = await fetch(`http://localhost:8080/api/v1/predaju/${predavanje.predaje_id}?idNastavnik=${nastavnik}&idPredmet=${predmet}`, {
+                    method: "PUT",
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (response.ok) {
+                    let f = await response.json();
+                    // U slucaju da bekend nije poslao niz, prepakuje se u niz
+                    if (!Array.isArray(f)) {
+                        let notArrayFetched = f;
+                        f = [];
+                        f.push(notArrayFetched);
+                    }
+                    if (!cancel) {
+                        onDelete();
+                    }
+                }
+                else {
+                    // hvatanje neuspesnog HTTP odgovora
+                    if (response.status === 403) {
+                        // setWarning(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
+                    }
+                    else {
+                        // setWarning(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
+                    }
+                }
+            } catch (error) {
+                // hvatanje greski van HTTP odgovora
+                // setError(new Error(error));
+            }
+            finally {
+                // Zatvaram modal
+                setEditModalOpen(false);
+            }
+        };
+        goFetch();
+        return () => {
+            cancel = true;
+        };
+    };
+
+    // Brisanje predavanja
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const handleDelete = () => {
         let cancel = false;
@@ -95,15 +146,15 @@ const Predavanje = ({ predavanje, onDelete }) => {
                 <IconButton
                     aria-label='edit'
                     color='primary'
-                // onClick={() => setEditModalOpen(true)}
+                    onClick={() => setEditModalOpen(true)}
                 >
                     <EditIcon />
                 </IconButton>
-                {/* {editModalOpen && <PredmetEditModal
+                {editModalOpen && <PredavanjeEditModal
                     onCancel={() => setEditModalOpen(false)}
                     onSubmit={handleEdit}
-                    object={predmet}
-                />} */}
+                    object={predavanje}
+                />}
 
                 {/* Brisanje predmeta */}
                 <IconButton
