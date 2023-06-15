@@ -25,6 +25,9 @@ const DeleteModal = ({ onCancel, onDelete, title, object }) => {
             </DialogTitle>
             <DialogContent sx={{ ml: 'auto', mr: 'auto' }}>
                 {Object.entries(object).map(([key, value]) => {
+                    if (typeof value === 'object') {
+                        value = JSON.stringify(value); // Prikazuje objekte kao JSON string
+                    }
                     return (
                         <DialogContentText key={key}>
                             `{key}: {value}`
