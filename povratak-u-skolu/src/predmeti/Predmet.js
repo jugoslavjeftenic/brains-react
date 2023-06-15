@@ -9,7 +9,6 @@ import PredmetEditModal from './PredmetEditModal';
 
 const Predmet = ({ predmet, onDelete }) => {
     const { user } = useContext(UserContext);
-    // const [fetchedData, setFetchedData] = useState([]);
 
     // Izmena predmeta
     const [editModalOpen, setEditModalOpen] = useState(false);
@@ -39,7 +38,6 @@ const Predmet = ({ predmet, onDelete }) => {
                         f.push(notArrayFetched);
                     }
                     if (!cancel) {
-                        // setFetchedData(f);
                         onDelete();
                     }
                 }
@@ -89,7 +87,6 @@ const Predmet = ({ predmet, onDelete }) => {
                         f.push(notArrayFetched);
                     }
                     if (!cancel) {
-                        // setFetchedData(f);
                         onDelete();
                     }
                 }
