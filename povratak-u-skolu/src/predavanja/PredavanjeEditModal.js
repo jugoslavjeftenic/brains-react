@@ -76,7 +76,7 @@ const PredavanjeEditModal = ({ onCancel, onSubmit, object }) => {
     });
     const [predmet, setPredmet] = useState({
         id: object.predmet.predmet_id,
-        predmet: object.predmet.naziv
+        predmet: object.predmet.naziv + ' [razred: ' + object.predmet.razred + ']'
     });
 
     return (
