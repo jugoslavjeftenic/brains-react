@@ -1,3 +1,9 @@
+// Jugoslav Jeftenic
+// GitHub - frontend (private, bice public posle roka za predaju)
+// https://github.com/jugoslavjeftenic/brains-react/tree/master/povratak-u-skolu
+// GitHub - backend (public)
+// https://github.com/jugoslavjeftenic/brains-springboot/tree/master/be_t99_back_to_school
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';

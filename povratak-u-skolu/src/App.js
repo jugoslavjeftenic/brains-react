@@ -1,13 +1,12 @@
 import { createContext } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-// import './App.css';
 
 import { useLogin } from './login/login_logic';
 import Login from './login/Login';
 import AppMain from './AppMain';
 
 // Definisanje UserContext-a
-// const { user, login, logout } = useContext(UserContext);
+// const { user, role, login, logout } = useContext(UserContext);
 export const UserContext = createContext(null);
 
 function App() {
