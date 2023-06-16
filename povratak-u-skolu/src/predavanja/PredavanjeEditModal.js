@@ -128,7 +128,6 @@ const PredavanjeEditModal = ({ onCancel, onSubmit, object }) => {
                                 ...prevState,
                                 id: newValue?.nastavnik_id
                             }));
-                            // setNastavnik(newValue?.nastavnik_id);
                         }}
                     />
                     <Autocomplete
@@ -152,12 +151,7 @@ const PredavanjeEditModal = ({ onCancel, onSubmit, object }) => {
                                 ...prevState,
                                 id: newValue?.predmet_id
                             }));
-                            // setNastavnik(newValue?.nastavnik_id);
                         }}
-                    // onChange={(event, newValue) => {
-                    //     setPredmet(newValue?.predmet_id);
-                    //     // setPredmet(newValue?.predmet_id);
-                    // }}
                     />
                 </Stack>
             </DialogContent>
