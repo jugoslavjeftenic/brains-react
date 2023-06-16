@@ -39,15 +39,18 @@ const Predavanje = ({ predavanje, onDelete }) => {
                 else {
                     // hvatanje neuspesnog HTTP odgovora
                     if (response.status === 403) {
-                        // setWarning(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
+                        console.log(`Niste ovlašćeni da pristupite traženim resursima. (HTTP kod: ${response.status})`);
+                    }
+                    if (response.status === 417) {
+                        console.log(`Nastavnik je već registrovan za predmet. (HTTP kod: ${response.status})`);
                     }
                     else {
-                        // setWarning(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
+                        console.log(`Zahtev ka serveru nije bio uspešan (HTTP kod: ${response.status})`);
                     }
                 }
             } catch (error) {
                 // hvatanje greski van HTTP odgovora
-                // setError(new Error(error));
+                console.log(new Error(error));
             }
             finally {
                 // Zatvaram modal
