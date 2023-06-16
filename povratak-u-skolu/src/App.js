@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import './App.css';
+// import './App.css';
 
 import { useLogin } from './login/login_logic';
 import Login from './login/Login';

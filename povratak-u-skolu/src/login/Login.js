@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 
 import logo from '../assets/icons/logo.svg';
+import './logo.css';
 import { UserContext } from '../App';
 
 import LoadingComponent from '../components/LoadingComponent';
